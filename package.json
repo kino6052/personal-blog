@@ -1,0 +1,20 @@
+{
+  "name": "hanziyuan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx serve public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.3.3",
+    "glob": "^13.0.6",
+    "marked": "^17.0.3"
+  }
+}
