@@ -4,23 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etymonline · Article Browser</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <style>
-      header {
-        display: flex;
-        flex-direction: column;
-        max-width: 100%;
-        margin: 0;
-        justify-content: center;
-        align-items: center;
-      }
-
-      h1, p {
-        width: fit-content;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <style><%- cssContent %></style>
 </head>
 <body>
     <header class="site-header">
@@ -29,25 +13,21 @@
     </header>
 
     <div class="main-container">
-        <!-- Sidebar: tag tree -->
         <div id="sidebar">
             <h3>✧  browse by tag  ✧</h3>
             <div id="tree"></div>
         </div>
 
-        <!-- Main content: page list -->
         <div id="content">
             <h3>✧  articles  ✧</h3>
             <div id="page-list"></div>
         </div>
     </div>
 
-    <!-- Embedded data (filled by build script) -->
     <script>
         window.__TAG_HIERARCHY__ = <%- JSON.stringify(hierarchy) %>;
         window.__ALL_PAGES__ = <%- JSON.stringify(allPages) %>;
     </script>
-    <!-- Collapsible tree logic -->
-    <script src="assets/tag-browser.js"></script>
+    <script><%- jsContent %></script>
 </body>
 </html>

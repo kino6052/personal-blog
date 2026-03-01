@@ -136,18 +136,43 @@ const hierarchyEntries = Array.from(pagesByTag.entries());
 const tagHierarchy = buildHierarchy(hierarchyEntries);
 
 // ----------------------------------------------------------------------
-// Generate index.html
+// Generate index.html with inline CSS/JS
 // ----------------------------------------------------------------------
 
 const indexLayoutPath = path.join(srcDir, 'layouts', 'index.html');
 if (await fs.pathExists(indexLayoutPath)) {
+  // Read the layout template
   const indexLayout = await fs.readFile(indexLayoutPath, 'utf-8');
+
+  // Read the CSS and JS files to inline them
+  const cssPath = path.join(srcDir, 'assets', 'style.css');
+  const jsPath = path.join(srcDir, 'assets', 'tag-browser.js');
+
+  let cssContent = '';
+  let jsContent = '';
+
+  if (await fs.pathExists(cssPath)) {
+    cssContent = await fs.readFile(cssPath, 'utf-8');
+  } else {
+    console.warn('style.css not found, inline CSS will be empty.');
+  }
+
+  if (await fs.pathExists(jsPath)) {
+    jsContent = await fs.readFile(jsPath, 'utf-8');
+  } else {
+    console.warn('tag-browser.js not found, inline JS will be empty.');
+  }
+
+  // Render the index page with all data and inline content
   const indexHtml = ejs.render(indexLayout, {
     hierarchy: tagHierarchy,
-    allPages: allPages
+    allPages: allPages,
+    cssContent: cssContent,
+    jsContent: jsContent
   });
+
   await fs.writeFile(path.join(outDir, 'index.html'), indexHtml);
-  console.log('Generated index.html');
+  console.log('Generated index.html (with inlined CSS/JS)');
 } else {
   console.warn('No index.html layout found; skipping index generation.');
 }
