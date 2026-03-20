@@ -1,33 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etymonline · Article Browser</title>
-    <style><%- cssContent %></style>
-</head>
-<body>
+    <style>
+      <%- cssContent %>
+    </style>
+  </head>
+  <body>
     <header class="site-header">
-        <h1>ETYMOLOGICON</h1>
-        <p>a catalogue of word origins & curious roots</p>
+      <h1>PERSONAL BLOG</h1>
+      <p>sharing thoughts</p>
     </header>
 
     <div class="main-container">
-        <div id="sidebar">
-            <h3>✧  browse by tag  ✧</h3>
-            <div id="tree"></div>
-        </div>
+      <div id="sidebar">
+        <h3>✧ browse by tag ✧</h3>
+        <div id="tree"></div>
+      </div>
 
-        <div id="content">
-            <h3>✧  articles  ✧</h3>
-            <div id="page-list"></div>
-        </div>
+      <div id="content">
+        <h3>✧ articles ✧</h3>
+        <div id="page-list"></div>
+      </div>
     </div>
 
     <script>
-        window.__TAG_HIERARCHY__ = <%- JSON.stringify(hierarchy) %>;
-        window.__ALL_PAGES__ = <%- JSON.stringify(allPages) %>;
+      window.__TAG_HIERARCHY__ = <%- JSON.stringify(hierarchy) %>;
+      window.__ALL_PAGES__ = <%- JSON.stringify(allPages) %>;
     </script>
-    <script><%- jsContent %></script>
-</body>
+    <script>
+      <%- jsContent %>
+    </script>
+  </body>
 </html>

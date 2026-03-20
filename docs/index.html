@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etymonline · Article Browser</title>
-    <style>/* -------------------- */
+    <style>
+      /* -------------------- */
 /* CSS Variables (themes) */
 /* -------------------- */
 :root {
@@ -401,31 +402,34 @@ th {
     border-right: none;
     border-bottom: 1px solid var(--border-sidebar);
   }
-}</style>
-</head>
-<body>
+}
+    </style>
+  </head>
+  <body>
     <header class="site-header">
-        <h1>ETYMOLOGICON</h1>
-        <p>a catalogue of word origins & curious roots</p>
+      <h1>PERSONAL BLOG</h1>
+      <p>sharing thoughts</p>
     </header>
 
     <div class="main-container">
-        <div id="sidebar">
-            <h3>✧  browse by tag  ✧</h3>
-            <div id="tree"></div>
-        </div>
+      <div id="sidebar">
+        <h3>✧ browse by tag ✧</h3>
+        <div id="tree"></div>
+      </div>
 
-        <div id="content">
-            <h3>✧  articles  ✧</h3>
-            <div id="page-list"></div>
-        </div>
+      <div id="content">
+        <h3>✧ articles ✧</h3>
+        <div id="page-list"></div>
+      </div>
     </div>
 
     <script>
-        window.__TAG_HIERARCHY__ = {"children":{"all":{"value":[{"title":"Etymology of 策略","url":"策略.html"},{"title":"Etymology of 欲望 and 愿望","url":"欲望.html"},{"title":"Etymology of 勇敢","url":"勇敢.html"}]},"radicals":{"children":{"semantic":{"children":{"field":{"children":{"left":{"value":[{"title":"Etymology of 策略","url":"策略.html"}]}}},"bamboo":{"children":{"top":{"value":[{"title":"Etymology of 策略","url":"策略.html"}]}}},"open mouth":{"children":{"right":{"value":[{"title":"Etymology of 欲望 and 愿望","url":"欲望.html"}]}}},"strength":{"children":{"bottom":{"value":[{"title":"Etymology of 勇敢","url":"勇敢.html"}]}}},"hand with a whip":{"children":{"right":{"value":[{"title":"Etymology of 勇敢","url":"勇敢.html"}]}}}}},"phonetic":{"children":{"valley":{"children":{"left":{"value":[{"title":"Etymology of 欲望 and 愿望","url":"欲望.html"}]}}}}}}},"word formation type":{"children":{"coordinated":{"value":[{"title":"Etymology of 策略","url":"策略.html"},{"title":"Etymology of 欲望 and 愿望","url":"欲望.html"},{"title":"Etymology of 勇敢","url":"勇敢.html"}]}}}}};
-        window.__ALL_PAGES__ = [{"title":"Etymology of 策略","url":"策略.html"},{"title":"Etymology of 欲望 and 愿望","url":"欲望.html"},{"title":"Etymology of 勇敢","url":"勇敢.html"}];
+      window.__TAG_HIERARCHY__ = {"children":{"all":{"value":[{"title":"Collectibles as a form of investment","url":"collection-investement.html"}]},"money":{"children":{"investment":{"value":[{"title":"Collectibles as a form of investment","url":"collection-investement.html"}]}}}}};
+      window.__ALL_PAGES__ = [{"title":"Collectibles as a form of investment","url":"collection-investement.html"}];
     </script>
-    <script>(function() {
+    <script>
+      // tags: general / code;
+(function () {
   const hierarchy = window.__TAG_HIERARCHY__;
   const allPages = window.__ALL_PAGES__;
 
@@ -438,33 +442,36 @@ th {
       }
     }
     const unique = new Map();
-    node.allPages.forEach(p => unique.set(p.url, p));
+    node.allPages.forEach((p) => unique.set(p.url, p));
     node.allPages = Array.from(unique.values());
   }
   computeAllPages(hierarchy);
 
-  const treeEl = document.getElementById('tree');
-  const pageListEl = document.getElementById('page-list');
+  const treeEl = document.getElementById("tree");
+  const pageListEl = document.getElementById("page-list");
 
   function renderTree(children, parentEl) {
-    const ul = document.createElement('ul');
+    const ul = document.createElement("ul");
 
     for (const [key, node] of Object.entries(children)) {
-      const li = document.createElement('li');
+      const li = document.createElement("li");
 
-      const header = document.createElement('div');
-      header.className = 'node-header';
+      const header = document.createElement("div");
+      header.className = "node-header";
 
-      const toggle = document.createElement('span');
-      toggle.className = 'toggle';
+      const toggle = document.createElement("span");
+      toggle.className = "toggle";
 
-      const nameSpan = document.createElement('span');
-      nameSpan.className = 'tag-name';
-      nameSpan.textContent = key + (node.allPages.length ? ` (${node.allPages.length})` : '');
-      nameSpan.addEventListener('click', (e) => {
+      const nameSpan = document.createElement("span");
+      nameSpan.className = "tag-name";
+      nameSpan.textContent =
+        key + (node.allPages.length ? ` (${node.allPages.length})` : "");
+      nameSpan.addEventListener("click", (e) => {
         e.stopPropagation();
-        document.querySelectorAll('.tag-name').forEach(s => s.classList.remove('selected'));
-        nameSpan.classList.add('selected');
+        document
+          .querySelectorAll(".tag-name")
+          .forEach((s) => s.classList.remove("selected"));
+        nameSpan.classList.add("selected");
         displayPages(node.allPages);
       });
 
@@ -473,20 +480,22 @@ th {
       li.appendChild(header);
 
       if (node.children && Object.keys(node.children).length > 0) {
-        toggle.textContent = '▶'; // collapsed arrow
-        const childContainer = document.createElement('div');
-        childContainer.className = 'children collapsed'; // start hidden
+        toggle.textContent = "▶"; // collapsed arrow
+        const childContainer = document.createElement("div");
+        childContainer.className = "children collapsed"; // start hidden
         renderTree(node.children, childContainer);
         li.appendChild(childContainer);
 
-        toggle.addEventListener('click', (e) => {
+        toggle.addEventListener("click", (e) => {
           e.stopPropagation();
-          childContainer.classList.toggle('collapsed');
-          toggle.textContent = childContainer.classList.contains('collapsed') ? '▶' : '▼';
+          childContainer.classList.toggle("collapsed");
+          toggle.textContent = childContainer.classList.contains("collapsed")
+            ? "▶"
+            : "▼";
         });
       } else {
-        toggle.textContent = ' ';
-        toggle.style.visibility = 'hidden';
+        toggle.textContent = " ";
+        toggle.style.visibility = "hidden";
       }
 
       ul.appendChild(li);
@@ -499,19 +508,21 @@ th {
   displayPages(allPages);
 
   function displayPages(pages) {
-    pageListEl.innerHTML = '';
+    pageListEl.innerHTML = "";
     if (pages.length === 0) {
-      pageListEl.textContent = 'No pages.';
+      pageListEl.textContent = "No pages.";
       return;
     }
-    pages.forEach(page => {
-      const a = document.createElement('a');
+    pages.forEach((page) => {
+      const a = document.createElement("a");
       a.href = page.url;
       a.textContent = page.title || page.url;
-      a.className = 'page-link';
+      a.className = "page-link";
       pageListEl.appendChild(a);
     });
   }
-})();</script>
-</body>
+})();
+
+    </script>
+  </body>
 </html>
