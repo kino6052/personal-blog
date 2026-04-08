@@ -1,5 +1,5 @@
 ---
-title: THE METAPHYSICS OF CODE
+title: THE METAPHYSICS OF CODE - INTRODUCTION
 subtitle: Introduction. A Million Patterns Versus One Codebase
 date: 2025-02-21
 layout: post.html # reference to a layout file
