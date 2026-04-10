@@ -1,11 +1,10 @@
-Here’s your finalized article, keeping the same tone and simple sentence structure.
-
 ---
-
-**Title:** Simple But Overlooked Communication Practices  
-**Subtitle:** How I wish my colleagues communicated  
-**Date:** 2025-02-21  
-**Tags:** all; communication;
+title: Simple But Overlooked Communication Practices
+subtitle: How I wish my colleagues communicated
+date: 2025-02-21
+layout: post.html # reference to a layout file
+tags: all; communication;
+---
 
 I often think that communication is a skill that requires complex and arcane practices. However, I see time and time again that it is more about the simplest imaginable practices that are so common sense, yet completely overlooked.
 
