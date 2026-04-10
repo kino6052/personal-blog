@@ -1,11 +1,9 @@
 ---
-
 title: Fun Use Cases for LLMs
 subtitle: Using LLMs in creative ways
 date: 2025-02-21
 layout: post.html # reference to a layout file
 tags: all; code / creative;
-
 ---
 
 LLMs are an extraordinary tool. It is hard to believe that less than 5 years ago we didn't have them and now it is hard to imagine our lives without them.
@@ -33,6 +31,10 @@ Writing IDE plugins has never been easier, I created a plugin that allows to vie
 **Personal**
 
 I provide LLM with my goals and my understanding direction and ask him to help me create action items to tackle these goals. It breaks down big ambitions into small steps I can start on today.
+
+**Boring Documents**
+
+I ask LLMs to rewrite boring documents as soviet union style textbooks with smooth narrative flow.
 
 **Other**
 
