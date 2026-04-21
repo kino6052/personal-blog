@@ -34,9 +34,13 @@ This is worth holding onto, because it suggests something. The same competitive 
 
 The catch is that competition requires something to compare. If every product becomes equally sustainable, the competitive edge vanishes. The mechanism works only as long as there is a difference worth chasing.
 
+What would actually change the rules? Not moral exhortation — that is another slogan on a wall. Three things have historically moved competitive behavior at scale: visible scores, real costs, and social shame. Carbon labeling on packaging makes the score visible. Extended producer responsibility laws — where companies pay the actual recycling cost of what they ship — make sustainability a line on the balance sheet rather than a virtue signal. And public rankings of producers by packaging waste give consumers something to chase, or to avoid. None of this is novel; versions of all three exist in various countries already. The question is not whether such mechanisms work but whether the political will exists to deploy them at the scale required. That is a different problem from the one the sorting slogan is trying to solve.
+
 ---
 
-Now take a longer view.
+Now take a longer view, and notice that packaging waste and labor competition share the same root.
+
+Both are produced by the same engine: a system that measures success by volume of exchange. More goods sold, more packaging consumed. More jobs competed for, more workers squeezed. The strawberry's Saran wrap and the factory worker's twelve-hour shift are not separate problems with separate causes. They are two outputs of a logic that values throughput above almost everything else. Sorting your rubbish addresses one output. Automation addresses another. Neither touches the underlying logic — and that is why both feel, in the end, like symptoms.
 
 Robots and AI already produce most manufactured goods more efficiently than humans. That frontier is advancing rapidly — not just in factories, but in logistics, translation, accounting, legal drafting, medical imaging. The trend is clear even if the end point is uncertain. At some point, it becomes difficult to answer the question: what exactly is human labor _for_, in economic terms?
 
@@ -64,8 +68,8 @@ We are not, in the end, at the decisive moment of ecological crisis because we s
 
 The old engine — produce more, sell more, compete harder — generates the packaging problem as a side effect. It is not malice. It is mechanics. A system optimized for exchange will produce things designed to be exchanged, in quantities optimized for exchange, wrapped in materials that make exchange feel valuable. Sorting the waste after the fact is not the answer to that system. Reducing what the system produces is.
 
-This does not mean sorting is useless. A small local resolution of a specific tension is still worth doing — it is better than not doing it. But we should see it for what it is: a downstream measure in a system that has not yet changed its upstream logic.
+This does not mean sorting is useless. Downstream measures create upstream pressure too, if imperfectly and slowly: the higher the actual cost of processing packaging waste, the stronger the economic signal to produce less of it. Sorting is part of the feedback loop, just a distant and weak part. The honest thing is to know where in the chain you are acting, and not to mistake the end of the pipe for the source of the water.
 
-The real question is not how to clean up after the old engine. It is how to preserve meaning and agency — for ourselves, for other people, for the creatures who share our planet — while that engine gradually winds down and something else, something we can barely describe yet, takes its place.
+The real question is not how to clean up after the old engine. It is what kind of competition — and what kind of meaning — we want to design into whatever replaces it. That is a question about values, not logistics. And unlike sorting rubbish, it cannot be answered by a slogan.
 
-We are not at the end of that story. We are somewhere in the middle, holding a plastic-wrapped strawberry, wondering what to do with the packaging.
+We are somewhere in the middle of that story. The strawberry is still double-wrapped. The bin is still there. But the more interesting question is who designed the packaging, and what it would take to make that decision change.
