@@ -12,7 +12,7 @@ Not far from the shop, a slogan painted on the wall read: _"Sorting the waste is
 
 Something about that pairing nagged at me on the way home.
 
-<img src="/images/strawberry.jpg" alt="Strawberry" style="width:100%;" />
+<img src="./assets/strawberries.png" alt="Strawberry" style="width:100%;" />
 
 ---
 
