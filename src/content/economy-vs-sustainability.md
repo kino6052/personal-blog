@@ -3,7 +3,7 @@ title: Economy vs Sustainability as a Transitory Clash
 subtitle: Thoughts on how these are related
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; economy; sustainability;
+tags: all; economics; sustainability; future; technology / AI;
 ---
 
 I recently bought strawberries in China. They came in a beautiful plastic package, and that package was also wrapped in Saran wrap.
@@ -11,6 +11,8 @@ I recently bought strawberries in China. They came in a beautiful plastic packag
 Not far from the shop, a slogan painted on the wall read: _"Sorting the waste is a small step to civilized living."_
 
 Something about that pairing nagged at me on the way home.
+
+<img src="/images/strawberry.jpg" alt="Strawberry" style="width:100%;" />
 
 ---
 
