@@ -16,7 +16,7 @@ tags: all; philosophy / values; communication / feedback;
 
 Попробуем разобраться.
 
-<img src="/assets/feedback.jpg" alt="feedback as a gift" style="width:100%;"/>
+<img src="./assets/feedback.jpg" alt="feedback as a gift" style="width:100%;"/>
 
 ---
 
