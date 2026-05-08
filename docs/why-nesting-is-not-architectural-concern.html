@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decoupling Code from Nesting</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Decoupling Code from Nesting</h1>
+      <h2>Why nesting is not an architectural concern</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p>Is having a large function or file bad architecture? Is decomposition into many small functions always better? Can we answer these questions unequivocally?</p>
+<p>In my opinion — yes. Absolutely. I will argue why.</p>
+<p>But before getting to the answer itself, we first need to understand what exactly people mean when they talk about “clean structure.”</p>
+<p>Modern programming culture strongly associates quality with decomposition.</p>
+<p>Large functions are considered suspicious. Deeply nested logic is considered dangerous. Splitting code into many files and many helpers is often treated almost as a moral virtue.</p>
+<p>But something strange happens when we examine these claims carefully.</p>
+<p>Most of the time, decomposition changes absolutely nothing about the actual behavior of the program.</p>
+<p>The execution graph remains identical.</p>
+<p>The dependencies remain identical.</p>
+<p>The data flow remains identical.</p>
+<p>Only the <em>presentation</em> changes.</p>
+<p>This is extremely important.</p>
+<p>Because architecture is not about presentation.</p>
+<p>Architecture is about whether software remains soft under change.</p>
+<p>A good architecture allows modification without causing cascading damage throughout the system. A bad architecture creates rigidity and coupling.</p>
+<p>Now we can ask the real question:</p>
+<p>Does visual nesting determine softness?</p>
+<p>I would argue — only in a very limited sense.</p>
+<p>And to understand why, let us consider a simple example.</p>
+<pre><code class="language-typescript">// separate-function
+export const test = (param) =&gt; {
+  console.log(param);
+  console.warn(&quot;check&quot;);
+
+  console.error(&quot;test&quot;);
+};
+
+const one = () =&gt; {
+  return {
+    name: test(&quot;Hello, World!&quot;),
+  };
+};
+</code></pre>
+<p>Normally, we perceive this as two separate units:</p>
+<ul>
+<li>one function declaration,</li>
+<li>one call site.</li>
+</ul>
+<p>The editor reinforces this perception.</p>
+<p>The function occupies physical space above. The call occupies physical space below. Our brain interprets them as separated conceptual objects.</p>
+<p>But this separation is not inherent to the code itself.</p>
+<p>It is only one possible visualization.</p>
+<p>I built a VSCode extension to demonstrate this.</p>
+<p>The extension reads special comments like:</p>
+<pre><code class="language-typescript">// separate-function
+</code></pre>
+<p>and changes how the editor presents the source code.</p>
+<p>Instead of showing the helper function separately, the editor can visually inline it directly into the call site:</p>
+<pre><code class="language-typescript">const one = () =&gt; {
+  return {
+    name: ((param) =&gt; {
+      console.log(param);
+      console.warn(&quot;check&quot;);
+
+      console.error(&quot;test&quot;);
+    })(&quot;Hello, World!&quot;),
+  };
+};
+</code></pre>
+<p>The source code itself never changes.</p>
+<p>The file on disk remains identical.</p>
+<p>Only the representation changes.</p>
+<p>And the reverse is also possible.</p>
+<p>A deeply nested implementation can be visually collapsed into symbolic calls, hiding internal details and making the surrounding logic appear simpler.</p>
+<p>In other words:</p>
+<ul>
+<li>functions can appear local while living elsewhere,</li>
+<li>or appear external while physically existing nearby.</li>
+</ul>
+<p>The editor becomes capable of projecting different organizational realities over identical code.</p>
+<p>This changes the discussion completely.</p>
+<p>Because once representation becomes virtualized, nesting stops being an intrinsic property of architecture.</p>
+<p>It becomes a cognitive tool.</p>
+<h3>The Hidden Assumption</h3>
+<p>Modern programming languages accidentally fuse two separate concerns:</p>
+<ul>
+<li>execution structure,</li>
+<li>perceptual structure.</li>
+</ul>
+<p>But they are not the same thing.</p>
+<p>A nested function affects lexical scope. That is real semantics.</p>
+<p>But whether we <em>visually perceive</em> it as nested is not semantics. That is editor behavior.</p>
+<p>Similarly:</p>
+<ul>
+<li>code folding,</li>
+<li>minimaps,</li>
+<li>“Go to Definition,”</li>
+<li>inline type hints,</li>
+<li>syntax highlighting,</li>
+<li>call hierarchies,</li>
+</ul>
+<p>already manipulate our perception of code without changing the program itself.</p>
+<p>My extension simply pushes this principle further.</p>
+<p>It allows decomposition itself to become partially virtual.</p>
+<h3>The Important Consequence</h3>
+<p>This creates a serious philosophical problem for many programming dogmas.</p>
+<p>Consider the common claim:</p>
+<blockquote>
+<p>“Large functions are bad architecture.”</p>
+</blockquote>
+<p>But what exactly does “large” mean?</p>
+<p>Large on disk?</p>
+<p>Large visually?</p>
+<p>Large cognitively?</p>
+<p>A function may occupy 300 lines physically while only exposing 20 relevant lines through projection and collapsing.</p>
+<p>Another function may occupy 20 lines physically while requiring jumps across 15 files to mentally reconstruct its behavior.</p>
+<p>Which one is truly more complex?</p>
+<p>The answer is no longer obvious.</p>
+<p>Because complexity is partly a property of representation.</p>
+<p>And once tooling can manipulate representation independently from execution, arguments based purely on visual decomposition lose their universality.</p>
+<h3>The Real Role of Decomposition</h3>
+<p>This does not mean decomposition is useless.</p>
+<p>Far from it.</p>
+<p>Decomposition still matters when it changes actual coupling:</p>
+<ul>
+<li>reducing dependency surfaces,</li>
+<li>isolating side effects,</li>
+<li>separating domains,</li>
+<li>improving testability,</li>
+<li>controlling state propagation.</li>
+</ul>
+<p>Those are architectural concerns because they affect how software behaves under change.</p>
+<p>But splitting logic merely to satisfy visual aesthetics is different.</p>
+<p>That is not architecture.</p>
+<p>That is navigation.</p>
+<p>And navigation can be virtualized.</p>
+<h3>A Useful Analogy</h3>
+<p>A city can be represented in many ways:</p>
+<ul>
+<li>subway map,</li>
+<li>road map,</li>
+<li>terrain map,</li>
+<li>population density map,</li>
+<li>political district map.</li>
+</ul>
+<p>None of these maps <em>is</em> the city.</p>
+<p>They are cognitive projections optimized for different tasks.</p>
+<p>Code organization is similar.</p>
+<p>Folders, files, nesting, and decomposition are often just maps over an execution graph.</p>
+<p>Different developers prefer different maps because they optimize different forms of cognition.</p>
+<p>But the underlying program may remain unchanged.</p>
+<p>The mistake is confusing the map for the terrain.</p>
+<h3>The Philosophical Conclusion</h3>
+<p>The logic becomes simple:</p>
+<ul>
+<li>If representation can be manipulated independently from execution,</li>
+<li>and changing representation does not alter the behavior of the system,</li>
+<li>and multiple representations can coexist simultaneously,</li>
+<li>then representation itself is not architecture.</li>
+</ul>
+<p>Nesting passes this test.</p>
+<p>File structure passes this test.</p>
+<p>Visual decomposition passes this test.</p>
+<p>They are not the software itself.</p>
+<p>They are lenses through which humans perceive software.</p>
+<p>Good architecture concerns resistance to change.</p>
+<p>Presentation concerns resistance to perception.</p>
+<p>These are related problems.</p>
+<p>But they are not the same problem.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
