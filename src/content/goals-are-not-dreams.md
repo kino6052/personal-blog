@@ -3,7 +3,7 @@ title: Goals Are Not Dreams
 subtitle: On the difference between a destination and a direction, and why confusing them is the same mistake that makes software unmaintainable
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / metaphysics; goals;
+tags: all; philosophy / metaphysics; psychology; productivity;
 ---
 
 ## The Same Disease, a Different Domain
