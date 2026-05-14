@@ -1,5 +1,5 @@
 ---
-title: prints Should Have Names
+title: Sprints Should Have Names
 subtitle: Agile as it was meant
 date: 2025-02-21
 layout: post.html # reference to a layout file
