@@ -3,7 +3,7 @@ title: 简单话
 subtitle: 这个写出来的东西用简单话写，也说简单话是什么
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning; technology / AI;
+tags: all; language / chinese / 简单话; learning; technology / AI;
 ---
 
 这个写出来的东西用简单话写，也说简单话是什么。
