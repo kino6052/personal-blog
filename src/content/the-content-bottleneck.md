@@ -64,7 +64,7 @@ The shift from the static page to real-time audio is a notorious friction point.
 
 The solution is **voiced-over text** (simultaneous reading and listening).
 
-By consuming audiobooks accompanied by text, or videos with accurate target-language subtitles, you feed your brain visual and auditory data simultaneously. Do not succumb to the urge to constantly pause the media. The human brain is an extraordinary pattern-recognition engine, not a brittle computer that crashes when data arrives too quickly.
+By consuming audiobooks accompanied by text, or videos with accurate target-language subtitles, you feed your brain visual and auditory data simultaneously. You can pause as much as you need to, eventually you will do it less and less. The human brain is an extraordinary pattern-recognition engine, not a brittle computer that crashes when data arrives too quickly.
 
 Through sustained exposure to voiced-over text, your processing speed naturally self-corrects. The language shifts from an impenetrable wall of sound into distinct, recognizable patterns.
 
