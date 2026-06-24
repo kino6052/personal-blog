@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GROW</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GROW</h1>
+      <h2>What a Seedling Teaches About the Assumptions You Never Knew You Had</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p><a href="https://codesandbox.io/p/sandbox/plant-99cjrl">CodeSandbox with the game.</a></p>
+<h2>THE PROBLEM OF THE UNASKED QUESTION</h2>
+<p>You stand before a seedling in a plain pot. You water it. It dies.</p>
+<p>You read a pamphlet about watering. You water differently. It lives.</p>
+<p>This is not a story about plants. It is a story about <em>questions you did not know existed</em>.</p>
+<p>Every beginner gardener faces a gap. But the gap is not in their knowledge of facts. The gap is in their <em>menu of possible actions</em>. They perform an action — watering, moving, feeding — without realizing that the action itself has hidden branches. They assume that &quot;watering&quot; is one thing. In reality, it is a tree of choices: how much, how often, from above or below, with what kind of soil, at what time of day.</p>
+<p>The plant dies not because the gardener is stupid. The plant dies because the gardener never knew there was a choice to make.</p>
+<p>Let us examine two kinds of blindness. Then we will see how a small simulation game called GROW engineers a cure.</p>
+<hr>
+<h2>TWO KINDS OF BLINDNESS</h2>
+<p><strong>The first kind:</strong> You see an effect. You do not see its cause. The leaf droops. Where is the moisture? Below the surface, invisible. You guess. Sometimes you guess wrong. This is the familiar blindness of hidden information. You solve it by measuring — a finger in the soil, a moisture meter.</p>
+<p><strong>The second kind:</strong> You do not even know that a question exists. You have never heard that &quot;bottom-watering&quot; is a distinct technique. To you, &quot;watering&quot; is a single, undifferentiated act. The possibility of choosing <em>how</em> to water never enters your mind. This is the blindness of <em>hidden questions</em>.</p>
+<p>The first blindness is a locked box. You find the key. The second blindness is a smooth wall with no door — not because the door is locked, but because you never thought to look for a door.</p>
+<p>Most learning games address the first blindness. They hide a number. You hunt for clues. You find the number. You win. This is satisfying, but it misses something essential.</p>
+<p>GROW — a small plant‑tending simulation — addresses the second blindness. It hides <em>assumptions</em>. And it forces you to discover those assumptions through failure.</p>
+<hr>
+<h2>THE ASSUMPTION AS A DEFAULT ACTION</h2>
+<p>Every action you take sits on a foundation of unexamined assumptions.</p>
+<p>You water the plant. What assumptions are you making? That watering is a single operation. That the method of delivery does not change the outcome. That roots are passive pipes waiting to be filled, not active structures that grow toward moisture.</p>
+<p>These assumptions are not written in any manual. They live in your fingers. They live in the shape of the button you press.</p>
+<p>GROW makes these assumptions visible by encoding each one as a <em>default action</em>. When you have not read the guide on watering method, the game gives you one watering button. Behind that button, it performs a specific hidden operation: surface watering. The plant&#39;s roots stay shallow. Eventually the plant collapses.</p>
+<p>You see the collapse. You do not see the chain of assumptions that led to it. The game does not say, &quot;You made an error.&quot; It says: <strong>&quot;You never read this guide. That assumption stayed invisible — so you never got to choose.&quot;</strong></p>
+<p>That is a different kind of feedback. It does not judge your decision. It points to a question you never knew you could ask.</p>
+<hr>
+<h2>THE MOMENT A LEVER APPEARS</h2>
+<p>Here is the mechanical heart of the thing.</p>
+<p>After you read the guide, the watering button <em>changes</em>. A menu appears. Four options. Bottom. Surface. Mist. Daily splash.</p>
+<p>You now have a choice where before there was only an automatic reflex.</p>
+<p>The guide gave you a mental model — &quot;bottom‑watering builds deep roots.&quot; But the mental model is not the prize. The prize is the <em>lever</em>. The interface has grown a new branch. What was a single action is now a decision tree.</p>
+<p>The game does not say, &quot;Congratulations, you have learned a fact.&quot; It says, &quot;You have transformed an invisible assumption into a visible choice.&quot;</p>
+<p>This is not cognitive psychology. This is <em>interaction design as epistemology</em>. The model lives in the world, not just in your head. It lives in the buttons you can press.</p>
+<hr>
+<h2>WHY STORING FACTS IS NOT ENOUGH</h2>
+<p>Consider the difference between a recipe and a stove.</p>
+<p>A recipe tells you: &quot;Brown the meat on high heat before adding liquid.&quot; You can memorize this sentence. You still do not know <em>why</em> browning matters, or what happens if you skip it, or whether &quot;high heat&quot; means the same on every stove.</p>
+<p>A stove gives you knobs. You turn one. The meat sizzles or burns. You learn by doing, by choosing, by observing the consequence of each setting.</p>
+<p>Most educational software acts like a recipe. It presents a model. Then it tests your ability to repeat the model. This is <em>storage</em>, not learning. You can store a fact without it ever changing what you do.</p>
+<p>GROW acts like a stove. It hides the knobs until you have earned the right to see them. Then it gives you the knobs and says: &quot;Now choose. The plant will tell you if you chose well.&quot;</p>
+<p>The model (the text you read) matters only because it unlocks the knob. Without the knob, the model is just decoration.</p>
+<hr>
+<h2>THE PERSISTENCE OF EXCAVATED QUESTIONS</h2>
+<p>Here is the second insight.</p>
+<p>When the plant dies, the game tells you exactly which unread guide contained the assumption you did not know you had. You read it. The assumption becomes visible. And — this is critical — <em>it stays visible forever</em>.</p>
+<p>You carry your excavated questions across every new seedling. The game resets the plant. It does not reset you. You remain a person who now knows that &quot;watering&quot; contains hidden branches.</p>
+<p>This models a deep truth about real expertise. Once you see that a leaning stem means &quot;reaching for light, not weakness,&quot; you cannot unsee it. The assumption that leaning was a defect collapses. A new action — rotating the pot — becomes obvious. You do not have to remember a fact. You simply <em>see</em> a possibility that was invisible before.</p>
+<p>The expert is not someone with more models in their head. The expert is someone who has <em>demolished more false assumptions</em> about what is possible. Their world contains more levers.</p>
+<hr>
+<h2>A METHOD FOR DESIGNING SUCH MACHINES</h2>
+<p>If you wanted to build a learning tool that works this way, you could follow a simple pattern:</p>
+<p><strong>For every hidden assumption a novice makes, define a default action that embodies that assumption. Then hide the alternative actions behind a text that names the assumption. When the text is read, replace the default action with a visible choice.</strong></p>
+<p>Let us test this pattern in other domains.</p>
+<p><strong>Cooking.</strong> Novice assumption: &quot;Browning meat is just something you do.&quot; Default action: brown always. Hidden alternatives: not browning, browning at different intensities, browning in batches. A guide explains the Maillard reaction and why moisture inhibits browning. After reading, the cooking interface now asks: &quot;Browning level: None / Light / Medium / Dark.&quot;</p>
+<p><strong>Programming debugging.</strong> Novice assumption: &quot;I run the program and look at the output.&quot; Default action: run the whole program. Hidden alternatives: breakpoints, stepping line by line, inspecting variables. A guide explains how execution traces reveal state changes. After reading, the debugger now offers: &quot;Run mode: Full / Step / Break on condition.&quot;</p>
+<p><strong>Medical diagnosis.</strong> Novice assumption: &quot;The symptom tells me the cause.&quot; Default action: treat the most visible symptom. Hidden alternative: consider that the symptom is downstream of a different system. A guide explains referred pain or atypical presentations. After reading, the diagnostic checklist adds a new column: &quot;Could this be something else?&quot;</p>
+<p>The pattern is not complicated. It is <em>engineering the epistemology of action</em> — building tools that grow as the user grows.</p>
+<hr>
+<h2>THE SEEDLING AS A TEACHER</h2>
+<p>The seedling in GROW does not lecture. It does not quiz. It simply lives or dies based on choices you did not know you were making.</p>
+<p>When it dies, it tells you: &quot;You never read this guide. That assumption stayed invisible. So you never got to choose.&quot;</p>
+<p>That is not a punishment. That is a <em>blueprint for reconstruction</em>.</p>
+<p>Read the guide. Start a new seedling. The same pot. The same windowsill. But now the watering button has four branches. Now the light adjustment includes a rotation step. Now you see what was always possible but never accessible.</p>
+<p>The plant lives or dies again. But this time, when it dies, it dies because you made a <em>choice</em> — not because you were acting inside a prison you could not see.</p>
+<hr>
+<h2>THE UNKNOWN QUESTION IS THE REAL ENEMY</h2>
+<p>We began with a gap. The gap is made of assumptions you do not know you have. It looks like common sense. It feels like &quot;the way things are done.&quot;</p>
+<p>GROW is a small machine for finding the cracks in that surface. It does not give you a map. It gives you a <em>method</em>: fail, notice that failure points to an unread guide, read it, watch a new choice appear, act, repeat.</p>
+<p>Every time a new choice appears, you have learned something. Not a fact. Not a model. A <em>new question</em> that you did not know you could ask.</p>
+<p>That is what real learning feels like. Not the accumulation of answers. The discovery that there were questions you had never even formulated.</p>
+<p>Now tend your seedling. And when it dies — as it will — do not ask only &quot;What did I do wrong?&quot; Ask also: &quot;What did I not know I was assuming?&quot;</p>
+<p>That question is the beginning of genuine competence.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decoupling Code from Convenience Wrappers</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Decoupling Code from Convenience Wrappers</h1>
+      <h2>Why declarative ceremony is not an architectural concern</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p>I recently spent time inside an autotesting codebase. The technology is unimportant — call it Playwright, call it anything — because that is an implementation detail, and by the lights of this series, implementation details are not the unit of analysis.</p>
+<p>What I observed there was striking, and it took me some time to name precisely what was wrong.</p>
+<p>The codebase was, by the standards we have developed earlier, <em>well grounded</em>. Almost everything in it corresponded to something that could be observed on the screen. Buttons that could be clicked. Inputs that could be filled. Pages that could be navigated to. There was no DDD Aggregate hiding in the corner with no observable referent. There were no Domain Service objects mediating phantom relationships. The selectors pointed at real DOM elements. The assertions checked real visible state.</p>
+<p>This is the kind of codebase that passes the perception test: every concept has a perceivable correspondent. The grounding is intact.</p>
+<p>And yet the code was suffocating under its own weight.</p>
+<p>Why?</p>
+<p>The answer is not reification. The disease here is different. And until we can name it, we cannot treat it.</p>
+<h3>The Symptom</h3>
+<p>The codebase was organized around the standard set of patterns one finds in modern testing infrastructure: page objects, helper classes, fixtures, mock orchestrators, assertion DSLs. A typical test read something like:</p>
+<pre><code class="language-typescript">test(&quot;user can log in&quot;, async ({ loginPage, dashboardPage }) =&gt; {
+  await loginPage
+    .navigate()
+    .fillCredentials({ username: &quot;test&quot;, password: &quot;test&quot; })
+    .clickLoginButton()
+    .expectRedirectTo(dashboardPage);
+
+  await dashboardPage.waitForLoad().expectGreeting(&quot;Hello, test&quot;);
+});
+</code></pre>
+<p>This is elegant. It reads almost like English. Each method name corresponds to something a human would do in a browser. The grounding is impeccable: every step has a perceivable referent.</p>
+<p>The cost of producing this elegance was approximately twelve files of supporting infrastructure: an abstract Page base class, a PageFactory that instantiated pages with the correct dependencies, a mixin system for shared behaviors, a fluent assertion library, a fixture system that wired everything together, a session manager, and a hierarchy of typed selectors.</p>
+<p>To change anything — to add a new field to the login form, to handle a new edge case, to make the test more resilient — one had to know which of those twelve files needed editing, in what order, and whose abstractions could not be perturbed without cascading consequences.</p>
+<p>The behavior under test was simple. The verification of that behavior was simple. The expression of that simple verification required an immovable temple of declarative machinery.</p>
+<p>This was the wrong kind of weight.</p>
+<h3>What This Is Not</h3>
+<p>It is tempting to call this reification, because we have a name for that, and we know how to argue against it.</p>
+<p>But it is not reification, and pretending it is would be sloppy.</p>
+<p>Reification is the disease of conjuring entities that have no perceivable referent: a <code>CustomerAggregate</code>, a <code>BillingDomain</code>, a <code>UserContext</code> that turns out to be neither user nor context. In a reified system, you cannot answer the question <em>what does this stand for in the running software?</em> — because the answer is <em>nothing</em>. The abstraction was born detached.</p>
+<p>That is not what was happening here. <code>loginPage.clickLoginButton()</code> <em>does</em> stand for something. It stands for the act of clicking the login button, which corresponds to a real DOM element, which produces a real observable effect. The chain of correspondences from the abstraction to the running software is unbroken.</p>
+<p>The problem is not that the abstraction has no referent.</p>
+<p>The problem is that the abstraction is <em>itself unnecessary</em> — because the thing it refers to was already perfectly nameable without it.</p>
+<pre><code class="language-typescript">await page.click(&quot;#login-button&quot;);
+</code></pre>
+<p>This is not less grounded than <code>loginPage.clickLoginButton()</code>. If anything it is more grounded — the reference is direct, with no intermediary class, no inherited behavior, no factory, no fixture. The cost of the ceremony is, in this case, all overhead.</p>
+<h3>The Real Diagnosis</h3>
+<p>This is the same disease we identified in the file structure essay and the nesting essay, appearing in a new form.</p>
+<p>There, the claim was: file structure and visual nesting are <em>presentation concerns</em>. They are lenses through which humans perceive code. They can be manipulated without changing the program. Therefore they are not architecture.</p>
+<p>The page object pattern, the fluent DSL, the assertion library — these are also presentation concerns. They change how the test reads. They do not change what the test does. The execution graph is identical. The observable behavior is identical. The dependencies, when you trace them honestly, are identical.</p>
+<p>What has been added is a layer of <em>how-it-looks-to-the-reader</em>, mistaken for a layer of <em>how-it-works</em>.</p>
+<p>Code is made of ideas. Ideas should be soft. Soft means: when the world demands a change, the code yields with proportionate effort. A small change in the world should require a small change in the code.</p>
+<p>The ceremony layer breaks this property. A small change in the world — a new field in the login form, say — now requires changes in the page object, possibly the base class, possibly the fixture, possibly the test. The change in the world is small. The change in the code is large. The code is no longer soft. It has been hardened by its own decoration.</p>
+<h3>The Side-By-Side Test</h3>
+<p>Here is a test that anyone can run, and that I think settles the question.</p>
+<p>Take any behavior you want to verify. Write the verification twice.</p>
+<p>Version A: directly, using the underlying tool. <code>page.click</code>, <code>page.fill</code>, <code>expect(page.locator(...)).toBeVisible()</code>.</p>
+<p>Version B: through whatever wrapper infrastructure you currently use. <code>loginPage.clickLoginButton()</code>, <code>dashboardPage.expectGreeting(...)</code>, with all the supporting files in place.</p>
+<p>Now change the behavior. Add a captcha to the login flow. Or change the success condition. Or handle a new error state.</p>
+<p>If Version A is changed with one edit and Version B requires edits across multiple files — that is the answer. Version B is not soft. The wrappers are not paying their rent. They are taxing every change with bureaucratic processing that produces no behavioral value.</p>
+<p>This is not a thought experiment. It is runnable on any codebase, at any time, by anyone.</p>
+<p>The fact that the result is so reliably damning is what makes the ceremony so hard to defend honestly.</p>
+<h3>The Legitimate Kernel</h3>
+<p>I do not want to be misread. There <em>is</em> a legitimate impulse buried inside the ceremony, and it must be preserved.</p>
+<p>If your test suite has a hundred tests that all need to log in first, the login flow should not be re-implemented a hundred times. That is just DRY — a real principle, grounded in a real concern about the cost of change. If logging in takes four steps today and five steps tomorrow, you want to edit four lines, not four hundred.</p>
+<p>So a function:</p>
+<pre><code class="language-typescript">async function logIn(page, { username, password }) {
+  await page.goto(&quot;/login&quot;);
+  await page.fill(&quot;#username&quot;, username);
+  await page.fill(&quot;#password&quot;, password);
+  await page.click(&quot;#login-button&quot;);
+  await page.waitForURL(&quot;/dashboard&quot;);
+}
+</code></pre>
+<p>is necessary and sufficient. It captures a real commonality. It is grounded. It is the smallest expression of the real software that needs to exist. The Open/Closed Principle, properly understood, is about exactly this — there is one place where the login flow is defined, and changes to logging-in happen there.</p>
+<p>What is <em>not</em> necessary and sufficient is wrapping this function in a <code>LoginPage</code> class, registering that class in a <code>PageRegistry</code>, instantiating it through a <code>PageFactory</code>, exposing its methods through a fluent chain, and adding an <code>IPage</code> interface for the type system to enforce. None of that machinery touches the actual login behavior. All of it is presentation, dressed up as architecture.</p>
+<p>The test is simple. Strip it away. Does the remaining program still do what it needs to do, expressed clearly? If yes, what you stripped was ceremony.</p>
+<h3>Where Declarative Tools Earn Their Keep</h3>
+<p>This is not an argument against all utility layers. It is a precise argument about <em>which</em> utility layers are justified.</p>
+<p>Lodash is justified. <code>_.groupBy(items, &quot;category&quot;)</code> is a name for a four-line pattern you could write yourself in seconds. The implementation is transparent. There is no machinery — no plugin system, no lifecycle, no dependency graph. The cost of adopting it is approximately zero, and the cost of abandoning it is approximately zero. You can read the source of any function in a minute. It does not impose a worldview on the code that uses it.</p>
+<p>Compare this to a dependency-injection framework that auto-discovers test fixtures, wires them through a container, and constructs your test environment via decorators. The implementation is not transparent. The cost of adopting it is the cost of learning its conventions. The cost of abandoning it is the cost of unwinding every place it touches. It imposes a worldview, and that worldview becomes load-bearing.</p>
+<p>The principle is: declarative tools earn their keep when they are <em>simple, transparent, and locally replaceable</em>. They lose it when they require their own conceptual apparatus to use correctly — when they introduce automagic that has to be understood as such before anything else can be understood.</p>
+<p>A small utility function is a name for a pattern.</p>
+<p>A framework is a pattern you cannot escape.</p>
+<h3>Wrappers Are Subjective</h3>
+<p>Here is the deepest reason why wrappers should not be confused with architecture.</p>
+<p>Two developers can look at the same login function and reasonably disagree about how it should <em>read</em>. One prefers <code>loginPage.clickLoginButton()</code>. Another prefers <code>loginAs(&quot;user&quot;, &quot;pass&quot;)</code>. A third prefers no wrapper at all and writes the steps inline. None of them is wrong. They are expressing different preferences about how the test should narrate itself to a reader.</p>
+<p>This is exactly the structure of the file structure debate. Two developers can reasonably disagree about whether a file belongs under <code>features/auth/login/</code> or <code>auth/components/LoginForm/</code>. None of them is wrong. They are expressing different preferences about how the code should be navigated.</p>
+<p>In both cases, the resolution is the same: <em>make the preference swappable</em>. Make the presentation layer separable from the code. Allow different readers to see the same code through different lenses, without forcing any of them on the others, and without making any of them load-bearing.</p>
+<p>The VSCode extensions described in the earlier essays were not gadgets. They were demonstrations of a principle: that a concern which can be virtualized is, by that fact, not architectural. The same principle applies here. If your wrapper layer can be added or removed without touching the code that does the work, it is a view. If it cannot, then you have welded presentation to substance, and the substance can no longer move freely.</p>
+<p>The page object is a view. It should live where views live — outside the load-bearing structure of the program, swappable per reader, strippable on demand.</p>
+<h3>The Discipline</h3>
+<p>Ask, of every helper, every wrapper, every utility:</p>
+<p><em>Is this necessary?</em> Could the program be expressed clearly without it?</p>
+<p><em>Is this sufficient?</em> Does its presence add behavioral value, or only readability?</p>
+<p><em>Is its necessity reified, or real?</em> Is it solving a coordination problem in the running software, or solving a coordination problem only in the writer&#39;s mind?</p>
+<p><em>Can it be stripped?</em> If you removed it tomorrow, would the program still work, and would the remaining expression be clear?</p>
+<p>These are not aesthetic questions. They are engineering questions. A piece of code that fails them is not lighter or heavier than code that passes them — it is <em>different in kind</em>. It is presentation, masquerading as software.</p>
+<h3>The Philosophical Conclusion</h3>
+<p>The logic is the same as in the earlier essays:</p>
+<ul>
+<li>If a layer can be added and removed without changing the program&#39;s behavior,</li>
+<li>And the same code can be presented through several such layers,</li>
+<li>And changes to the layer do not constrain changes to the code,</li>
+<li>Then the layer is not architecture.</li>
+</ul>
+<p>Page object frameworks pass this test. Fluent assertion DSLs pass this test. Auto-wiring fixture systems pass this test. They are not software. They are ways of looking at software.</p>
+<p>Real software is what remains when the ceremony is stripped. Real software is the login function, the click, the assertion against the visible state. Real software is what cannot be removed without losing behavior.</p>
+<p>Write necessary and sufficient code. Extract the commonalities that are real software — they earn their place by the cost they save under change. Reject the wrappers that are not real software — they earn nothing, and they tax every change with ceremony that produces no behavior.</p>
+<p>Don&#39;t mistake non-software concerns for software concerns.</p>
+<p>That, in the end, is the whole discipline.</p>
+<hr>
+<h2>Compiled Wrappers (Expanded)</h2>
+<p><em>When convenience becomes verifiable against ground truth</em></p>
+<p>[Previous content remains unchanged up to the end of &quot;The Asymmetric Architecture&quot; section, then continues as below.]</p>
+<hr>
+<h3>DRY, Abstraction, and the View Principle</h3>
+<p>The compiled-wrapper architecture is not merely about page objects or test utilities. It reveals a general truth about <em>any</em> indirection in code. DRY—&quot;Don&#39;t Repeat Yourself&quot;—is fundamentally an instruction to create views over repeated substance. When you extract a function, you are creating a wrapper: the function call expands to a sequence of primitive operations. When you define a constant for a magic number, you are creating a wrapper: the identifier expands to a literal value. When you factor out a shared component in a UI framework, you are creating a wrapper: the component tag expands to a tree of primitives.</p>
+<p>In every case, the same two-layer structure appears:</p>
+<ul>
+<li>The <strong>primitive ground truth</strong> – the actual operations that execute.</li>
+<li>The <strong>wrapper layer</strong> – names, functions, components, all of which <em>project</em> a convenient interface over that ground truth.</li>
+</ul>
+<p>The compiled-wrapper architecture generalizes this pattern. Any DRY abstraction, any macro, any inline function, any component – if it expands to the same primitive sequence as the canonical version of truth, it is verifiably correct. And if it does not, the build fails.</p>
+<p>This is the view principle applied to code organization: <em>presentation is not architecture</em>. The fact that you have factored something out is a decision about how the code is presented to human readers and tooling. It does not change what the software <em>does</em>. The canonical file captures what the software does. Everything else is a view.</p>
+<hr>
+<h3>The Separation of Concerns That Matters</h3>
+<p>A crucial distinction emerges: <strong>behavioral change</strong> versus <strong>architectural change</strong>.</p>
+<ul>
+<li><p><strong>Behavioral change</strong> – modifying what the software actually does. A new step in a login flow. A different selector. An additional assertion. These changes belong exclusively in the canonical file. They are the substance.</p>
+</li>
+<li><p><strong>Architectural change</strong> – modifying how the software is organized, without altering what it does. Renaming a wrapper method. Splitting a large wrapper into smaller ones. Changing the naming convention of test helpers. These changes operate only on the derivative layer.</p>
+</li>
+</ul>
+<p>The compiled-wrapper architecture enforces this separation. You cannot accidentally introduce a behavioral change by editing a wrapper – because the wrapper&#39;s expansion must match the canonical, and the canonical has not changed. Conversely, you cannot accidentally break the wrapper layer by editing the canonical – because the build will fail until the wrappers are updated to match.</p>
+<p>This is the essence of <em>softness</em> in software: the ability to change the substance (behavior) without paying the cost of updating every place that presented that substance. The wrapper layer conforms to the canonical. The canonical does not conform to the wrappers.</p>
+<p>Without this separation, every behavioral change incurs a tax on the architectural layer. You change a selector – you must update every test that used the old selector, every page object that referenced it, every fixture that depended on it. That tax is not a property of the behavior. It is a property of the <em>presentation</em> you chose. The compiled-wrapper architecture pays that tax mechanically, or not at all.</p>
+<hr>
+<h3>Snapshots as Verification, Snapshots as Discovery</h3>
+<p>Jest snapshots provide an illuminating parallel. When you run a snapshot test, you serialize a value and compare it to a stored reference. Updating snapshots is a conscious act – you run <code>jest -u</code> when the change is intentional.</p>
+<p>The canonical file in this architecture serves the same role as a master snapshot. It is the stored reference against which all wrapper expansions are compared. When you change the canonical, you are effectively updating the master snapshot. The build will then fail for every wrapper that has not yet been updated to match.</p>
+<p>But snapshots also offer a diagnostic capability. Consider a scenario without wrappers: you change a selector in one test file. You run your tests. One snapshot fails – the one you changed. But there are ten other tests that also use that selector, scattered across the codebase, each with its own snapshot. They do not fail because they still have the old selector. You have just introduced a divergence. The software now has inconsistent behavior depending on which test runs. The snapshots did not catch this because each snapshot is isolated.</p>
+<p>Now consider the same scenario with the compiled-wrapper architecture. The canonical file contains the selector once. All tests are written as sequences of wrapper calls that expand to the canonical sequence. When you change the selector in the canonical, you change it everywhere. You run the build. All tests pass, because all wrappers expand to the new canonical. The snapshots (if you maintain them) show the change in exactly one place – the canonical – and the verification step ensures that all wrapper expansions match that single source.</p>
+<p>The diagnostic insight is this: <strong>if you change something and the effect appears in only one place when it should appear in many, that is a sign that you lacked a proper wrapper.</strong> The absence of abstraction forces you to scatter the same change across multiple files, each with its own risk of omission or inconsistency. The presence of a canonical wrapper – a single source of truth for that piece of behavior – turns a scattered change into a localized one.</p>
+<p>Snapshots can be used to <em>detect</em> missing wrappers. Before introducing the compiled-wrapper architecture, you might snapshot the entire test output of your suite. Then you make a behavioral change – say, updating a button&#39;s <code>data-testid</code>. After the change, you examine which snapshots differ. If more than one snapshot differs, that is expected – the behavior changed in multiple tests. But if <em>exactly one</em> snapshot differs, and you know the change should affect many tests, you have discovered a problem: your tests are not sharing the canonical source of truth for that behavior. The correct fix is to introduce a wrapper (a function, a constant, a page object) that captures that behavior in one place, then rewrite the tests to use it.</p>
+<hr>
+<h3>Wrappers as Architectural Debt That Pays for Itself</h3>
+<p>Every wrapper is a bet. The bet is that the convenience it provides – shorter code, better names, IDE support, DRY – outweighs the cost of maintaining the indirection. Many teams lose this bet because the cost of updating wrappers scales with the number of behavioral changes, and behavioral changes are frequent.</p>
+<p>The compiled-wrapper architecture changes the terms of the bet. Wrappers no longer incur a per-change cost. The cost is shifted to:</p>
+<ol>
+<li><strong>Initial creation</strong> – writing the canonical file and the wrappers that project it.</li>
+<li><strong>Mechanical propagation</strong> – updating wrappers when the canonical changes, which can be automated with AI or code generation.</li>
+<li><strong>Verification</strong> – the build&#39;s equivalence check, which is automatic.</li>
+</ol>
+<p>The ongoing cost of <em>using</em> wrappers – writing tests that call them – is zero. The cost of <em>maintaining</em> wrappers is near-zero, because propagation is automated. The cost of <em>verifying</em> correctness is paid by the CI system, not by the developer.</p>
+<p>This transforms the economics of abstraction. In traditional codebases, introducing a wrapper is a commitment to future maintenance. In this architecture, introducing a wrapper is a one-time effort that yields permanent convenience, because the canonical file owns the behavior and the wrapper simply follows.</p>
+<hr>
+<h3>Different Wrappers for Different Concerns</h3>
+<p>Not all wrappers are equal. The compiled-wrapper architecture distinguishes between:</p>
+<ul>
+<li><p><strong>Architectural wrappers</strong> – those that embody a single source of truth for a piece of behavior. The canonical file itself is the ultimate architectural wrapper. Page objects, if they capture <em>all</em> interactions with a particular UI surface, are architectural wrappers. Changing the canonical changes the behavior; updating the wrapper is a mechanical propagation.</p>
+</li>
+<li><p><strong>View wrappers</strong> – those that exist purely for presentation, with no claim to being the single source of truth. A fluent DSL that reorders or renames operations is a view wrapper. A test helper that combines multiple primitives into one named step is a view wrapper. Multiple view wrappers can project the same canonical in different ways.</p>
+</li>
+</ul>
+<p>The architecture permits both, but treats them differently. Architectural wrappers are <em>canonical</em> – they are the truth, and other wrappers must expand to match them. View wrappers are <em>derivative</em> – they must expand to a sequence that matches <em>some</em> architectural wrapper, but they are not required to be the only representation.</p>
+<p>In practice, a repository might have:</p>
+<ul>
+<li>One canonical file per logical behavior (<code>flows/login.ts</code>)</li>
+<li>One architectural wrapper per UI surface (<code>pages/LoginPage.ts</code>) that exactly mirrors the canonical operations</li>
+<li>Multiple view wrappers per test author&#39;s taste (<code>actions/logIn.ts</code>, <code>steps/iLogIn.ts</code>, <code>dsl/login.perform()</code>)</li>
+</ul>
+<p>All view wrappers are verified against the architectural wrapper, which is itself verified against the canonical. The build enforces a chain of equivalence.</p>
+<hr>
+<h3>Snapshot-Verified Wrappers</h3>
+<p>The verification step can be implemented using the same snapshot machinery developers already understand. For each wrapper method, you can snapshot its expansion to primitives. The snapshot becomes the stored expectation. On every build, the current expansion is compared to the snapshot.</p>
+<p>When the canonical changes, the snapshots for affected wrappers will fail. The developer (or AI) then updates the snapshots to match the new canonical. This is exactly the same workflow as <code>jest -u</code>, but applied to wrapper definitions rather than test outputs.</p>
+<p>The advantage of snapshot-based verification is that it composes with existing tooling. You do not need a special-purpose compiler. You need:</p>
+<ul>
+<li>A convention for mapping wrapper expansions to canonical fragments</li>
+<li>A snapshot test that runs the expansion and compares it to the stored canonical</li>
+<li>A commit hook that fails if snapshots do not match</li>
+</ul>
+<p>This is lightweight enough to implement in any project that already uses Jest or similar snapshot frameworks.</p>
+<hr>
+<h3>Two Truths, Verified</h3>
+<p>The original objection to wrappers stood: they tax every change. The compiled-wrapper architecture removes that tax by making wrappers <em>derivative</em> and <em>verifiable</em>. The canonical owns the behavior. The wrappers follow. The build enforces.</p>
+<p>DRY, abstraction, factoring – all are views over the same primitive ground truth. They are not architectural in the sense of changing what the software does. They are architectural only in the sense of organizing how we <em>see</em> what the software does. That is a legitimate concern – readability, maintainability, tooling support – but it is a separate concern from behavior.</p>
+<p>The compiled-wrapper architecture gives you both. The substance changes freely. The presentation adjusts automatically or verifiably. The build tells you when they have drifted apart.</p>
+<p>That is softness: the ability to change what the software does without being punished for how you chose to write it down.</p>
+<p><em>[Original conclusion follows.]</em></p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
