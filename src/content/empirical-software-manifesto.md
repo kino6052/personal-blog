@@ -321,6 +321,20 @@ renderUI(workstation);
 
 ---
 
+### The Illusion of Velocity: AI Boilerplate and "Guest-Host" Programming
+
+Modern development tools and AI assistants have created a dangerous corporate illusion: hyper-velocity at initialization. Armed with AI code generators, a developer can spin up an entire enterprise framework, complete with databases and deployment scaffolding, in mere seconds. This initial vertical spike in productivity deceives stakeholders into believing the software is built to scale. In reality, it is a headlong acceleration into an unmaintainable, brittle graveyard of throw-away code. Because the system was not built _soft_, it hardens instantly under the weight of automated boilerplate. The developer transitions from an author who deeply understands their program into a passive guest-host, spending their days debugging automated edge-case mistakes in a massive architecture they fundamentally do not comprehend.
+
+### The Antidote: AI as the Epistemological Guardrail
+
+Empirical Software fiercely rejects the use of AI as an ungrounded code multiplier. Instead, we invert the tool: we use AI as an unyielding validator of architectural principles and a mechanism to make traditional Test-Driven Development (TDD) entirely painless. We do not use AI to generate massive, speculative abstractions. We use AI to verify adherence to radical softness and to enforce **100% test coverage exclusively on the core layer—the soul of the software**. Because our core logic runs completely synchronously and in-memory, free from external framework or infrastructure contamination, the AI can effortlessly run, mutate, and bulletproof our minimal handlers in milliseconds. The engineer remains the absolute master of the idea; the AI simply ensures the shield never cracks.
+
+### The Rule of AI Naming Justification
+
+To prevent the AI from introducing reified engineering jargon—such as abstract sessions or phantom database keys—into our testing suites, we enforce a strict prompt constraint. **The AI must explicitly provide a justification for every variable, handler, and state name it introduces, declaring exactly what it corresponds to on the user's screen**. If a test asserts against a value, the AI must describe what the user visibly perceives that validates that value. If the AI cannot point to a screen primitive, the naming is flagged as a ghost, and the code is rejected.
+
+---
+
 ## The Empirical Manifesto
 
 We reject the false industry consensus that massive engineering overhead is the necessary price of software scalability. Bloat is not the cost of power; it is the penalty paid for ungrounded thinking.
