@@ -10,6 +10,8 @@ tags: all; misc; music;
 
 The core identity of this project is **physical catharsis disguised as an interactive cartoon**. It strips away the dark, self-destructive tropes of traditional punk and replaces them with an infectious, high-energy, inclusive space where the boundary between the stage and the audience completely melts away.
 
+<img src="./assets/punk.png" alt="Strawberry" style="width:100%;" />
+
 ---
 
 ## 🎵 The Sonic Identity: Live-First Simplicity
