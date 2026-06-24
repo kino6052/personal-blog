@@ -1,9 +1,9 @@
 ---
 title: Punk Rock Band Vision
-subtitle: THE BLUEPRINT: RAW, FUN, CARTOONISH PUNK
+subtitle: THE BLUEPRINT - RAW, FUN, CARTOONISH PUNK
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; misc; time-management;
+tags: all; misc; music;
 ---
 
 ### _Designed Live-First for the Chinese Underground Scene_
