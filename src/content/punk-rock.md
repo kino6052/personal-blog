@@ -22,6 +22,8 @@ The music is engineered from day one for the live environment—every riff, beat
 - **The Local Flavor:** A distinctly Chinese identity woven naturally into the raw punk energy. It utilizes electronic elements and organic samplings of traditional Chinese music, creating a familiar yet hyper-modern sonic landscape for local youth.
 - **The Complexity:** Like _The Simpsons_ or _Futurama_, the music is instantly friendly and digestible on the surface, yet structurally tight and cleverly executed underneath.
 
+<img src="./assets/punk002.png" alt="Strawberry" style="width:100%;" />
+
 ---
 
 ## 👥 The Roster & Visual Aesthetic
