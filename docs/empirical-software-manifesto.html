@@ -13,33 +13,37 @@
     </header>
     <main>
       <a href=".">Home Page</a>
-      <p>Modern software engineering is buried under an immense, expensive temple of its own decoration. We have built a tech culture that treats presentation as architecture, pours concrete over ideas far too early, and forces human creativity to serve the machine.</p>
+      <h1>EMPIRICAL SOFTWARE: THE MANIFESTO FOR SOFT SOFTWARE</h1>
+<p>Modern software engineering is buried under an immense, expensive temple of its own decoration. We have built a tech culture that treats presentation as architecture, pours concrete over ideas far too early, and forces human creativity to serve the machine.</p>
 <p><strong>Empirical Software</strong> exists to dismantle this priesthood, strip away the introduced complexity, and make software do what it was always meant to do: stay <em>soft</em>.</p>
 <hr>
 <h2>1. The Three Triumvirates of Failure: Our Named Enemies</h2>
 <p>To fix what is broken, we must call out the core pathologies that corrupt modern development. The architecture of a system breaks down not because of a lack of technical tools, but because of foundational philosophical failures.</p>
 <h3>Enemy I: Reification</h3>
-<p>The act of treating an abstract concept born in a meeting as a real, physical thing that exists in the wild. In modern code, this manifests as building massive load-bearing code structures around phantom entities—like an abstract domain layer, an aggregate root, or a database driver—long before a single user-facing behavior is validated.</p>
+<p>The act of treating an abstract concept born in a meeting as a real, physical thing that exists in the wild. In modern code, this manifests as building massive, load-bearing code structures around phantom entities—like an abstract domain layer, an aggregate root, or an enterprise model—long before a single user-facing behavior is validated.</p>
 <h3>Enemy II: Metaphysics</h3>
-<p>The creation of overcomplicated, unfalsifiable corporate and engineering fantasies that have no grounding in direct user perception. When software is driven by ungrounded metaphysics, it spins out of control into a labyrinth of seven-layered architectures and abstract enterprise languages that hide the actual soul of the application.</p>
+<p>The creation of overcomplicated, unfalsifiable corporate and engineering fantasies that have no grounding in direct user perception. When software is driven by ungrounded metaphysics, it spins out of control into a labyrinth of multi-layered architectures and abstract enterprise languages that hide the actual soul of the application.</p>
 <h3>Enemy III: The Obsession with Details</h3>
 <p>The crippling habit of focusing on implementation details—such as which cloud infrastructure, database ORM, or server-side rendering library to use—before defining the underlying logic of the program.</p>
 <p>This obsession manifests clearly in how teams frantically try to organize everything into rigid folder hierarchies early in a codebase&#39;s lifecycle. Just like heavy linters and over-engineered configurations, physical file structures are chosen too soon and mistaken for genuine architecture. File organization is merely a subjective presentation layer, yet teams weld it to substance.</p>
 <blockquote>
-<p><strong>The Tragedy of Modern Tooling:</strong> Our code has ceased to serve human utility. Instead, <strong>our code serves our tools and our bureaucracy</strong>. Root directories fill with configuration files for deployment machines while the real story of the software is buried six folders deep.</p>
+<p><strong>The Tragedy of Modern Tooling:</strong> Our code has ceased to serve human utility. Instead, <strong>our code serves our tools and our bureaucracy</strong>. Root directories fill with configuration files for deployment machines while the real story of what the software does is buried six folders deep.</p>
 </blockquote>
 <hr>
 <h2>2. The Core Principle: Radical Softness</h2>
 <p>Good architecture is defined by one primary metric: <strong>making software soft</strong>.</p>
 <p>True architectural softness is the absolute capacity to <strong>postpone implementation and detail decisions as far into the future as possible.</strong> If a small change in the real world requires rewriting complex deployment pipelines, editing twelve files of structural boilerplate, or re-drawing database schemas, your code is hard. It has been concrete-shackled by its own decoration.</p>
-<p>Empirical Software protects the soul of an idea by ensuring that the core mathematical transformations of a program remain completely isolated from, and indifferent to, the shifting runtimes of the external world.</p>
+<p>Empirical Software protects the soul of an idea by ensuring that the core mathematical transformations of a program remain completely isolated from, and indifferent to, the shifting runtimes and environments of the external world.</p>
 <hr>
 <h2>3. The Metaphysical Exorcism: Grounding the Client</h2>
-<p>When business stakeholders communicate, they routinely fall victim to their own ungrounded corporate metaphysics, speaking in buzzwords like <em>&quot;multi-tiered user-retention ecosystem matrices.&quot;</em> Empirical Software begins every project with a compassionate, non-belittling visual translation exercise designed to strip away the jargon:</p>
+<p>When business stakeholders communicate, they routinely fall victim to their own ungrounded corporate metaphysics, speaking in buzzwords like <em>&quot;multi-tiered user-retention ecosystem matrices&quot;</em>. Empirical Software begins every project with a compassionate, non-belittling visual translation exercise designed to strip away the jargon:</p>
 <ul>
-<li><strong>The Rule of Visual Language:</strong> We ask the client, <em>&quot;If your idea were fully represented on a static computer screen using only text, buttons, and squares, what would it look like?&quot;</em></li>
-<li><strong>Dethroning Abstract Names:</strong> We forcefully dereify labels. A &quot;login page&quot; is no longer a metaphysical state; it is a square with two inputs and a button.</li>
-<li><strong>The TRIZ Assumption Teardown:</strong> We deploy TRIZ-style inventive analysis to deliberately isolate, unpack, and disassemble the hidden assumptions locking the client into a narrow, over-engineered solution space. We utilize high-level abstractions consciously as provisional notation, never as permanent load-bearing walls.</li>
+<li><p><strong>The Rule of Visual Language:</strong> We ask the client, <em>&quot;If your idea were fully represented on a static computer screen using only text, buttons, and squares, what would it look like?&quot;</em></p>
+</li>
+<li><p><strong>Dethroning Abstract Names:</strong> We forcefully dereify labels. A &quot;login page&quot; is no longer a metaphysical state; it is a square with two inputs and a button.</p>
+</li>
+<li><p><strong>The TRIZ Assumption Teardown:</strong> We deploy TRIZ-style inventive analysis to deliberately isolate, unpack, and disassemble the hidden assumptions locking the client into a narrow, over-engineered solution space. We utilize high-level abstractions consciously as provisional notation, never as permanent load-bearing walls.</p>
+</li>
 </ul>
 <hr>
 <h2>4. The Dual-UI Architecture &amp; Behavioral Grounding</h2>
@@ -51,29 +55,249 @@
 <pre><code>  [ Minimal Necessary UI ] ---&gt; ( Downstream Mappers ) ---&gt; [ Target UI ]
     (Pure In-Memory State)                                   (Polished Design)
 </code></pre>
-<p>The Target UI is treated as a pure, swappable projection. It is layered on top using <strong>isolated non-invasive mappers</strong> that cleanly map the core application state and primitive handlers downstream to the design components. The production design conforms to the engine; the core engine never yields to the design.</p>
+<p>The Target UI is treated as a pure, swappable projection. It is layered on top using <strong>isolated, non-invasive mappers</strong> that cleanly map the core application state and primitive handlers downstream to the design components. The production design conforms to the handlers; the core logic never yields to the design.</p>
 <h3>Honest Interaction Handlers</h3>
-<p>We reject abstract, non-visual code labels. Code handlers do not capture phantom user intents (e.g., <code>handleSubmit</code>), because &quot;submitting&quot; cannot be visually pointed to on a screen. A user simply clicks a button to see a new screen that tells them if they are going the right way or the wrong way. We write code that mirrors the exact physical interaction: <code>onClickButton</code>.</p>
+<p>We reject abstract, non-visual code labels. Code handlers do not capture phantom user intents (e.g., <code>handleSubmit</code>), because &quot;submitting&quot; cannot be visually pointed to on a screen. A user simply interacts with a physical boundary—like clicking a button—to see a new screen that tells them if they are going the right way or the wrong way. We write code that mirrors the exact physical interaction: <code>onButtonPress</code>.</p>
 <hr>
-<h2>5. Stripped Bare: The Synchronous Local Engine</h2>
+<h2>5. Stripped Bare: The Synchronous Local Workstation</h2>
 <p>The ultimate litmus test of scalable software is feedback velocity. A project built by Empirical Software can be stripped entirely of its implementation details and run <strong>completely synchronously in-memory on a developer&#39;s local machine at any single point in time</strong>.</p>
 <ul>
-<li><strong>No Vampire Pipelines:</strong> We eradicate budget-sucking, latency-inducing CI/CD pipelines, bloated Docker environments, and heavy, brittle automated E2E testing suites that plague modern development teams.</li>
-<li><strong>Instant Compilation:</strong> Developers compile locally and instantly, updating only what has explicitly changed.</li>
-<li><strong>Radical Sprint Demos:</strong> Because the application runs cleanly in-memory with lightweight, synchronous replacements for infrastructure, sprint demos are always tangible, functional, and demonstrable. There is no &quot;complete on paper but broken in reality&quot; fantasy stage.</li>
+<li><p><strong>No Vampire Pipelines:</strong> We eradicate budget-sucking, latency-inducing CI/CD pipelines, bloated Docker environments, and heavy, brittle automated E2E testing suites that plague modern development teams.</p>
+</li>
+<li><p><strong>Instant Compilation:</strong> Developers compile locally and instantly, updating only what has explicitly changed.</p>
+</li>
+<li><p><strong>Radical Sprint Demos:</strong> Because the application runs cleanly in-memory with lightweight, synchronous replacements for infrastructure, sprint demos are always tangible, functional, and demonstrable. There is no &quot;complete on paper but broken in reality&quot; fantasy stage.</p>
+</li>
 </ul>
 <hr>
 <h2>6. Living Contracts at the Frontier</h2>
 <p>We do not allow the messy metaphysics of third-party APIs or external cloud networks to infiltrate our core logic. When integrating with external entities, Empirical Software enforces strict defensive lines:</p>
 <ol>
-<li><strong>The Demand for Primitives:</strong> If an external partner wishes to integrate with us, we demand they provide a minimal, necessary, and sufficient synchronous in-memory interface and behavioral implementation of their service.</li>
-<li><strong>The Boundary Proxy:</strong> If they cannot provide this, <strong>we build it ourselves</strong>. We map their external concepts through a defensive proxy layer, verifying integration correctness locally in milliseconds without ever forcing our system to bow to foreign instruments.</li>
+<li><p><strong>The Demand for Primitives:</strong> If an external partner wishes to integrate with us, we demand they provide a minimal, necessary, and sufficient synchronous in-memory interface and behavioral implementation of their service.</p>
+</li>
+<li><p><strong>The Boundary Proxy:</strong> If they cannot provide this, <strong>we build it ourselves</strong>. We map their external concepts through a defensive proxy layer, verifying integration correctness locally in milliseconds without ever forcing our system to bow to foreign instruments.</p>
+</li>
 </ol>
+<hr>
+<h2>7. The Architecture Blueprint (Framework-Blind Composition)</h2>
+<p>Below is the definitive layout of a <strong>Credential Box</strong> (what the ungrounded world incorrectly reifies as a &quot;Login Page&quot;). Notice how the composition root is entirely pure JavaScript—it remains blind to React, browsers, DOM structures, and renderers.</p>
+<h3><code>credentialLogic.js</code> (Pure Perceptual States &amp; Handlers)</h3>
+<p>This file holds the pure data transitions and instantiates the agnostic state workstation manager. It contains zero external framework or markup dependencies.</p>
+<pre><code class="language-javascript">// Pure functional logic transformations
+export function updateFormEntry(currentEntries, key, incomingText) {
+  return { ...currentEntries, [key]: incomingText };
+}
+
+export function evaluateFormValidity(usernameText, passwordText) {
+  if (!usernameText.trim()) return &quot;Username text box cannot be empty&quot;;
+  if (!passwordText.trim()) return &quot;Password text box cannot be empty&quot;;
+  return null;
+}
+
+// Agnostic Workstation State Manager
+export function createCredentialWorkstation(localNetworkProxy) {
+  let state = {
+    userFormEntries: { usernameText: &quot;&quot;, passwordText: &quot;&quot; },
+    isLoaderVisible: false,
+    displayedStatusText: &quot;Please enter your credentials&quot;,
+    isActionButtonDisabled: false,
+  };
+
+  const listeners = new Set();
+  const subscribe = (listener) =&gt; {
+    listeners.add(listener);
+    return () =&gt; listeners.delete(listener);
+  };
+
+  const emit = () =&gt; listeners.forEach((l) =&gt; l(getPrimitiveProps()));
+
+  const onInputChange = (key, incomingText) =&gt; {
+    state.userFormEntries = updateFormEntry(
+      state.userFormEntries,
+      key,
+      incomingText,
+    );
+    state.displayedStatusText = &quot;Typing...&quot;;
+    emit();
+  };
+
+  const onButtonPress = async () =&gt; {
+    const UIValidationError = evaluateFormValidity(
+      state.userFormEntries.usernameText,
+      state.userFormEntries.passwordText,
+    );
+
+    if (UIValidationError) {
+      state.displayedStatusText = UIValidationError;
+      emit();
+      return;
+    }
+
+    state.isLoaderVisible = true;
+    state.displayedStatusText = &quot;Verifying credentials against server...&quot;;
+    state.isActionButtonDisabled = true;
+    emit();
+
+    try {
+      const successDisplayString = await localNetworkProxy(
+        state.userFormEntries.usernameText,
+        state.userFormEntries.passwordText,
+      );
+      state.isLoaderVisible = false;
+      state.displayedStatusText = successDisplayString;
+      state.isActionButtonDisabled = true;
+    } catch (err) {
+      state.isLoaderVisible = false;
+      state.displayedStatusText = `Error: ${err.message}`;
+      state.isActionButtonDisabled = false;
+    }
+    emit();
+  };
+
+  const getPrimitiveProps = () =&gt; ({
+    statusText: state.displayedStatusText,
+    isSpinnerActive: state.isLoaderVisible,
+    usernameValue: state.userFormEntries.usernameText,
+    passwordValue: state.userFormEntries.passwordText,
+    disableAction: state.isActionButtonDisabled,
+    onUsernameType: (text) =&gt; onInputChange(&quot;usernameText&quot;, text),
+    onPasswordType: (text) =&gt; onInputChange(&quot;passwordText&quot;, text),
+    onButtonPress,
+  });
+
+  return { subscribe, getProps: getPrimitiveProps };
+}
+</code></pre>
+<h3><code>credentialView.jsx</code> (The Peripheral View Layer Detail)</h3>
+<p>The view layer encapsulates its own internal dependencies (React, ReactDOM, DOM targets) entirely within itself. It exposes a single, clean contract method to the world: <code>renderUI(stateManager)</code>.</p>
+<pre><code class="language-jsx">import React, { useState, useEffect } from &quot;react&quot;;
+import ReactDOM from &quot;react-dom/client&quot;;
+
+// Track 1: Minimal Necessary UI (MS Paint primitive equivalence)
+function MinimalCredentialBox(props) {
+  return (
+    &lt;div style={{ border: &quot;1px solid black&quot;, padding: &quot;10px&quot;, width: &quot;300px&quot; }}&gt;
+      &lt;div&gt;{props.statusText}&lt;/div&gt;
+      {props.isSpinnerActive &amp;&amp; &lt;div&gt;[Loader Active]&lt;/div&gt;}
+      &lt;input
+        type=&quot;text&quot;
+        value={props.usernameValue}
+        onChange={(e) =&gt; props.onUsernameType(e.target.value)}
+        placeholder=&quot;User Box&quot;
+      /&gt;
+      &lt;input
+        type=&quot;password&quot;
+        value={props.passwordValue}
+        onChange={(e) =&gt; props.onPasswordType(e.target.value)}
+        placeholder=&quot;Pass Box&quot;
+      /&gt;
+      &lt;button onClick={props.onButtonPress} disabled={props.disableAction}&gt;
+        Press Button
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// Track 2: Target UI (Polished wrapper projection lens)
+function TargetCredentialBox(props) {
+  return (
+    &lt;div className=&quot;auth-card-container modern-shadow-v2&quot;&gt;
+      &lt;header className=&quot;brand-header&quot;&gt;
+        &lt;p className=&quot;ui-subtitle-status&quot;&gt;{props.statusText}&lt;/p&gt;
+      &lt;/header&gt;
+      {props.isSpinnerActive &amp;&amp; &lt;div className=&quot;modern-loading-bar&quot; /&gt;}
+      &lt;div className=&quot;input-group-wrapper&quot;&gt;
+        &lt;input
+          className=&quot;styled-input-field&quot;
+          type=&quot;text&quot;
+          value={props.usernameValue}
+          onChange={(e) =&gt; props.onUsernameType(e.target.value)}
+        /&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;input-group-wrapper&quot;&gt;
+        &lt;input
+          className=&quot;styled-input-field&quot;
+          type=&quot;password&quot;
+          value={props.passwordValue}
+          onChange={(e) =&gt; props.onPasswordType(e.target.value)}
+        /&gt;
+      &lt;/div&gt;
+      &lt;button
+        className=&quot;action-btn-primary&quot;
+        onClick={props.onButtonPress}
+        disabled={props.disableAction}
+      &gt;
+        Sign In
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// Internal framework adapter bridge
+function ReactWorkstationShell({ workstation }) {
+  const [props, setProps] = useState(() =&gt; workstation.getProps());
+
+  useEffect(() =&gt; {
+    return workstation.subscribe((nextPrimitiveProps) =&gt; {
+      setProps(nextPrimitiveProps);
+    });
+  }, [workstation]);
+
+  return (
+    &lt;div style={{ display: &quot;flex&quot;, gap: &quot;40px&quot;, padding: &quot;40px&quot; }}&gt;
+      &lt;MinimalCredentialBox {...props} /&gt;
+      &lt;TargetCredentialBox {...props} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+// Standardized Contract Method: The View Layer takes ownership of its own presentation machinery
+export function renderUI(workstation) {
+  const domRootElement = document.getElementById(&quot;root&quot;);
+  const UIPlatformRoot = ReactDOM.createRoot(domRootElement);
+  UIPlatformRoot.render(&lt;ReactWorkstationShell workstation={workstation} /&gt;);
+}
+</code></pre>
+<h3><code>main.js</code> (The Framework-Blind Composition Root)</h3>
+<p>This is the absolute entry point of the application running on the system. It contains no JSX, no React imports, and no reference to browser DOM elements. It sets up the logic dependencies and boots up the presentation adapter blind to its specific implementation.</p>
+<pre><code class="language-javascript">import { createCredentialWorkstation } from &quot;./credentialLogic&quot;;
+import { renderUI } from &quot;./credentialView&quot;;
+
+// 1. Setup clean, local, synchronous infrastructure proxies
+const synchronousLocalProxy = async (username, password) =&gt; {
+  await new Promise((resolve) =&gt; setTimeout(resolve, 400));
+  if (username === &quot;admin&quot; &amp;&amp; password === &quot;soft&quot;) {
+    return &quot;Access Granted: Welcome back, Operator Alpha&quot;;
+  }
+  throw new Error(&quot;Invalid entries inside the primitive text boxes&quot;);
+};
+
+// 2. Instantiate the pure state manager workstation
+const workstation = createCredentialWorkstation(synchronousLocalProxy);
+
+// 3. Hand control off to the isolated view presentation layer
+renderUI(workstation);
+</code></pre>
 <hr>
 <h2>The Empirical Manifesto</h2>
 <p>We reject the false industry consensus that massive engineering overhead is the necessary price of software scalability. Bloat is not the cost of power; it is the penalty paid for ungrounded thinking.</p>
 <p>By demanding necessity and sufficiency, stripping away the ceremony of modern frameworks, and centering our entire architecture around what can be directly seen and verified, we make software that can scale to a billion users while remaining light enough to run on an ENIAC.</p>
 <p>We stop building immovable monuments to our tools. We build software that remains soft.</p>
+<hr>
+<h2>8. FAQ</h2>
+<h3>Q: Without a rigid folder structure like Feature-Sliced Design (FSD), how do developers find anything in a massive codebase?</h3>
+<p><strong>A:</strong> You use your IDE&#39;s search, context menus, and jump-to-definition features. In the modern era, the physical directory on a disk is practically invisible during active development. Treating file structure as a primary architectural choice is a fundamental mistake; it confuses a presentation lens with structural logic. Code can live in a completely flat structure and still be neatly organized through dynamic, swappable tags. Architecture is about how code yields to change, not where you store the files.</p>
+<h3>Q: If we don&#39;t use Domain-Driven Design (DDD), how are we supposed to map complex business requirements?</h3>
+<p><strong>A:</strong> DDD routinely models an organization&#39;s internal bureaucracy and meeting notes rather than the user&#39;s actual experience of the software. Users don&#39;t interact with &quot;Bounded Contexts&quot; or &quot;Aggregate Roots&quot;; they interact with a button, a list, a text field, and a status block. The moment you make a conceptual word like &quot;Customer&quot; a load-bearing architectural wall, you have reified an abstraction. We map requirements by starting from the perceptible screen outward, ensuring every line of code tracks a visible truth rather than a metaphysical ghost.</p>
+<h3>Q: Stripping away automated E2E tests and heavy CI/CD pipelines sounds reckless. How do you guarantee stability?</h3>
+<p><strong>A:</strong> Heavy CI/CD pipelines are a tax teams pay for building high-latency, infrastructure-dependent systems. If your software requires a cloud environment, a live database, and three third-party sandboxes just to verify a logic change, your feedback loop is broken. True stability doesn&#39;t come from a vampire pipeline auditing thousands of lines of transitive dependencies. It comes from an architecture that runs completely synchronously and in-memory. When correctness can be verified locally in milliseconds, the heavy engineering pipeline transitions from a necessity to an expensive corporate ornament.</p>
+<h3>Q: React won the industry standard. Why go through the trouble of hiding it behind a custom view adapter?</h3>
+<p><strong>A:</strong> React succeeded because it introduced composable UI components, but it also popularized the mixing of layout presentation syntax with pure state logic. JSX requires complex, non-native transformation pipelines that harden your codebase. Runtimes change and frameworks drift, but pure logic is durable. Relegating React to a peripheral implementation detail—accessed only via a standardized <code>renderUI</code> contract—guarantees that your software&#39;s soul remains soft, independently testable, and completely framework-blind.</p>
+<h3>Q: Isn&#39;t tracking a &quot;Minimal Necessary UI&quot; and a &quot;Target UI&quot; just writing the code twice?</h3>
+<p><strong>A:</strong> No, because you are writing the <em>substance</em> (the states and physical handlers) exactly once. The Target UI is merely a downstream projection layer. Traditional stacks weld the visual design system directly to the business logic, meaning a minor design revamp or layout shift forces a massive refactoring of data flows. By utilizing non-invasive mappers, you ensure that the substance changes freely while the visual clothing adjusts automatically without taxing the architecture.</p>
+<blockquote>
+<p><strong>The Litmus Test:</strong> Take any user-facing behavior in your current codebase. Add an extra input field or change the success condition. If Version A (the direct logic) requires one clean edit, but Version B (the decorated stack) requires you to touch a page object, an abstract registry, a factory, and an infrastructure configuration file, your abstractions are not paying rent. They are a tax on change.</p>
+</blockquote>
 
       <!-- unescaped HTML from Markdown -->
       <a href=".">Home Page</a>

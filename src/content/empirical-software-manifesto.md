@@ -1,9 +1,9 @@
-You are entirely right. I left the operational scaffolding sitting directly in the entrance hall. True architectural separation means the composition root shouldn't even know that the browser DOM or React exists in the world. Runtimes, renderers, and third-party UI syntaxes are downstream consumers—peripheral details plugged into the core.
-
-Let's rename "engine" to "logic" and "handlers" to respect behavioral grounding, and push the framework-specific initialization completely behind a standardized `renderUI(stateManager)` boundary.
-
-Here is the fully refined, uncompromising manifesto.
-
+---
+title: EMPIRICAL SOFTWARE MANIFESTO
+subtitle: THE MANIFESTO FOR SOFT SOFTWARE
+date: 2025-02-21
+layout: post.html # reference to a layout file
+tags: all; code / architecture; code / metaphysics;
 ---
 
 # EMPIRICAL SOFTWARE: THE MANIFESTO FOR SOFT SOFTWARE
@@ -328,3 +328,29 @@ We reject the false industry consensus that massive engineering overhead is the 
 By demanding necessity and sufficiency, stripping away the ceremony of modern frameworks, and centering our entire architecture around what can be directly seen and verified, we make software that can scale to a billion users while remaining light enough to run on an ENIAC.
 
 We stop building immovable monuments to our tools. We build software that remains soft.
+
+---
+
+## 8. FAQ
+
+### Q: Without a rigid folder structure like Feature-Sliced Design (FSD), how do developers find anything in a massive codebase?
+
+**A:** You use your IDE's search, context menus, and jump-to-definition features. In the modern era, the physical directory on a disk is practically invisible during active development. Treating file structure as a primary architectural choice is a fundamental mistake; it confuses a presentation lens with structural logic. Code can live in a completely flat structure and still be neatly organized through dynamic, swappable tags. Architecture is about how code yields to change, not where you store the files.
+
+### Q: If we don't use Domain-Driven Design (DDD), how are we supposed to map complex business requirements?
+
+**A:** DDD routinely models an organization's internal bureaucracy and meeting notes rather than the user's actual experience of the software. Users don't interact with "Bounded Contexts" or "Aggregate Roots"; they interact with a button, a list, a text field, and a status block. The moment you make a conceptual word like "Customer" a load-bearing architectural wall, you have reified an abstraction. We map requirements by starting from the perceptible screen outward, ensuring every line of code tracks a visible truth rather than a metaphysical ghost.
+
+### Q: Stripping away automated E2E tests and heavy CI/CD pipelines sounds reckless. How do you guarantee stability?
+
+**A:** Heavy CI/CD pipelines are a tax teams pay for building high-latency, infrastructure-dependent systems. If your software requires a cloud environment, a live database, and three third-party sandboxes just to verify a logic change, your feedback loop is broken. True stability doesn't come from a vampire pipeline auditing thousands of lines of transitive dependencies. It comes from an architecture that runs completely synchronously and in-memory. When correctness can be verified locally in milliseconds, the heavy engineering pipeline transitions from a necessity to an expensive corporate ornament.
+
+### Q: React won the industry standard. Why go through the trouble of hiding it behind a custom view adapter?
+
+**A:** React succeeded because it introduced composable UI components, but it also popularized the mixing of layout presentation syntax with pure state logic. JSX requires complex, non-native transformation pipelines that harden your codebase. Runtimes change and frameworks drift, but pure logic is durable. Relegating React to a peripheral implementation detail—accessed only via a standardized `renderUI` contract—guarantees that your software's soul remains soft, independently testable, and completely framework-blind.
+
+### Q: Isn't tracking a "Minimal Necessary UI" and a "Target UI" just writing the code twice?
+
+**A:** No, because you are writing the _substance_ (the states and physical handlers) exactly once. The Target UI is merely a downstream projection layer. Traditional stacks weld the visual design system directly to the business logic, meaning a minor design revamp or layout shift forces a massive refactoring of data flows. By utilizing non-invasive mappers, you ensure that the substance changes freely while the visual clothing adjusts automatically without taxing the architecture.
+
+> **The Litmus Test:** Take any user-facing behavior in your current codebase. Add an extra input field or change the success condition. If Version A (the direct logic) requires one clean edit, but Version B (the decorated stack) requires you to touch a page object, an abstract registry, a factory, and an infrastructure configuration file, your abstractions are not paying rent. They are a tax on change.
