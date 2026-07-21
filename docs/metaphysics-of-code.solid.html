@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE METAPHYSICS OF CODE - SOLID Is Aristotelian Metaphysics</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>THE METAPHYSICS OF CODE - SOLID Is Aristotelian Metaphysics</h1>
+      <h2>The Philosophy Bob Martin Didn&#39;t Know He Was Writing</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p><strong>Introduction: The Hidden Philosophy</strong></p>
+<p>You have used SOLID principles. You have been told they are &quot;best practices&quot;—pragmatic rules for writing maintainable code. You have been told to apply them, to follow them, to teach them. And you have probably experienced the confusion that follows.</p>
+<p>How small should a class be? How many methods is too many? What counts as a &quot;reason to change&quot;? When am I done applying the Single Responsibility Principle? The answer is always the same: &quot;It depends.&quot; And no one can tell you what it depends on.</p>
+<p>This is not a failure of your understanding. It is a failure of the principles themselves. They are philosophical prescriptions disguised as engineering rules—and they were written by a man who did not realize he was doing philosophy.</p>
+<p>SOLID is not a set of pragmatic guidelines. SOLID is Aristotle&#39;s metaphysics applied to code.</p>
+<hr>
+<p><strong>The Substance-Accident Distinction</strong></p>
+<p>Aristotle asked: What makes a thing <em>what it is</em>? He distinguished between <em>substance</em>—the essential nature that defines a thing&#39;s identity—and <em>accidents</em>—everything that can change without destroying that identity.</p>
+<p>A chair is a chair because it has four legs, a seat, and a backrest. That is its substance. Its color, material, and height are accidents. You can repaint it, reupholster it, even shorten its legs, and it remains a chair. You cannot remove the seat and call it a chair.</p>
+<p>This distinction has haunted philosophy for two thousand years. It has never been properly applied to software.</p>
+<p>Until now.</p>
+<p>Software has substance too. The substance of a software system is its <strong>minimal, necessary, and sufficient representation</strong>—the pure, synchronous, in-memory state machine that you can hold entirely in your head, interact with directly, and verify without any external machinery. Everything else—databases, UI frameworks, networks, file structures, deployment configurations—is accident. It can be swapped, upgraded, or discarded without destroying the software&#39;s essential identity.</p>
+<p>SOLID is the accidental application of this distinction to code. Bob Martin wrote rules to solve practical problems—rigidity, fragility, immobility. He was trying to make code &quot;clean.&quot; He was actually doing ontology.</p>
+<hr>
+<p><strong>Single Responsibility: The Search for Substance</strong></p>
+<p>&quot;Each component should have only one reason to change.&quot;</p>
+<p>This sounds precise. It is not. How many &quot;reasons to change&quot; does a component have? One line of code has one reason. One method has one reason. One class has one reason if you define the reason broadly enough. And a whole module has one reason if you define it narrowly enough. The principle is unfalsifiable. It can justify any granularity.</p>
+<p>Why? Because &quot;reason to change&quot; is an accident. It is external. It depends on who the stakeholders are, what the business wants, what the organizational structure looks like. The CFO wants the tax logic to change. The CTO wants the database to change. These are accidents of corporate structure—not properties of the software itself.</p>
+<p>The principle cannot tell you where to stop because it is grounded in the wrong thing. It is grounded in accidents, not in substance.</p>
+<p>When you apply the <em>correct</em> philosophical lens, SRP becomes clear:</p>
+<p><strong>Each component should correspond to one perceivable entity.</strong></p>
+<p>A button. A form. A status message. A list. These are the ontological primitives of software. The user points to them on the screen. They exist in the perceptual field. You stop decomposing when you have isolated one observable thing. This is the substance.</p>
+<p>If you cannot point to what the user sees that corresponds to your &quot;Customer&quot; class, your &quot;Repository,&quot; your &quot;Aggregate Root&quot;—you have reified. You have built a ghost. You have not found substance; you have created metaphysical fantasy.</p>
+<p>This is the <em>real</em> Single Responsibility Principle. And Bob Martin never knew it.</p>
+<hr>
+<p><strong>Open-Closed: Stacking Behaviors on Substance</strong></p>
+<p>&quot;Software should be open for extension but closed for modification.&quot;</p>
+<p>This principle is about <em>stacking behaviors</em> on top of the substance. You have the essential core—the perceivable behaviors. Then you add what is necessary for the project to function in its context. These additions are accidents, but they are a particular kind of accident.</p>
+<p>There are two types of accidents:</p>
+<ol>
+<li><p><strong>Baked accidents</strong>—Things that are <em>implemented</em> but not essential. They live inside the system. They could, in theory, be different without changing the core identity. They are necessary for the project, but they are not the substance.</p>
+</li>
+<li><p><strong>Separated accidents</strong>—Things that are <em>plugged in</em> at the boundary. Dependencies, third-party services, infrastructure, frameworks. These are external and swappable. They do not live inside the substance; they are connected to it through contracts.</p>
+</li>
+</ol>
+<p>Open-Closed is the recognition that you can stack behaviors on top of substance. You can add new functionality without altering the essence. But it fails to tell you <em>what</em> to extend and <em>what</em> to close. Without the substance-accident distinction, you cannot know where the boundary is.</p>
+<p>The correct application: <strong>The substance is closed. The accidents are open.</strong></p>
+<p>Your perceivable, grounded, essential behaviors do not change when the business adds a new feature. They <em>extend</em>—you add new perceivable behaviors—but the existing ones remain untouched. And the accidents—the implementation details, the external dependencies—can be extended, swapped, or discarded without touching the substance.</p>
+<p>This is what Open-Closed <em>should</em> mean. It is not what it <em>does</em> mean.</p>
+<hr>
+<p><strong>Liskov Substitution: Contracts as Substance</strong></p>
+<p>&quot;Subtypes must be substitutable for their base types.&quot;</p>
+<p>This principle tells us that implementations of dependencies must match a contract. The contract itself must be substantial. It must be minimal, necessary, and sufficient.</p>
+<p>If a dependency&#39;s implementation violates the contract, the substance breaks. The system becomes untestable, unpredictable, or dishonest.</p>
+<p>The contract is not an accident. It is the <em>grounding</em> of the substance at the boundary. It defines what is essential for that interaction. Any extra method, any unneeded property, is an accident leaking in.</p>
+<p>The Liskov Substitution Principle is correct—when the contract is grounded in perceivable behavior. When the contract is an abstract <code>IUserRepository</code> derived from your database schema, you have built a ghost. When the contract is &quot;the user clicks this button and sees this result,&quot; you have built substance.</p>
+<p>This is what Liskov <em>should</em> say. It does not.</p>
+<hr>
+<p><strong>Interface Segregation: No Accidents in Contracts</strong></p>
+<p>&quot;No client should be forced to depend on methods it does not use.&quot;</p>
+<p>This is a defense of the contract. It says: make sure we do not pollute the substance with accidents. Dependencies, too, must be substantial.</p>
+<p>Any method on an interface that is not necessary for the interaction is an accident. It forces the client to depend on something that is not essential. It adds coupling where none is needed. It makes the contract fat, imprecise, and polluted.</p>
+<p>This is correct—when the interface is grounded in perceivable behavior. When you start with &quot;the user clicks this button&quot; and derive the interface from that interaction, you naturally get only what is necessary. When you start with &quot;we need a UserRepository&quot; and build abstractions around it, you create pollution.</p>
+<p>The Interface Segregation Principle is a symptom of a larger problem: fat interfaces exist because we never started from substance. We started from accidents and built abstractions around them. ISP is a corrective, but it&#39;s correcting a problem we shouldn&#39;t have had.</p>
+<p>The real fix: <strong>Start from the user&#39;s perception. Derive the interface from the observable behavior. It will be exactly as small as it needs to be.</strong></p>
+<hr>
+<p><strong>Dependency Inversion: The Crown Principle</strong></p>
+<p>&quot;Depend on abstractions, not concretions.&quot;</p>
+<p>This is the most philosophically correct of the five principles. It explicitly says: the substance must not depend on accidents. Your core logic must not depend on databases, frameworks, UI libraries, or networks. These are accidents. They change. They vary. They are not essential.</p>
+<p>Dependency Inversion forces you to invert the direction of dependency so the substance is independent. Your core logic depends on contracts—interfaces—that are substantial. The implementation details depend on the contracts. The substance is protected.</p>
+<p>This is the structural mechanism that makes &quot;soft software&quot; possible. By inverting dependencies, you isolate the substance from everything that can change. You make the software light enough to run on a developer&#39;s local machine, at any moment, with zero external dependencies. You make it <em>soft</em>.</p>
+<p>But here is the trap: &quot;abstractions&quot; can themselves become metaphysical ghosts. An abstract <code>IUserRepository</code> is still an accident if it was derived from your database schema rather than from perceivable user behavior. The abstraction must itself be substantial—grounded in what the user sees and does—or it is just another layer of reification.</p>
+<p>The correct application: <strong>Depend on contracts that are grounded in perceivable behavior. Let the accidents depend on you, not the other way around.</strong></p>
+<hr>
+<p><strong>Why SOLID Is Philosophical (And Bob Martin Didn&#39;t Know It)</strong></p>
+<p>Bob Martin prescribed rules to solve practical problems. He saw codebases that were rigid, fragile, immobile. He saw developers struggling to make changes. He wrote principles to make software &quot;clean.&quot;</p>
+<p>He did not know he was doing philosophy.</p>
+<p>He did not know he was writing about substance and accidents. He did not know he was applying Aristotle&#39;s metaphysics to code. He did not know that &quot;one reason to change&quot; is an ontological claim, not a practical one. He did not know that &quot;depend on abstractions&quot; is an epistemological claim about what counts as real.</p>
+<p>He just wanted to help developers write better code.</p>
+<p>And the principles <em>work</em>—when they work—because they <em>accidentally</em> enforce the substance-accident distinction. When you correctly apply SRP, you naturally isolate substance. When you correctly apply DIP, you naturally protect it. But without the philosophical framework, these principles are ambiguous, unfalsifiable, and easily misapplied.</p>
+<p>Developers are left guessing. They argue over how small a class should be. They build metaphysical labyrinths of abstractions. They create &quot;Customer&quot; objects that are load-bearing architectural walls, while the actual behavior of the software is buried six folders deep.</p>
+<p>They are doing philosophy without knowing it. And because they do not know it, they are doing it badly.</p>
+<hr>
+<p><strong>The Antidote: Substance-First Architecture</strong></p>
+<p>SOLID is not wrong. It is incomplete. It is a set of philosophical principles that were stripped of their philosophical grounding and presented as engineering rules.</p>
+<p>The solution is not to abandon SOLID. The solution is to <em>ground it</em>.</p>
+<p>Start from the user&#39;s perception. What does the user see? A button. A form. A status message. These are your ontological primitives. These are your substance.</p>
+<p>Everything else—the database, the API, the cloud, the framework, the file structure—is accident. It can be changed. It can be swapped. It is not essential.</p>
+<p>Let SOLID be what it always was: a philosophical manifesto. But now, understand it. Apply it correctly. Stop building ghosts. Start building substance.</p>
+<p>The software will stay soft.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
