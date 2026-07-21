@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE METAPHYSICS OF CODE - USE CASE - TIC TAC TOE (DRAFT)</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>THE METAPHYSICS OF CODE - USE CASE - TIC TAC TOE (DRAFT)</h1>
+      <h2>A Post-Mortem of Tic-Tac-Toe Through the Lens of Empirical Software</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <h2>Introduction: The Canonical Case Study</h2>
+<p>Every field has its canonical example. In software, Tic-Tac-Toe serves as the &quot;Hello World&quot; of interactive applications—the rite of passage that every developer completes, usually within their first week of learning React. The official React tutorial presents a complete implementation: state managed with hooks, logic embedded in components, and a game that works perfectly.</p>
+<p>But like the architectural &quot;temple of decoration&quot; described in the Empirical Software Manifesto, the default implementation contains a foundational error so deeply concealed by its apparent simplicity that generations of developers have replicated it without question. The error is this: <strong>the logic of the game has been bound to the machinery of its presentation, and the concepts of the code have been allowed to drift from their empirical anchors.</strong></p>
+<p>What follows is a philosophical and structural examination of a deliberately refactored Tic-Tac-Toe implementation—one that embodies the principles of Empirical Software and serves as a working demonstration of the metaphysics outlined in <em>The Metaphysics of Code</em>. This is not a tutorial. It is an autopsy of an architecture, conducted to reveal what most codebases conceal: <strong>the ghost of reification dressed in the robes of best practice.</strong></p>
+<hr>
+<h2>Part I: The Default Framework and Its Hidden Bugs</h2>
+<h3>The Received Implementation</h3>
+<p>In the canonical React implementation, the <code>Game</code> component manages state via <code>useState</code>, defines <code>handleClick</code> and <code>jumpTo</code> functions inline, and passes props down to <code>Board</code> and <code>Square</code>. The logic for calculating winners, making moves, and managing history is intertwined with the rendering code. Everything lives in one file—or at most, two.</p>
+<p>This works. It ships. The CEO is happy.</p>
+<p>But consider what this architecture communicates to the developer who inherits it. The state, the logic, and the UI are presented as a single, indivisible phenomenon. The <code>Board</code> <em>is</em> the game. The <code>Square</code> <em>is</em> the move. The <code>useState</code> hook <em>is</em> the history.</p>
+<p>This is reification in its purest form: an abstract concept—&quot;the game state&quot;—has been treated as a physical thing that exists in the wild, with properties and behaviors that are inseparable from the React runtime. The mental model becomes: &quot;I am building a React component called <code>Game</code>, and inside it lives the game.&quot;</p>
+<h3>What the Default Framework Hides</h3>
+<p>Berkeley&#39;s critique of abstraction was not a philosophical exercise—it was a diagnostic tool for identifying the precise point at which concepts detach from experience and become ghosts. Applied to React Tic-Tac-Toe, the diagnosis is devastating:</p>
+<p>The <code>handleClick</code> function does not correspond to anything a user perceives. The user does not &quot;handle a click.&quot; The user presses a square. The <code>jumpTo</code> function does not exist in the user&#39;s experience. The user moves backward through history. The <code>useState</code> hook has no empirical correspondent—it is machinery, not meaning.</p>
+<p>These are not merely naming issues. They are category errors that propagate throughout the codebase. When a new developer reads <code>handleClick</code>, they are forced to perform a translation: &quot;handleClick&quot; means &quot;the user pressed a square, which should update the board, which may win or draw, unless it&#39;s already over...&quot; The name does not point to the behavior. It points to the implementation. The code has become a map of its own internal logic rather than a map of what the user experiences.</p>
+<p>The result is cognitive friction. Every addition to the codebase—persistence, undo, multiplayer—requires adding more machinery that must be understood through the lens of the machinery that already exists. The complexity compounds not because the game is complex, but because the architecture has mistaken its own structures for the problem domain.</p>
+<hr>
+<h2>Part II: The Inversion—Empirically Grounded Tic-Tac-Toe</h2>
+<h3>The Core: Logic as a Pure Mathematical Transformation</h3>
+<p>In the refactored implementation, the game&#39;s logic is extracted into a set of pure functions:</p>
+<pre><code class="language-typescript">export function calculateWinner(matrix: TBoardMatrix): string | null;
+export function getStatus(matrix: TBoardMatrix, xIsNext: boolean): string;
+export function makeMove(
+  matrix: TBoardMatrix,
+  row: number,
+  col: number,
+  xIsNext: boolean,
+): TBoardMatrix | null;
+</code></pre>
+<p>These functions are deterministic, synchronous, and dependency-free. They are not React components. They are not hooks. They are not classes. They are mathematical transformations that map inputs to outputs with no side effects.</p>
+<p>Importantly, they operate on the simplest possible data structures: a <code>TBoardMatrix</code> is a 2D array of strings or nulls. There are no <code>Game</code> objects, no <code>Board</code> classes, no <code>Move</code> factories. The ontology is flat and transparent. Everything corresponds directly to what can be seen: <code>calculateWinner</code> looks at the board and returns an X, O, or null. <code>getStatus</code> reads the board and returns a string that will appear on the screen.</p>
+<p><strong>This is the antidote to reification.</strong> By refusing to create entities that have no visual correspondent, the core logic remains anchored in perception. The developer can point to any line of code and say: &quot;This affects what the user sees on the screen in exactly this way.&quot;</p>
+<h3>The Rule of Screen Referent Justification</h3>
+<p>The Empirical Software framework introduces a single, operational rule for determining whether a concept is legitimate:</p>
+<p><strong>Every concept in the code must either:</strong></p>
+<ol>
+<li><strong>Have a direct screen referent</strong> (the user can point to it), OR</li>
+<li><strong>Explain its route to a screen referent and justify the necessity of the abstraction.</strong></li>
+</ol>
+<p>This rule is not a naming convention. It is a <strong>constraint on the creation of concepts</strong>. When a developer cannot point to the screen and say &quot;this concept corresponds to <em>that</em>,&quot; they are forced to:</p>
+<ol>
+<li>Question the abstraction: Do I really need this?</li>
+<li>Justify the abstraction: Why is this necessary for testing or structure?</li>
+<li>Document the route: How does this connect to what the user sees?</li>
+</ol>
+<p>The result is that concepts are not created until they are absolutely necessary, and when they are created, they are transparently connected to the user&#39;s experience.</p>
+<h3>The Screen Referent Audit</h3>
+<p>Let&#39;s audit every concept in the refactored codebase:</p>
+<h4>✅ Pass: Direct Screen Referent</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Screen Referent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>TBoardMatrix</code></td>
+<td>The grid of 9 squares</td>
+</tr>
+<tr>
+<td><code>currentMove</code></td>
+<td>The highlighted move in the history list</td>
+</tr>
+<tr>
+<td><code>calculateWinner</code></td>
+<td>The status text &quot;Winner: X&quot; or &quot;Winner: O&quot;</td>
+</tr>
+<tr>
+<td><code>getStatus</code></td>
+<td>The status text: &quot;Next player: X&quot;, &quot;Draw&quot;, etc.</td>
+</tr>
+<tr>
+<td><code>makeMove</code></td>
+<td>An X or O appearing in a square</td>
+</tr>
+<tr>
+<td><code>onSquareClick</code></td>
+<td>The physical interaction of clicking a square</td>
+</tr>
+<tr>
+<td><code>onJumpToMove</code></td>
+<td>The physical interaction of clicking a history button</td>
+</tr>
+<tr>
+<td><code>TGameViewModel</code></td>
+<td>The complete visible Game component</td>
+</tr>
+<tr>
+<td><code>title</code> (in ViewModel)</td>
+<td>The status text at the top</td>
+</tr>
+<tr>
+<td><code>boardProps</code></td>
+<td>The board with 9 squares</td>
+</tr>
+<tr>
+<td><code>moveButtonProps</code></td>
+<td>The list of history buttons</td>
+</tr>
+<tr>
+<td><code>Square</code> component</td>
+<td>A square on the screen</td>
+</tr>
+<tr>
+<td><code>Board</code> component</td>
+<td>The 3x3 grid</td>
+</tr>
+<tr>
+<td><code>Game</code> component</td>
+<td>The entire game UI</td>
+</tr>
+</tbody></table>
+<h4>⚠️ Pass: Route to Screen + Justification</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Route to Screen</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>compileGameViewModel</code></td>
+<td>Produces the ViewModel that maps to the Game UI</td>
+<td>Enables pure testing without React</td>
+</tr>
+<tr>
+<td><code>TGameState</code></td>
+<td>Bundles boards (visible history) and currentMove (highlighted move)</td>
+<td>Organizes data needed to produce the ViewModel</td>
+</tr>
+<tr>
+<td><code>runGame</code></td>
+<td>Bootstraps the infrastructure that renders the Game</td>
+<td>Necessary entry point; contains no business logic</td>
+</tr>
+<tr>
+<td><code>BehaviorSubject</code> / <code>useSharedState</code></td>
+<td>Tools that express the game&#39;s state in words</td>
+<td>State is the description of what the user sees; these are the machinery that holds those words</td>
+</tr>
+</tbody></table>
+<h4>❌ Ghosts: Concepts Without Screen Referents</h4>
+<p>In a strictly Empirical codebase, these concepts would be rejected:</p>
+<table>
+<thead>
+<tr>
+<th>Ghost</th>
+<th>Why It&#39;s a Ghost</th>
+<th>Alternative</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>GameController</code></td>
+<td>No screen referent, no justification</td>
+<td>The pure functions are the controller</td>
+</tr>
+<tr>
+<td><code>GameService</code></td>
+<td>No screen referent, no justification</td>
+<td>The pure functions are the service</td>
+</tr>
+<tr>
+<td><code>MoveFactory</code></td>
+<td>No screen referent, no justification</td>
+<td>Just call <code>makeMove</code> with parameters</td>
+</tr>
+<tr>
+<td><code>HistoryManager</code></td>
+<td>No screen referent, no justification</td>
+<td>The state management already handles history</td>
+</tr>
+<tr>
+<td><code>handleClick</code></td>
+<td>Does not point to a screen interaction</td>
+<td><code>onSquareClick</code> maps directly to the physical action</td>
+</tr>
+<tr>
+<td><code>jumpTo</code></td>
+<td>Does not point to a screen interaction</td>
+<td><code>onJumpToMove</code> maps directly to the physical action</td>
+</tr>
+</tbody></table>
+<h3>The ViewModel: The Empirical Ground Truth</h3>
+<p>The <code>compileGameViewModel</code> function bridges the gap between the pure logic and the presentation:</p>
+<pre><code class="language-typescript">export function compileGameViewModel(
+  state: TGameState,
+  getState: TGetState,
+  setState: TSetState,
+): TGameViewModel;
+</code></pre>
+<p>This function does not render anything. It does not know about React, the DOM, or any presentation technology. It takes the current state and the state management interface and produces a plain JavaScript object that contains everything needed to display the game.</p>
+<p>The crucial insight is that <code>compileGameViewModel</code> is the <em>only</em> place where the abstract state of the game is translated into perceivable primitives. The <code>title</code> is a string that will appear as text. The <code>boardProps</code> are a matrix of squares, each with a value (text) and an <code>onClick</code> handler (the behavior). The <code>moveButtonProps</code> are a list of buttons with descriptions (text) and <code>onClick</code> handlers.</p>
+<p>Every property of the ViewModel points to something that the user can see or do. There are no <code>GameStatus</code> enums, no <code>BoardState</code> objects, no abstract concepts that require interpretation. The mapping from state to perception is direct and transparent.</p>
+<h3>The Actions: Handlers That Mirror Physical Interaction</h3>
+<p>The action handlers—<code>onSquareClick</code> and <code>onJumpToMove</code>—are defined as pure functions that operate on a state interface:</p>
+<pre><code class="language-typescript">export const onSquareClick = (
+  row: number,
+  col: number,
+  getState: TGetState,
+  setState: TSetState,
+): void =&gt; {
+  /* ... */
+};
+
+export const onJumpToMove = (
+  moveIndex: number,
+  getState: TGetState,
+  setState: TSetState,
+): void =&gt; {
+  /* ... */
+};
+</code></pre>
+<p>Notice the naming: <code>onSquareClick</code> corresponds to the physical interaction of clicking a square. <code>onJumpToMove</code> corresponds to the physical interaction of clicking a history button. These names do not describe the implementation—they describe the user&#39;s behavior. The code is written from the perspective of what the user perceives, not how the machinery works.</p>
+<p>The handlers receive the physical coordinates of the interaction—<code>row</code> and <code>col</code> for the square, <code>moveIndex</code> for the history button. They retrieve the current state, call the pure functions, and update the state. The <code>setState</code> function is passed in as a parameter, making the handler completely decoupled from any particular state management implementation.</p>
+<p><strong>This is Dependency Inversion in its purest form.</strong> The handler depends on an abstraction (<code>(state) =&gt; void</code>) rather than a concrete implementation. It can be tested with a simple mock that records the state updates.</p>
+<h3>The View: A Peripheral Projection</h3>
+<p>The React components—<code>Square</code>, <code>Board</code>, <code>Game</code>—are pure presentational components. They do not manage state. They do not define logic. They receive props and render elements. The <code>Game</code> component receives a <code>TGameViewModel</code> and renders it as a DOM tree.</p>
+<p>The key architectural decision is that the React components are treated as a <em>projection</em> of the ViewModel, not as the source of truth for the application&#39;s state. The <code>Game</code> component does not know about <code>useState</code>, <code>useEffect</code>, or any hooks. It is a pure function of its props.</p>
+<p>The composition root—renamed to <code>runGame</code> to better reflect its screen referent—creates the state management machinery, defines the <code>getState</code>/<code>setState</code> functions, and wires everything together:</p>
+<pre><code class="language-typescript">export function runGame() {
+  const store = new BehaviorSubject&lt;TGameState&gt;(INITIAL_STATE);
+  // ...
+  return function App() {
+    const state = useSharedState();
+    const viewModel = compileGameViewModel(state, getState, setState);
+    return React.createElement(Game, viewModel);
+  };
+}
+</code></pre>
+<p>The React runtime is invoked at the absolute periphery of the application. The <code>App</code> component does not define the logic—it <em>consumes</em> the logic that was defined elsewhere. The <code>Game</code> component does not know it is being rendered by React. It is a pure function that happens to return React elements because that is the projection layer in use.</p>
+<h3>The State Container: An Infrastructure Detail</h3>
+<p>The state is managed by a <code>BehaviorSubject</code> from RxJS—a choice that is completely invisible to the core logic. The <code>getState</code> and <code>setState</code> functions isolate the core from the details of the state management implementation.</p>
+<p>The <code>useSharedState</code> hook exists solely to bridge the reactive state container to the React rendering cycle. These tools do not have screen referents themselves—but they are machinery that holds the &quot;words&quot; that describe what the user sees. They are justified because they enable state to be expressed, tested, and rendered.</p>
+<hr>
+<h2>Part III: The Philosophical Implications</h2>
+<h3>The Three Triumvirates of Failure, Examined</h3>
+<h4>1. Reification</h4>
+<p>The canonical implementation reifies the concept of a &quot;game&quot; as a React component. The refactored implementation treats the game as a mathematical transformation—a set of pure functions that operate on data structures. The <code>Game</code> component is not the game. It is a projection of the game. The <code>handleClick</code> function is not the game. It is a translator between physical interactions and state transitions.</p>
+<p>The refactoring systematically eliminates reification by:</p>
+<ul>
+<li>Defining the core logic in terms of data transformations rather than objects with identity</li>
+<li>Exposing the ViewModel as a plain object that mirrors the user&#39;s perception</li>
+<li>Treating the UI as a projection rather than a source of truth</li>
+<li>Naming actions after physical interactions rather than implementation events</li>
+<li>Applying the Rule of Screen Referent Justification to every concept</li>
+</ul>
+<h4>2. Metaphysics</h4>
+<p>The canonical implementation operates on a metaphysics of &quot;components,&quot; &quot;hooks,&quot; and &quot;effects.&quot; These concepts are not grounded in user perception. They are internal to the framework. The refactored implementation grounds every concept in what the user sees: squares, moves, status text.</p>
+<p>The <code>compileGameViewModel</code> function is a metaphysical exorcism. It takes the abstract state of the game and translates it into the concrete, perceivable elements that will appear on the screen. There is no intermediary ontology. The state exists only as data, and the ViewModel exists only as a description of what the user will see.</p>
+<h4>3. The Obsession with Details</h4>
+<p>The canonical implementation—and the framework it depends on—is an obsession with details. Which rendering library? Which hooks? Which state management pattern? The refactored implementation postpones these decisions as far as possible. The core logic is independent of React. The ViewModel is independent of React. Only the peripheral view layer and the composition root contain framework-specific code.</p>
+<p>The physical file structure follows the same principle. The core logic, the ViewModel compiler, and the composition root are clearly separated. The presentation components are isolated in their own file. The state management is initialized at the composition root. The architecture is not defined by file organization—the file organization reflects the architecture.</p>
+<h3>The Toy Representation and Its Power</h3>
+<p>The refactored implementation reveals something profound: the game, in its essence, is incredibly simple. The core logic is approximately 50 lines of pure functions. The ViewModel compiler is about 30 lines. The entire complexity of the application—the game logic, the history management, the state transitions—is contained in a handful of pure, testable functions.</p>
+<p>The rest—the React components, the state container, the subscription management—is machinery. It is necessary machinery, to be sure, but it is peripheral. It serves the core. The core does not serve it.</p>
+<p>This &quot;toy representation&quot; is the ultimate goal of Empirical Software. The software becomes soft because its core is simple, its behavior is predictable, and its dependencies are minimal. The codebase can be understood in its entirety by reading a few files. Changes can be made with confidence because the behavior is well-defined and tested.</p>
+<h3>The Role of AI: Validation, Not Generation</h3>
+<p>In the context of this architecture, AI becomes a powerful tool for validation rather than generation. Because the core logic is pure, deterministic, and synchronous, the AI can:</p>
+<ul>
+<li>Generate exhaustive test cases based on the behavior defined in the ViewModel</li>
+<li>Verify that every state transition corresponds to a perceivable change</li>
+<li>Detect reification—naming that has no visual correspondent</li>
+<li>Ensure that the interface contracts (the <code>getState</code>/<code>setState</code> functions) are correctly implemented</li>
+<li>Enforce the Rule of Screen Referent Justification: reject any concept that cannot be traced to the screen</li>
+</ul>
+<p>The AI is not used to generate large, speculative abstractions. It is used to enforce the principles of Empirical Software: grounding, softness, and the elimination of reification. The engineer remains the master of the idea; the AI ensures the shield never cracks.</p>
+<h3>Testability and the Feedback Loop</h3>
+<p>The refactored implementation excels at testability because the core logic is isolated from infrastructure. The following can be tested completely in-memory, without a browser, without React, without a network:</p>
+<ul>
+<li><code>calculateWinner</code> - pure function, trivial to test</li>
+<li><code>makeMove</code> - pure function, trivial to test</li>
+<li><code>getStatus</code> - pure function, trivial to test</li>
+<li><code>compileGameViewModel</code> - given a state, returns a predictable ViewModel</li>
+<li><code>onSquareClick</code> - given a state and a clicked square, produces the correct state update</li>
+<li><code>onJumpToMove</code> - given a state and a move index, produces the correct state update</li>
+</ul>
+<p>The feedback loop is immediate. Every change to the core logic can be verified in milliseconds. Changes to the ViewModel compiler can be verified against the ViewModel contract. Changes to the presentation layer are limited to the view layer and can be verified visually or through automated tests against the ViewModel.</p>
+<p>The heavy CI/CD pipelines that plague modern development teams become unnecessary because the architecture itself provides fast, reliable feedback. The vampire pipelines—the expensive, latency-inducing CI/CD systems that teams build to compensate for architectural brittleness—are eliminated.</p>
+<hr>
+<h2>Part IV: The Practical Path Forward</h2>
+<h3>Adopting the Philosophy Without a Big Bang</h3>
+<p>The skeptical engineer&#39;s question is valid: How does a team adopt this philosophy without a costly rewrite? The answer is incremental extraction:</p>
+<p><strong>First Step: Extract the Pure Logic</strong>
+Take the canonical implementation and extract the pure functions—<code>calculateWinner</code>, <code>getStatus</code>, <code>makeMove</code>—into a separate file. Test them in isolation. Notice that the component code becomes simpler and more predictable.</p>
+<p><strong>Second Step: Define the ViewModel Contract</strong>
+Create a <code>compileGameViewModel</code> function that takes the state and returns a plain object describing what should be rendered. The component consumes this ViewModel and renders it. The component no longer defines the logic—it projects the ViewModel.</p>
+<p><strong>Third Step: Extract the Actions</strong>
+Move the <code>handleClick</code> and <code>jumpTo</code> functions into pure functions that take <code>getState</code> and <code>setState</code> as parameters. The component calls these functions with the state interface, becoming a thin wrapper over the logic.</p>
+<p><strong>Fourth Step: Decouple the State Management</strong>
+Replace the <code>useState</code> with a state management abstraction that is initialized at the composition root. The component receives <code>getState</code> and <code>setState</code> as props, or subscribes to the state through a hook.</p>
+<p><strong>Fifth Step: Parallelize the UI</strong>
+Build the Minimal Necessary UI—the MS Paint version—against the ViewModel. Use this as the foundation for development while the design team iterates on the Target UI in parallel. The design team can work independently because the contract is stable.</p>
+<p>Each step is a small, low-risk change that immediately improves the architecture. The team gains confidence as they see the code becoming cleaner, more testable, and more predictable. The philosophy spreads organically, not through mandate but through demonstrated value.</p>
+<h3>The AI-Assisted Migration</h3>
+<p>Given the current state of AI, the migration can be accelerated significantly. The AI can:</p>
+<ul>
+<li>Generate the pure function equivalents for existing logic</li>
+<li>Create the ViewModel types based on the component&#39;s props</li>
+<li>Refactor the component to consume the ViewModel</li>
+<li>Generate tests for the pure logic and the ViewModel compiler</li>
+<li>Identify reification in the naming and suggest corrections</li>
+<li>Enforce the Rule of Screen Referent Justification</li>
+</ul>
+<p>The engineer works with the AI as a collaborator, validating each step and ensuring that the architecture remains grounded. The AI is not a replacement for the engineer—it is a tool that accelerates the realization of the philosophy.</p>
+<hr>
+<h2>Part V: The Falsifiability of the Approach</h2>
+<p>The Empirical Software Manifesto includes a crucial section on falsifiability—the specific conditions that would disprove the claims. Applied to the Tic-Tac-Toe example, the claims are clear:</p>
+<p><strong>Claim 1: Extracting the pure logic improves maintainability.</strong><br><em>Falsification:</em> A team that extracts the pure logic but finds that changes are harder to make, tests are more brittle, or onboarding is slower. If the extracted logic does not provide the claimed benefits, the approach is weakened.</p>
+<p><strong>Claim 2: The ViewModel contract enables parallel development.</strong><br><em>Falsification:</em> A team that creates a ViewModel but finds that the UI team and the logic team are still blocked by each other&#39;s changes. If the ViewModel does not provide stable enough abstraction for independent work, the claim is refuted.</p>
+<p><strong>Claim 3: The state management abstraction eliminates framework coupling.</strong><br><em>Falsification:</em> A team that replaces React with another UI framework and finds that the migration requires significant changes to the ViewModel or the core logic. If the abstraction is not sufficiently decoupled, the claim is disproven.</p>
+<p><strong>Claim 4: The synchronous, in-memory execution model provides faster feedback.</strong><br><em>Falsification:</em> A team that runs the application entirely in-memory but finds that the feedback loop is still slow due to the amount of logic, the complexity of the ViewModel, or the overhead of the testing framework. If the feedback is not actually faster, the claim is refuted.</p>
+<p><strong>Claim 5: The Rule of Screen Referent Justification reduces reification.</strong><br><em>Falsification:</em> A team that applies the rule but finds that their codebase still contains abstractions with no screen referent, or that the rule forces them to create awkward justifications that don&#39;t actually improve the code. If the rule does not reduce reification, the claim is weakened.</p>
+<p>The absence of these counterexamples—the fact that teams consistently find the approach beneficial—is evidence for the validity of the philosophy.</p>
+<hr>
+<h2>Part VI: The Deeper Implication</h2>
+<h3>What This Philosophy Actually Changes</h3>
+<p>The Rule of Screen Referent Justification is not a minor stylistic preference. It fundamentally changes how software is developed:</p>
+<p><strong>Before Empirical Software:</strong><br>The team gathers requirements, builds a conceptual model (DDD), designs the architecture (Clean Architecture), chooses patterns (CQRS, Event Sourcing), and then—finally—implements the UI that the user will see. The UI is the last thing built, and it is the least important thing in the architecture. It is a &quot;view&quot; of the &quot;domain.&quot;</p>
+<p><strong>After Empirical Software:</strong><br>The team starts with what the user will see. The UI is the first thing designed, and it is the most important thing in the architecture. Everything else—the logic, the state, the infrastructure—exists to serve the UI. The core logic is a mathematical transformation that produces the UI&#39;s state. The infrastructure is machinery that enables the UI to be delivered.</p>
+<p>This inversion is not just a change in order. It is a change in <strong>which concepts are allowed to exist</strong>. Concepts that cannot be pointed to on the screen are either eliminated or justified through a clear route to the screen. Concepts that can be pointed to on the screen become the load-bearing structures of the architecture.</p>
+<h3>The Labyrinth Versus the Toy</h3>
+<p>The labyrinth is the natural state of a codebase where concepts have been allowed to drift from their empirical anchors. Every layer of abstraction is a wall. Every reification is a dead end. The developer navigates by memory, not by understanding.</p>
+<p>The toy is the natural state of a codebase where every concept is grounded in perception. The code is simple because it mirrors what the user sees. The developer understands the code by looking at the screen. The architecture is transparent because it follows from behavior, not from a conceptual model that must be learned before any code can be read.</p>
+<p>The goal of Empirical Software is to reduce every system to a toy—a representation so simple that it can be understood in its entirety by looking at the screen and reading the code that produces it.</p>
+<hr>
+<h2>Part VII: The Closing Argument</h2>
+<h3>The Toy That Reveals the Cathedral</h3>
+<p>Tic-Tac-Toe is a toy. It is intentionally simple. But the architecture of a toy is not trivial—it is a microcosm of the architecture of any software system, regardless of its scale. The principles that govern the refactored implementation—grounding in perception, elimination of reification, separation of logic from presentation, composition over inheritance, dependency inversion—are the same principles that govern the architecture of systems with millions of users.</p>
+<p>The &quot;toy representation&quot; is not a limitation. It is a feature. The ability to reduce a system to its essence—to strip away the details and see what it actually does—is the ultimate test of architectural integrity. A system that cannot be represented as a toy is a system that has been contaminated by its own machinery.</p>
+<p>The architecture described in this examination is not new. It draws on principles that have been understood for decades—pure functions, hexagonal architecture, clean architecture, dependency inversion. What is new is the application of these principles with radical consistency and the explicit grounding in philosophical empiricism. The result is software that remains soft, that can be understood, that can be tested, and that can change without breaking.</p>
+<h3>The Litmus Test</h3>
+<p>Take any user-facing behavior in your current codebase. Add an extra input field or change the success condition. If Version A (the direct logic) requires one clean edit, but Version B (the decorated stack) requires you to touch a page object, an abstract registry, a factory, and an infrastructure configuration file, your abstractions are not paying rent. They are a tax on change.</p>
+<p>The refactored Tic-Tac-Toe implementation passes the litmus test. The core logic is one edit. The ViewModel is one edit. The presentation layer updates automatically. The machinery is not a tax—it is a service.</p>
+<h3>The Final Challenge</h3>
+<p>Go through your codebase and name one concept that cannot be pointed to on the screen and cannot be justified through a clear route to the screen. If you cannot, your code is grounded. If you can, you have found a ghost—and ghosts are the source of the labyrinth.</p>
+<p>The toy reveals the cathedral. The cathedral, when stripped of its decoration, is just a toy.</p>
+<hr>
+<p><em>This article was developed through a dialogue between a software engineer and an AI, exploring the principles of Empirical Software through a specific implementation of Tic-Tac-Toe. The philosophy expressed here is derived from &quot;The Metaphysics of Code&quot; and the &quot;Empirical Software Manifesto&quot;—works that argue for grounding software architecture in perception, eliminating reification, and treating infrastructure as a peripheral concern. The code discussed is available in the accompanying repository.</em></p>
+<pre><code>import React, { useState, useEffect } from &quot;react&quot;;
+import { BehaviorSubject } from &quot;rxjs&quot;;
+import { skip } from &quot;rxjs/operators&quot;;
+
+// ==========================================
+// 1. Data Structures &amp; Types
+// ==========================================
+export type TBoardMatrix = (string | null)[][];
+
+export type TGameState = {
+  boards: TBoardMatrix[];
+  currentMove: number;
+};
+
+export type TSquareProps = {
+  value: string | null;
+  onClick: () =&gt; void;
+};
+
+export type TBoardProps = {
+  status: string;
+  squareProps: TSquareProps[][];
+};
+
+export type TMoveButtonProps = {
+  description: string;
+  onClick: () =&gt; void;
+};
+
+export type TGameViewModel = {
+  title: string;
+  boardProps: TBoardProps;
+  moveButtonProps: TMoveButtonProps[];
+};
+
+type TGetState = () =&gt; TGameState;
+type TSetState = (next: TGameState) =&gt; void;
+
+// ==========================================
+// 2. Pure Logic &amp; Actions
+// ==========================================
+export function calculateWinner(matrix: TBoardMatrix): string | null {
+  const flat = matrix.flat();
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (const [a, b, c] of lines) {
+    if (flat[a] &amp;&amp; flat[a] === flat[b] &amp;&amp; flat[a] === flat[c]) return flat[a];
+  }
+  return null;
+}
+
+export function getStatus(matrix: TBoardMatrix, xIsNext: boolean): string {
+  const winner = calculateWinner(matrix);
+  if (winner) return `Winner: ${winner}`;
+  if (matrix.flat().every(Boolean)) return &quot;Draw&quot;;
+  return `Next player: ${xIsNext ? &quot;X&quot; : &quot;O&quot;}`;
+}
+
+export function makeMove(
+  matrix: TBoardMatrix,
+  row: number,
+  col: number,
+  xIsNext: boolean
+): TBoardMatrix | null {
+  if (calculateWinner(matrix) || matrix[row][col]) return null;
+  const nextMatrix = matrix.map((r) =&gt; [...r]);
+  nextMatrix[row][col] = xIsNext ? &quot;X&quot; : &quot;O&quot;;
+  return nextMatrix;
+}
+
+// Global, un-nested action runners (Bound inside composition root)
+export const onSquareClick = (
+  row: number,
+  col: number,
+  getState: TGetState,
+  setState: TSetState
+): void =&gt; {
+  const { boards, currentMove } = getState();
+  const xIsNext = currentMove % 2 === 0;
+  const nextMatrix = makeMove(boards[currentMove], row, col, xIsNext);
+
+  if (nextMatrix) {
+    const nextBoards = [...boards.slice(0, currentMove + 1), nextMatrix];
+    setState({ boards: nextBoards, currentMove: nextBoards.length - 1 });
+  }
+};
+
+export const onJumpToMove = (
+  moveIndex: number,
+  getState: TGetState,
+  setState: TSetState
+): void =&gt; {
+  setState({ ...getState(), currentMove: moveIndex });
+};
+
+// ==========================================
+// 3. View Model Compiler
+// ==========================================
+export function compileGameViewModel(
+  state: TGameState,
+  getState: TGetState,
+  setState: TSetState
+): TGameViewModel {
+  const { boards, currentMove } = state;
+  const currentMatrix = boards[currentMove];
+  const statusStr = getStatus(currentMatrix, currentMove % 2 === 0);
+
+  return {
+    title: statusStr,
+    boardProps: {
+      status: statusStr,
+      squareProps: currentMatrix.map((rowArr, rowIndex) =&gt;
+        rowArr.map((cellValue, colIndex) =&gt; ({
+          value: cellValue,
+          onClick: () =&gt; onSquareClick(rowIndex, colIndex, getState, setState),
+        }))
+      ),
+    },
+    moveButtonProps: boards.map((_, moveIndex) =&gt; ({
+      description:
+        moveIndex === 0 ? &quot;Go to game start&quot; : `Go to move #${moveIndex}`,
+      onClick: () =&gt; onJumpToMove(moveIndex, getState, setState),
+    })),
+  };
+}
+
+// ==========================================
+// 4. Pure Presentational View Components
+// ==========================================
+function Square(props: TSquareProps) {
+  return React.createElement(
+    &quot;button&quot;,
+    { className: &quot;square&quot;, onClick: props.onClick },
+    props.value
+  );
+}
+
+function Board(props: TBoardProps) {
+  return React.createElement(
+    React.Fragment,
+    null,
+    React.createElement(&quot;div&quot;, { className: &quot;status&quot; }, props.status),
+    ...props.squareProps.map((row, rowIndex) =&gt;
+      React.createElement(
+        &quot;div&quot;,
+        { key: rowIndex, className: &quot;board-row&quot; },
+        row.map((colProps, colIndex) =&gt;
+          React.createElement(Square, { key: colIndex, ...colProps })
+        )
+      )
+    )
+  );
+}
+
+function Game(props: TGameViewModel) {
+  return React.createElement(
+    &quot;div&quot;,
+    { className: &quot;game-container&quot; },
+    React.createElement(&quot;h1&quot;, null, props.title),
+    React.createElement(
+      &quot;div&quot;,
+      { className: &quot;game&quot; },
+      React.createElement(
+        &quot;div&quot;,
+        { className: &quot;game-board&quot; },
+        React.createElement(Board, props.boardProps)
+      ),
+      React.createElement(
+        &quot;div&quot;,
+        { className: &quot;game-info&quot; },
+        React.createElement(
+          &quot;ol&quot;,
+          null,
+          ...props.moveButtonProps.map((btnProps, idx) =&gt;
+            React.createElement(
+              &quot;li&quot;,
+              { key: idx },
+              React.createElement(
+                &quot;button&quot;,
+                { onClick: btnProps.onClick },
+                btnProps.description
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+// ==========================================
+// 5. THE COMPOSITION ROOT
+// ==========================================
+
+// Explicit structural configuration isolated from runtime framework components
+const INITIAL_STATE: TGameState = {
+  boards: [
+    [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ],
+  ],
+  currentMove: 0,
+};
+
+// Orchestrator function constructing dependencies &amp; providing the reactive wiring
+export function createCompositionRoot() {
+  const store = new BehaviorSubject&lt;TGameState&gt;(INITIAL_STATE);
+
+  const getState: TGetState = () =&gt; store.getValue();
+  const setState: TSetState = (next) =&gt; store.next(next);
+
+  // Reusable framework wiring wrapper
+  function useSharedState(): TGameState {
+    const [value, setReactState] = useState(store.getValue());
+    useEffect(() =&gt; {
+      const sub = store.pipe(skip(1)).subscribe((s) =&gt; setReactState(s));
+      return () =&gt; sub.unsubscribe();
+    }, []);
+    return value;
+  }
+
+  // Returns the operational App Component wired to the isolated infrastructure
+  return function App() {
+    const state = useSharedState();
+    const viewModel = compileGameViewModel(state, getState, setState);
+
+    return React.createElement(Game, viewModel);
+  };
+}
+
+// Assembly execution
+export default createCompositionRoot();
+</code></pre>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
