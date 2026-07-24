@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 1 - Prior to Underst
 subtitle: Part 1 - Chapter 1 - Prior to Understanding
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy; misc;
+tags: all; philosophy / the only thing constant is change; misc;
 ---
 
 In part one of this book, I want to share my experience of building a fundamental understanding of reality from scratch. It was a system born out of necessity, assembled piece by piece through deep philosophical introspection. While it has its flaws, I believe it offers an essential key to unraveling the quiet confusion so many of us live in without realizing it. Before I can explain how I arrived at this understanding, I must explain why it became necessary in the first place. It began as an attempt to assemble the messy puzzle of misconceptions I found myself trapped in when I was younger—a deep, disorienting confusion about life, myself, and the world around me.
