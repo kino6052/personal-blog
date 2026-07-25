@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE METAPHYSICS OF CODE - Falsification Framework for Empirical Software</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>THE METAPHYSICS OF CODE - Falsification Framework for Empirical Software</h1>
+      <h2>Falsification Framework for Empirical Software</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <hr>
+<p>The Core Claim</p>
+<p>Empirical Software is a falsifiable methodology. It makes specific, testable claims about software development. If these claims are false, the methodology must be abandoned or revised.</p>
+<p>This is not a creed. This is science.</p>
+<hr>
+<p>The Claims</p>
+<p>Claim 1: Grounding in Perception Is Necessary</p>
+<p>The Claim:</p>
+<p>Software is a communicated idea. The only stable ground for architectural decisions is what the user perceives on the screen. Any abstraction that cannot be traced to perception is a ghost that will eventually produce complexity and brittleness.</p>
+<p>What Would Falsify It:</p>
+<p>Produce a software system that:</p>
+<ol>
+<li>Contains abstractions with no correspondent in user perception</li>
+<li>Is demonstrably more maintainable, adaptable, and understandable than a system that follows the Empirical approach</li>
+<li>Maintains this advantage over multiple years, multiple developers, and multiple requirement changes</li>
+</ol>
+<p>The Experiment:</p>
+<p>Take two teams. Give them the same requirements. Have one team build with Empirical principles (grounding everything in perception). Have the other team build using any other approach—Domain-Driven Design, Clean Architecture, Feature-Sliced Design, or &quot;best practices.&quot;</p>
+<p>Measure:</p>
+<p>· Time to implement new features after 6 months
+· Number of bugs introduced per change
+· Time for new developers to become productive
+· Developer satisfaction</p>
+<p>If the non-Empirical team outperforms the Empirical team on all metrics, the claim is falsified.</p>
+<hr>
+<p>Claim 2: Grounding in Perception Is Sufficient</p>
+<p>The Claim:</p>
+<p>Grounding everything in what the user perceives is sufficient to build any software system. You do not need to model the &quot;domain&quot; or the &quot;business&quot; or the &quot;data&quot; separately. The screen is enough.</p>
+<p>What Would Falsify It:</p>
+<p>Produce a software system that:</p>
+<ol>
+<li>Is grounded entirely in what the user perceives</li>
+<li>Cannot be built because the perceptual ground is insufficient to capture the system&#39;s complexity</li>
+<li>Requires additional concepts that have no perceptual anchor</li>
+</ol>
+<p>The Experiment:</p>
+<p>Take a complex system—a payment processor, an airline reservation system, a hospital management system.</p>
+<p>Attempt to model it entirely in terms of what the user perceives. Build the pure, synchronous, in-memory representation of the screens, the buttons, the forms, the status messages.</p>
+<p>If you cannot build a complete, working, verifiable system using this approach, the claim is falsified.</p>
+<p>If the system works but is more complex than an alternative approach, the claim is weakened.</p>
+<hr>
+<p>Claim 3: Accidents Are Swappable Without Affecting Substance</p>
+<p>The Claim:</p>
+<p>The substance (what the user perceives) can be completely separated from the accidents (the framework, the database, the deployment platform). The substance can be tested and verified in isolation. The accidents can be swapped without changing the substance.</p>
+<p>What Would Falsify It:</p>
+<p>Produce a system where:</p>
+<ol>
+<li>The substance and accidents are correctly separated</li>
+<li>Swapping an accident (e.g., changing from React to Vue, or PostgreSQL to MongoDB) requires changing the substance</li>
+<li>This is not due to poor design but due to inherent constraints of the problem</li>
+</ol>
+<p>The Experiment:</p>
+<p>Build a system using the Empirical approach. Extract the pure substance—the in-memory state machine.</p>
+<p>Swap the UI framework. Swap the database. Swap the deployment platform.</p>
+<p>If any swap requires changing the substance, the claim is falsified.</p>
+<hr>
+<p>Claim 4: Empirical Software Produces Faster Feedback</p>
+<p>The Claim:</p>
+<p>Because the substance is pure, synchronous, and in-memory, tests run in milliseconds. This instant feedback loop enables faster iteration, safer refactoring, and higher quality.</p>
+<p>What Would Falsify It:</p>
+<p>Produce an Empirical system where:</p>
+<ol>
+<li>The substance is correctly isolated</li>
+<li>Tests run slower than an ad-hoc approach</li>
+<li>The feedback loop is longer, not shorter</li>
+</ol>
+<p>The Experiment:</p>
+<p>Measure the test execution time for an Empirical system against an equivalent ad-hoc system.</p>
+<p>If the ad-hoc system provides faster feedback (measured from code change to test result), the claim is falsified.</p>
+<hr>
+<p>Claim 5: Empirical Software Reduces Reification</p>
+<p>The Claim:</p>
+<p>Because the only criterion for existence is perception, developers are prevented from creating ghosts. The system contains no abstractions that do not correspond to something the user sees.</p>
+<p>What Would Falsify It:</p>
+<p>Produce an Empirical system that:</p>
+<ol>
+<li>Claims to be grounded in perception</li>
+<li>Contains abstractions that have no perceptual anchor</li>
+<li>These abstractions are load-bearing and cannot be removed without breaking the system</li>
+</ol>
+<p>The Experiment:</p>
+<p>Review an Empirical codebase. Identify every abstraction (class, interface, function, module). For each one, ask: &quot;Does this correspond to something the user perceives?&quot;</p>
+<p>If a significant number of abstractions have no perceptual anchor, the claim is falsified.</p>
+<hr>
+<p>Claim 6: Empirical Software Is Simpler and More Maintainable</p>
+<p>The Claim:</p>
+<p>Because the substance is small, pure, and isolated, the system is easier to understand, change, and maintain. Developers can hold the entire substance in their head.</p>
+<p>What Would Falsify It:</p>
+<p>Produce an Empirical system where:</p>
+<ol>
+<li>The substance is correctly isolated</li>
+<li>The system is more complex, harder to understand, and more difficult to change than an ad-hoc system solving the same problem</li>
+<li>This is not due to poor implementation but due to inherent limitations of the approach</li>
+</ol>
+<p>The Experiment:</p>
+<p>Take two teams. Give them the same requirements. Measure over time:</p>
+<p>· Lines of code
+· Number of modules/classes
+· Cyclomatic complexity
+· Time to implement new features
+· Bug rate</p>
+<p>If the Empirical system is consistently more complex than the ad-hoc system, the claim is falsified.</p>
+<hr>
+<p>The Falsification Test</p>
+<p>If you are a skeptic, you can falsify the Empirical Software approach by producing evidence for any of the following:</p>
+<p>Claim Falsification Evidence
+Grounding in perception is necessary A system with ungrounded abstractions that outperforms a grounded system
+Grounding in perception is sufficient A system that cannot be built from perception alone
+Accidents are swappable A swap that requires changing the substance
+Empirical produces faster feedback An Empirical system with slower tests than ad-hoc
+Empirical reduces reification An Empirical system with load-bearing ghosts
+Empirical is simpler and more maintainable An Empirical system that is more complex than ad-hoc</p>
+<hr>
+<p>What Would Not Falsify It</p>
+<p>To be clear, the following would not falsify Empirical Software:</p>
+<p>· &quot;I don&#39;t like it.&quot; This is subjective. The claims are objective.
+· &quot;It&#39;s not how we&#39;ve always done it.&quot; Tradition is not evidence.
+· &quot;It seems too simple to work.&quot; Intuition is not evidence.
+· &quot;The business requires more complex modeling.&quot; This is the very reification the framework rejects. If the business requires something not on the screen, it is a ghost.
+· &quot;Our framework forces us to do it differently.&quot; The framework is an accident. If it forces pollution, replace it.</p>
+<hr>
+<p>The Science</p>
+<p>This is how science works.</p>
+<p>You state a claim. You specify what would falsify it. You invite others to produce the evidence. If the evidence appears, you revise or abandon the claim. If the evidence does not appear, the claim stands.</p>
+<p>Empirical Software is falsifiable. It is science. It is not a creed.</p>
+<hr>
+<p>Summary</p>
+<p>Claim Falsification
+Perception is necessary A system with ghosts that is more maintainable
+Perception is sufficient A system that cannot be built from perception alone
+Accidents are swappable A swap that requires changing the substance
+Faster feedback Slower tests than ad-hoc
+Reduces reification Load-bearing ghosts in the system
+Simpler and more maintainable More complex than ad-hoc</p>
+<hr>
+<p>This is the falsification framework. It is complete. It is testable. It invites refutation.</p>
+<p>If it is false, show us. We will revise.</p>
+<p>If it is true, it will survive.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
