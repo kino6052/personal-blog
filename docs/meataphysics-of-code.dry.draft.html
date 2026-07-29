@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE METAPHYSICS OF CODE - DON&#39;T REPEAT YOURSELF</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>THE METAPHYSICS OF CODE - DON&#39;T REPEAT YOURSELF</h1>
+      <h2>Don&#39;t repeat yourself</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p>Here is the critical pressure-test that tightens the core argument.</p>
+<h2>Poking the Argument: The Dual Traps of Code Design</h2>
+<p>To make this bulletproof, we have to admit where developers break things in <em>both</em> directions:</p>
+<ol>
+<li><strong>Trap A (Duplication):</strong> Splitting one real entity into five code objects.</li>
+<li><strong>Trap B (Naive DRY / Over-abstraction):</strong> Forcing two completely different real entities into one fake parent object just because they share a few lines of code.
+If we don&#39;t address Trap B, our critique of duplication accidentally justifies the worst over-engineering horror stories in software history.</li>
+</ol>
+<pre><code>                         HUMAN PERCEPTUAL REALITY
+                     ┌──────────────────────────────┐
+                     │ &quot;Customer&quot;  vs  &quot;Supplier&quot;   │
+                     └──────────────┬───────────────┘
+                                    │
+    ┌───────────────────────────────┴───────────────────────────────┐
+    ▼                                                               ▼
+TRAP A: UNGROUNDED PROLIFERATION                TRAP B: NAIVE DRY (GHOST ABSTRACTION)
+&quot;CustomerDTO&quot;, &quot;CustomerORM&quot;, &quot;CustomerEntity&quot;   Merge them into &quot;AbstractAuditableParty&quot;
+Result: 1 entity fragmented into 3              Result: 2 real entities fused into 1 fake
+</code></pre>
+<h3>1. Occam’s Razor: Preserving Essence</h3>
+<p>Occam’s Razor is regularly cited in computer science, but almost always misunderstood:</p>
+<blockquote>
+<p><em>&quot;Entities must not be multiplied beyond necessity.&quot;</em></p>
+<p>In software, <strong>necessity is defined exclusively by human perception.</strong>
+If a concept exists in human reality (<em>&quot;Customer&quot;</em>), it must exist in code. If it does not exist in human reality (<em>&quot;AbstractBaseEntityAdapterFactory&quot;</em>), it is an unnecessary entity—a ghost.
+Occam&#39;s Razor is not about writing fewer lines of code. It is about <strong>keeping the essence pure by refusing to invent ungrounded abstractions.</strong></p>
+</blockquote>
+<h3>2. Duplication as Essence Pollution</h3>
+<p>When you take a single perceptual entity—like an Account balance—and let it exist in a React state, a Redux store, a backend cache, and a database row simultaneously, you duplicate the <strong>identity</strong>.
+This is essence pollution. You now have competing versions of reality, and your system will spend immense energy keeping these fragments synchronized.</p>
+<h3>3. The DRY Horror Story: Coincidental Shape vs. True Identity</h3>
+<p>This is where the naive &quot;clean code&quot; movement went off the rails.
+A developer sees a Customer object and a Supplier object. Both have a name, an email, and an address. The developer panics, screams &quot;DRY!&quot;, and invents a shared base class:</p>
+<pre><code class="language-typescript">// THE GHOST ABSTRACTION (NAIVE DRY)
+// Inventing an entity that exists nowhere in human reality
+abstract class AbstractBaseAuditablePartyEntity {
+  name: string;
+  email: string;
+  address: string;
+}
+</code></pre>
+<p>This is the birth of <strong>instant-legacy</strong>.
+Customer and Supplier are two completely distinct entities in human perception. Their lifecycles, business rules, and future needs will diverge. But because an engineer fell in love with code-level DRY, they welded these two distinct identities together using a fake, ungrounded abstraction.
+Three months later, when the business changes how Customer emails are validated, the developer modifies AbstractBaseAuditablePartyEntity and accidentally breaks Supplier.</p>
+<h3>The Tightened Rule: Shape vs. Identity</h3>
+<blockquote>
+<p><strong>Shape is accidental; Identity is substantial.</strong></p>
+<ul>
+<li><strong>Coincidental Similarity:</strong> Two distinct perceptual entities that happen to look similar in code today. <strong>Do NOT merge them.</strong> Duplicating a few lines of structural shape is harmless.</li>
+<li><strong>Identity Duplication:</strong> A single perceptual entity scattered across multiple files or state containers. <strong>Eliminate it.</strong> Duplicating an identity is fatal.</li>
+</ul>
+</blockquote>
+<pre><code>┌────────────────────────────────────────────────────────────────────────┐
+│                        THE GROUNDING DECISION                          │
+├──────────────────────────────────┬─────────────────────────────────────┤
+│ COINCIDENTAL SHAPE               │ IDENTITY DUPLICATION                │
+│ (Two different things look alike)│ (One thing split across code)       │
+├──────────────────────────────────┼─────────────────────────────────────┤
+│ • Example: Customer &amp; Supplier   │ • Example: CustomerDTO &amp; Customer   │
+│ • Action: KEEP SEPARATE          │ • Action: MERGE / UNIFY             │
+│ • Reason: Different real-world   │ • Reason: Single real-world         │
+│   identities.                    │   identity.                         │
+└──────────────────────────────────┴─────────────────────────────────────┘
+</code></pre>
+<p>By drawing this line, we prevent both abuses: we stop developers from scattering a single identity into a dozen mappers (Trap A), and we stop them from inventing fake base classes in the name of DRY (Trap B).
+Does this distinction between <em>coincidental shape</em> and <em>true identity</em> give us the exact edge we need to call out over-engineered &quot;clean code&quot; practices?</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
