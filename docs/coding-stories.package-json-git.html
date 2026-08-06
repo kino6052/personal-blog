@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CODE STORIES - package.json and Git</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CODE STORIES - package.json and Git</h1>
+      <h2>When there are constantly updated dependencies</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p>In software development more than 50% of the time you don&#39;t do software, you do things that are barely related to it—mostly reducing friction. One such example is working on a large front-end project with many teams where versions of internal packages constantly change. Your branch, which needs to update one package, will <em>guaranteed</em> have merge conflicts.</p>
+<p>I had many thoughts about how to approach that problem. First, avoid JSON altogether and use YAML or even a TS file for managing packages. But that creates friction—we need to add extra scripts around <code>npm</code>.</p>
+<p>So here is how I solved it for myself.</p>
+<p>Simple, and to the point.</p>
+<hr>
+<h2>The Problem Isn&#39;t JSON. It&#39;s Proximity.</h2>
+<p>Most people blame JSON for merge conflicts. They say it&#39;s hard to read, it doesn&#39;t have comments, or Git doesn&#39;t know how to merge it properly.</p>
+<p>That&#39;s not quite right.</p>
+<p>The real problem is <strong>Git is a line-based diffing tool</strong>. It doesn&#39;t know or care about JSON structure. It only cares about <em>which lines changed</em> and <em>how close they are to other changed lines</em>.</p>
+<p>Here&#39;s what that looks like:</p>
+<pre><code class="language-json">{
+  &quot;dependencies&quot;: {
+    &quot;react&quot;: &quot;^18.0.0&quot;, // ← changes frequently
+    &quot;@acme/core&quot;: &quot;^1.0.0&quot;, // ← YOUR protected package (also changes)
+    &quot;lodash&quot;: &quot;^4.0.0&quot; // ← changes frequently
+  }
+}
+</code></pre>
+<p>You bump <code>@acme/core</code> in your branch. Meanwhile, another team bumps <code>react</code> in <code>main</code>. Both lines are adjacent. Git sees two changed lines right next to each other and throws a conflict—even though the changes are completely independent.</p>
+<p><strong>The fix is not to change the format. It&#39;s to change the spacing.</strong></p>
+<hr>
+<h2>The Obvious Trick: Just Add Some Lines</h2>
+<p>JSON doesn&#39;t support comments. But npm <em>does</em> ignore keys that start with <code>//</code>. That means you can add whatever descriptive keys you want—npm won&#39;t care.</p>
+<p>So I do this:</p>
+<pre><code class="language-json">{
+  &quot;dependencies&quot;: {
+    &quot;react&quot;: &quot;^18.0.0&quot;,
+    &quot;// this is line to protect dependency below from the merge conflicts&quot;: &quot;&quot;,
+    &quot;@acme/core&quot;: &quot;^1.0.0&quot;,
+    &quot;// this is line to protect dependency above from the merge conflicts&quot;: &quot;&quot;,
+    &quot;lodash&quot;: &quot;^4.0.0&quot;
+  }
+}
+</code></pre>
+<p>Now when <code>react</code> bumps, it&#39;s no longer adjacent to <code>@acme/core</code>. There&#39;s a stable, unchanging line between them. When <code>@acme/core</code> bumps, it sits between two lines that <em>never change</em>.</p>
+<p>Git sees your change in isolation. No conflict.</p>
+<p>It takes two lines. It costs nothing. It works.</p>
+<hr>
+<h2>But Sometimes Things Slip Through</h2>
+<p>Nothing is perfect. Sometimes a colleague adds a new dependency directly above your protected package. Sometimes someone removes the protective lines during a refactor. Sometimes the conflict is in <code>package-lock.json</code>, which this trick doesn&#39;t touch.</p>
+<p>For those cases, I keep a script.</p>
+<hr>
+<h2>The Structural Merge Script (Fire Extinguisher)</h2>
+<p>This script does a <strong>proper 3-way merge</strong> of <code>package.json</code>—by structure, not by lines.</p>
+<p>When Git shows a conflict, it stores three versions of the file:</p>
+<ul>
+<li><strong>Stage 1:</strong> The common ancestor (Base)</li>
+<li><strong>Stage 2:</strong> Your version (Ours)</li>
+<li><strong>Stage 3:</strong> The incoming version (Theirs)</li>
+</ul>
+<p>You can read them with <code>git show :1:package.json</code>, <code>git show :2:package.json</code>, and <code>git show :3:package.json</code>.</p>
+<p>The script:</p>
+<ol>
+<li>Parses all three as JSON.</li>
+<li>Merges them structurally—ours wins over base, theirs wins over ours.</li>
+<li>Writes the merged <code>package.json</code>.</li>
+<li>Runs <code>npm install --package-lock-only</code> to regenerate the lockfile.</li>
+<li>Stages both files for commit.</li>
+</ol>
+<p>Here it is.</p>
+<pre><code class="language-typescript">#!/usr/bin/env tsx
+/**
+ * resolve-pkg-conflict.ts
+ *
+ * Usage (when Git says CONFLICT in package.json):
+ *   npx tsx scripts/resolve-pkg-conflict.ts
+ */
+
+import { execSync } from &quot;node:child_process&quot;;
+import { writeFileSync } from &quot;node:fs&quot;;
+
+type JsonPrimitive = string | number | boolean | null;
+type JsonArray = JsonValue[];
+type JsonObject = { [key: string]: JsonValue };
+type JsonValue = JsonPrimitive | JsonArray | JsonObject;
+
+const isObject = (v: JsonValue): v is JsonObject =&gt;
+  typeof v === &quot;object&quot; &amp;&amp; v !== null &amp;&amp; !Array.isArray(v);
+
+const deepMerge = (left: JsonValue, right: JsonValue): JsonValue =&gt; {
+  if (isObject(left) &amp;&amp; isObject(right)) {
+    const keys = new Set([...Object.keys(left), ...Object.keys(right)]);
+    return Object.fromEntries(
+      [...keys].map((key) =&gt; [key, deepMerge(left[key], right[key])]),
+    );
+  }
+
+  if (Array.isArray(left) &amp;&amp; Array.isArray(right)) {
+    return [...left, ...right].filter(
+      (value, index, array) =&gt; array.indexOf(value) === index,
+    );
+  }
+
+  return right;
+};
+
+const merge3Way = (
+  base: JsonValue,
+  ours: JsonValue,
+  theirs: JsonValue,
+): JsonValue =&gt; deepMerge(deepMerge(base, ours), theirs);
+
+const readGitStage = (stage: 1 | 2 | 3): JsonValue =&gt; {
+  try {
+    const raw = execSync(`git show :${stage}:package.json`, {
+      encoding: &quot;utf-8&quot;,
+      stdio: [&quot;pipe&quot;, &quot;pipe&quot;, &quot;ignore&quot;],
+    });
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+};
+
+const hasConflict = (): boolean =&gt; {
+  try {
+    const output = execSync(&quot;git ls-files -u package.json&quot;, {
+      encoding: &quot;utf-8&quot;,
+    });
+    return output.trim().length &gt; 0;
+  } catch {
+    return false;
+  }
+};
+
+const writeJson = (file: string, data: JsonValue): void =&gt; {
+  writeFileSync(file, JSON.stringify(data, null, 2) + &quot;\n&quot;);
+};
+
+const run = (cmd: string): void =&gt; {
+  execSync(cmd, { stdio: &quot;inherit&quot; });
+};
+
+const main = (): void =&gt; {
+  if (!hasConflict()) {
+    console.log(&quot;✅ No merge conflict detected in package.json. Exiting.&quot;);
+    process.exit(0);
+  }
+
+  console.log(&quot;🔍 package.json conflict detected. Resolving structurally...&quot;);
+
+  const base = readGitStage(1);
+  const ours = readGitStage(2);
+  const theirs = readGitStage(3);
+
+  const merged = merge3Way(base, ours, theirs);
+
+  writeJson(&quot;package.json&quot;, merged);
+  console.log(&quot;✅ Merged package.json written.&quot;);
+
+  console.log(&quot;🔄 Regenerating package-lock.json...&quot;);
+  run(&quot;npm install --package-lock-only --no-audit --no-fund&quot;);
+
+  run(&quot;git add package.json package-lock.json&quot;);
+
+  console.log(&quot;🎉 Conflict resolved! Files are staged.&quot;);
+  console.log(&quot;👉 Run &#39;git commit&#39; to complete the merge.&quot;);
+};
+
+main();
+</code></pre>
+<p>The logic is simple: <strong>Ours wins over Base, Theirs wins over Ours</strong>. Your branch keeps its changes, but if the target branch has a newer version of something, you take it. That&#39;s almost always what you want.</p>
+<p>If you need the opposite, swap the order.</p>
+<hr>
+<h2>The Lockfile Problem</h2>
+<p>Fixing <code>package.json</code> is only half the battle. If you change dependencies, the lockfile must change too. Doing this manually is impossible.</p>
+<p>The script runs <code>npm install --package-lock-only</code> to regenerate the exact dependency tree from the merged <code>package.json</code>. Clean, deterministic, automated.</p>
+<hr>
+<h2>When This Breaks</h2>
+<p>This isn&#39;t a silver bullet. The script doesn&#39;t know about <em>semantic</em> conflicts—if Theres upgrades React to v19 and Ours upgrades React-DOM to v18, the script will happily merge them and your app will crash at runtime.</p>
+<p>But that&#39;s a <em>logic</em> error, not a <em>merge</em> error. Your tests or CI should catch that. The script&#39;s job is to get you past Git&#39;s line-based gatekeeping so you can actually run those tests.</p>
+<hr>
+<h2>The Takeaway</h2>
+<p>We spend way too much time acting as glorified diff-checkers for machines. If a problem is deterministic and repetitive, automate it.</p>
+<p>The <code>//</code> trick takes two lines. The script takes 30 minutes to write. Together, they&#39;ve saved my team hours of friction.</p>
+<p>The best code isn&#39;t just bug-free—it&#39;s the code that removes the need to write other code.</p>
+<hr>
+<p><strong>P.S.</strong> If you&#39;re using Yarn, change step 5 to <code>yarn install --mode=update-lockfile</code>. If you&#39;re using pnpm, use <code>pnpm install --lockfile-only</code>. The Git staging logic stays exactly the same.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
