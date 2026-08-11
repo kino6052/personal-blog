@@ -3,7 +3,7 @@ title: THE MANIFESTO OF DECOUPLED SCIENCE
 subtitle: THE MANIFESTO OF DECOUPLED SCIENCE
 date: 2025-02-21
 layout: post.html
-tags: all; misc / public speaking / toastmasters;
+tags: all; science; philosophy;
 ---
 
 # THE MANIFESTO OF DECOUPLED SCIENCE
