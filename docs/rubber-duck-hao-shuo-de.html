@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explaining Hǎo-shuō-de to a Rubber Duck</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Explaining Hǎo-shuō-de to a Rubber Duck</h1>
+      <h2>What a duck that only asks questions found in my own project</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p>I built a language, and I could not explain it in a way that did not contradict itself. I found that out in about ten minutes, with a rubber duck.</p>
+<h2>The duck</h2>
+<p>A rubber duck is the old programmer&#39;s trick: you explain your problem out loud to something that cannot answer, and halfway through you hear the mistake yourself.</p>
+<p>My duck is a bit more active. It is Claude in a special mode, and it follows three rules:</p>
+<ul>
+<li><strong>I explain, it only asks.</strong> It never gives me the right answer.</li>
+<li><strong>Every answer gets a verdict</strong>: correct, partly correct, incorrect, or &quot;can&#39;t tell&quot;. Each verdict quotes what I said and gives one comment.</li>
+<li><strong>One question at a time</strong>, always a <em>what</em>, <em>why</em> or <em>how</em>, short enough to fit on one line.</li>
+</ul>
+<p>Behind the scenes it breaks the topic into small pieces, and it counts a piece as <em>held</em> only when I have explained it in my own words. A side panel shows which pieces are held and which are not, and it keeps a list of the places where I contradicted myself.</p>
+<p>The topic I gave it was a single line: <strong>what is haoshuode?</strong></p>
+<h2>First answer</h2>
+<blockquote>
+<p>haoshuode is a language. It is the most minimal version of Mandarin. It has only 230 and grammar rules that allow you to say almost anything, and it lets you transition to real Mandarin in a fraction of the time, because it is a bridge language.</p>
+</blockquote>
+<p>Verdict: <em>partly correct</em>. &quot;Minimal version of Mandarin&quot; and &quot;bridge language&quot; held. But &quot;only 230&quot; does not say 230 of what.</p>
+<p>That was the first small embarrassment. The number I say most often was missing its noun.</p>
+<h2>Why not just follow HSK?</h2>
+<p>I asked the duck to ask me this one, because it is the question I get most. My answer:</p>
+<ul>
+<li>HSK has levels and a vocabulary list for each, but none of the levels gives you a <strong>closed system</strong> where you can express your own thoughts.</li>
+<li>It does not really teach real Chinese. It teaches reading and writing, and even then you are confined to graded readers.</li>
+</ul>
+<h2>Why is this new?</h2>
+<p>The second proposed question: hasn&#39;t someone tried this before?</p>
+<p>My answer was that other methods always hand you real Mandarin and only change the approach: flash cards, pictures for hanzi, AI conversation, comprehensible input. They change the <em>method</em>, never the <em>system</em>. I treat it like an engineer: separate the concerns, ask where the bottlenecks are, which part is essence and which part is accident. That lets me simplify the system without losing its essence.</p>
+<p>And then I said something that I did not notice at the time: <em>this is a complete language, although not a Mandarin.</em></p>
+<h2>The first contradiction</h2>
+<p>The duck did not accept it. In my first answer haoshuode was &quot;a minimal version of Mandarin&quot;. Now it was &quot;not a Mandarin&quot;.</p>
+<p>This is the part of the exercise I value most. The duck had no opinion about Mandarin. It had only my own sentences, set next to each other.</p>
+<p>My first try at repairing it was weak: <em>it can say almost anything because Mandarin has many inessential words.</em> That is true, but it left the contradiction untouched.</p>
+<p>The second try was a single line:</p>
+<blockquote>
+<p>It is a subset. A subset is not the whole.</p>
+</blockquote>
+<p>That made both statements fit. Everything in haoshuode is real Mandarin, but haoshuode is not all of Mandarin. I later flagged that exchange as a confusing point in my own explanation, because a newcomer will trip over it just as I did.</p>
+<h2>Atoms, core words, composite words</h2>
+<p>The next stretch was vocabulary, and the duck was ruthless about it. I had said &quot;230 atomic words&quot;, and the duck asked what <em>atomic</em> means.</p>
+<ul>
+<li><strong>Atomic</strong> means you cannot break it down further or express it in other terms.</li>
+<li>But <strong>not every word of the 230 is an atom.</strong> Some core words <em>can</em> be described with other core words. They stay in because without them you lose the ability to say things naturally, and that naturalness carries over into real Mandarin.</li>
+<li>Everything else is built from the 230 by combining them under simple grammar rules.</li>
+</ul>
+<p>So the number &quot;230&quot; is not a count of atoms. It is the smallest set of words needed to say everything most naturally. My own first answer had hidden that difference.</p>
+<h3>How you say a thing nothing names</h3>
+<p>The duck asked me to walk through it step by step. My answer:</p>
+<ol>
+<li>Find the closest matching thing.</li>
+<li>If it is a tool, ask <em>what kind</em> of tool.</li>
+<li>Build a descriptive part that makes the meaning concrete.</li>
+</ol>
+<p>The word you end up with is <strong>longer, sometimes much longer, yet clear and descriptive</strong>. I call it a <strong>composite word</strong>: a word made only of core words under the grammar rules.</p>
+<h3>What it cannot say</h3>
+<p>Honestly: specific scientific terms and jargon. Each would need a long description, whereas in a full language such a word is a shortcut for exactly that kind of description.</p>
+<h2>Why can so few words say so much?</h2>
+<p>My answer here was the philosophical one. Language and thought seem to rest on a small number of basic building blocks. Aristotle&#39;s categories point that way, so does the linguist&#39;s list of semantic primes (NSM), and a tiny made-up language like Toki Pona backs it up in practice. If that is right, language is highly compressible. The price is that you must adjust to saying things in a more logical way than you are used to.</p>
+<h2>Real Mandarin, or not?</h2>
+<p>The duck came back to the contradiction from another side. Question: <em>how is haoshuode connected to real Mandarin, word by word and rule by rule?</em></p>
+<p>My answer: it <strong>is</strong> real Mandarin. It uses its rules, but only the 230 most basic words, about a hundred grammar items, and only pinyin. No chengyu, no cultural layers, no hanzi, nothing that complicates the learning and puts you on a tangent.</p>
+<p>The duck noted that this again sat badly with &quot;not a Mandarin&quot;. The same repair applied: a subset is not the whole.</p>
+<p>Then the <em>why</em>: why keep the words and rules real? Because I want a <strong>bridge toward real Mandarin, with a series of checkpoints.</strong> Clear one and you have mastered a full language: you can read books in it, watch content, talk to other learners or to an AI.</p>
+<p>And the last question of the session so far: why not build it on Toki Pona&#39;s rules instead? Because Toki Pona is a made-up language. If I used made-up rules, it would stop being Mandarin and lose the benefit as a learning tool. You would learn only vocabulary, then have to relearn all of the grammar and unlearn habits, which is almost learning from scratch.</p>
+<h2>What the duck found</h2>
+<p>By the end of the first stretch the panel showed the explanation in seven slots: what it is, why it exists, how it works, what it relies on, its limits, and so on. Only two were empty, and those two honestly do not apply (inputs and outputs, and failure) to a language.</p>
+<p>More useful were the things it caught:</p>
+<ul>
+<li><strong>A missing noun</strong>: &quot;only 230&quot; needed &quot;230 core words&quot;.</li>
+<li><strong>A contradiction I kept repeating</strong>: &quot;minimal version of Mandarin&quot; against &quot;not a Mandarin&quot;. I used the second phrase in three different answers without noticing. The word that fixed it, <em>subset</em>, had to come from me.</li>
+<li><strong>A word doing two jobs</strong>: &quot;230 atoms&quot;, when only some of the core words are atoms.</li>
+<li><strong>Claims it could not check</strong>: &quot;a fraction of the time&quot;, &quot;no hanzi&quot;, &quot;checkpoints&quot;, &quot;closed system&quot;. These are not wrong. They are the claims I would have to prove to a skeptical reader, and I now know which ones they are.</li>
+</ul>
+<h2>What it did not get to</h2>
+<p>The session is not finished. The duck has not yet asked about the grammar (how a describing word sits before its noun and takes <em>-de</em>, how word order shows who does what), about the book of 26 lessons, or about the knowledge base that checks the data. It also still owes me the question I find hardest: what is haoshuode, in three sentences, now?</p>
+<p>I will come back to this article when it does.</p>
+<h2>Why bother</h2>
+<p>Writing documentation does not do this. When you write, you can smooth over a contradiction with a good paragraph. When you answer a short question, you cannot. The duck&#39;s only skill is to put my sentences next to each other and ask.</p>
+<p>I recommend it to anyone who has worked on a thing so long that they have stopped hearing how it sounds.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
