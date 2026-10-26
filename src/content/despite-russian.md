@@ -3,7 +3,7 @@ title: «Несмотря на» — не предлог
 subtitle: аргументация против лингвистического артефакта
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language / russian; language / part of speech / proposition; language / idimoatic expression;
+tags: all; language / russian; language / part of speech / preposition; language / idiomatic expression;
 ---
 
 ## Аннотация

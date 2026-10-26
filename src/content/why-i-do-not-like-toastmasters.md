@@ -3,7 +3,7 @@ title: The Hidden Cost of Toastmasters
 subtitle: A Critical Examination
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; communication / feedback; misс / toastmasters;
+tags: all; philosophy / values; communication / feedback; misc / public speaking / toastmasters;
 ---
 
 # The Hidden Cost of Toastmasters: A Critical Examination

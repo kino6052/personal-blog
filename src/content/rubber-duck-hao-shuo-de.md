@@ -3,7 +3,7 @@ title: Explaining Hǎo-shuō-de to a Rubber Duck
 subtitle: What a duck that only asks questions found in my own project
 date: 2026-10-18
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning; tools / ai;
+tags: all; language / chinese; learning; technology / AI;
 ---
 
 I built a language, and I could not explain it in a way that did not contradict itself. I found that out in about ten minutes, with a rubber duck.
