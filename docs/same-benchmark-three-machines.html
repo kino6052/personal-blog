@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Same Benchmark on Three Machines</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>The Same Benchmark on Three Machines</h1>
+      <h2>My phone, my Windows PC and a Linux inside it, measured with the same small scripts, and what the numbers say about where work should run</h2>
+    </header>
+    <main>
+      <a href=".">Home Page</a>
+      <p>My agent work runs on a PC, and I have started running some of it on my phone. Before I decide where a job should go, I want numbers. So I ran the same small benchmarks on three machines: the phone, the Windows PC, and a real Ubuntu running inside the PC through WSL2.</p>
+<p>The phone has 8 cores and about 2 GB free while other things run. The PC has 8 threads and 16 GB. The Ubuntu is 26.04 on its own ext4 disk, with bun installed in it.</p>
+<h2>What I measured</h2>
+<p>There were three tests. Each one reports total milliseconds, and lower is better.</p>
+<ul>
+<li><strong>CPU.</strong> A short JavaScript suite: integer and float loops, sorting, JSON, regular expressions, typed arrays, a map, and SHA-256. It runs three rounds and keeps the best one.</li>
+<li><strong>IO.</strong> Write 2000 files of 1 KB, read them all back, then delete them. This is the kind of work a test run or a build does all day.</li>
+<li><strong>Parallel.</strong> Eight copies of the CPU suite at once, to see what happens when several agents share one machine.</li>
+</ul>
+<h2>The numbers</h2>
+<p>On the CPU suite, the phone and the Ubuntu were close: 1159 and 1225 ms. The Windows PC took 1653 ms. The PC&#39;s bun is an older version (1.1.42), while the other two run 1.4.4, so part of that gap may be the version, not the machine.</p>
+<p>On the file test the picture changed. The phone took 1119 ms and the PC 1198 ms, about the same. The Ubuntu, on its own disk, took 109 ms. That is about ten times faster than either.</p>
+<p>The same test run from inside the Ubuntu onto the Windows drive (<code>/mnt/c</code>) took 20633 ms. That is about seventeen times slower than the PC doing the same files natively. Going through the Windows file system from Linux costs more than the work itself.</p>
+<p>With eight CPU suites running at once, the PC&#39;s copies each took 2664 to 2713 ms (that run used node, not bun). The Ubuntu&#39;s took 2140 to 2304 ms, and all eight finished together in 7.8 s. The phone&#39;s runs took 1660 to 2124 ms, from an earlier run whose wall time I did not keep.</p>
+<h2>What it means</h2>
+<p>Three things stand out.</p>
+<p>First, the phone is a real computer for small jobs. Its CPU is in the same range as the PC&#39;s, so a short code-only job can run there. Its file speed is also the same as the PC&#39;s.</p>
+<p>Second, file-heavy work belongs on the Linux disk. The same files take a tenth of the time there. Work that goes through the Windows file system from Linux is the slowest case of all. So any build, test or agent checkout that runs under WSL2 should live in the Linux home, never under <code>/mnt/c</code>.</p>
+<p>Third, the PC is still the place for everything that needs its Windows session. That covers the browser with my sign-ins, the desktop automation, and the personal database. The Linux side is faster for pure code, but it cannot do those jobs.</p>
+<h2>Caveats</h2>
+<p>Each test ran once per machine, and the PC was doing other work while it ran. An earlier PC file run gave 1124 ms against 1198 ms today, so differences of about 10 percent or less are not meaningful. The CPU and file numbers come from the saved scripts. The phone&#39;s parallel run is from an earlier session, so its range is less certain.</p>
+<p>The benchmark scripts sit in the agent project&#39;s <code>agent-out/bench</code> folder, next to the results table.</p>
+
+      <!-- unescaped HTML from Markdown -->
+      <a href=".">Home Page</a>
+    </main>
+  </body>
+</html>
