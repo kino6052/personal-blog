@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>THE METAPHYSICS OF CODE - Grounding UI in Perception</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>THE METAPHYSICS OF CODE - Grounding UI in Perception</h1>
-      <h2>Grounding UI in Perception</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>Anti-Legacy Architecture: Grounding UI in Perception</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>THE METAPHYSICS OF CODE - Grounding UI in Perception</h1>
+          <p class="sub">Grounding UI in Perception</p>
+        </header>
+        <div class="prose">
+          <h2>Anti-Legacy Architecture: Grounding UI in Perception</h2>
 <p>Legacy code is not just old code; it is a philosophical failure. It occurs when developers weld the <strong>essence</strong> (pure state) to the <strong>accidents</strong> (frameworks, complex I/O) and pollute the architecture with ungrounded abstractions.
 To achieve <strong>Radical Softness</strong>—software that adapts instantly to change—we must ruthlessly separate pure logic from delivery machinery. Here is the stripped-down blueprint.</p>
 <h3>1. The Perceptual Ground (The MS Paint Essence)</h3>
@@ -30,8 +45,9 @@ There is no &quot;one true model&quot; of a domain. Different engineers will con
 <h3>5. The Composition Root</h3>
 <p>The pure logic, the View Model function, and the external accidents (UI frameworks, HTTP clients, databases) meet only at the <strong>Composition Root</strong>. By deferring complex I/O to the very edge of the application and plugging it in via dependency injection, the core remains eternally soft, verifiable, and completely free of ghosts.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

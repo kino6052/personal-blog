@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>An App I Change by Messaging It</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>An App I Change by Messaging It</h1>
-      <h2>A private chat on my phone with an AI inside it, and the loop that lets the AI edit the app it lives in</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>There is an app on my phone that I do not write by hand. I message it, and it changes. Today I asked, in one sentence, for the quick-actions menu to open on a short list of pinned items. This post covers what the app is, how the loop works, what is rough, and how it compares with what exists. I do not think any single piece is new. I think the closed loop is unusual.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>An App I Change by Messaging It</h1>
+          <p class="sub">A private chat on my phone with an AI inside it, and the loop that lets the AI edit the app it lives in</p>
+        </header>
+        <div class="prose">
+          <p>There is an app on my phone that I do not write by hand. I message it, and it changes. Today I asked, in one sentence, for the quick-actions menu to open on a short list of pinned items. This post covers what the app is, how the loop works, what is rough, and how it compares with what exists. I do not think any single piece is new. I think the closed loop is unusual.</p>
 <h2>What it is</h2>
 <p>It is a private chat, sideloaded on my Android phone (there is also a desktop window with the same chat). It is end-to-end encrypted: the key is generated on my PC, copied into the app when it is built, and never goes into git. Firebase&#39;s Firestore only relays ciphertext.</p>
 <p>On the other end is a Claude agent running on my PC. It can use my real Chrome with my logged-in sessions, drive desktop apps, work in my repositories, and read and write a personal database of my tasks, calendar and notes.</p>
@@ -45,8 +60,9 @@
 <h2>What I want from it</h2>
 <p>What interests me is not &quot;AI writes code&quot;. It is the short distance between noticing an annoyance and having it gone, on the device where I noticed it. What I do not have is a number for how often a requested change is right the first time. Until I do, &quot;an app that rebuilds itself&quot; describes the loop, not how well it works.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

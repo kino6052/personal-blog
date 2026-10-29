@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Where the Agent Runs, My Phone or My PC</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Where the Agent Runs, My Phone or My PC</h1>
-      <h2>A message from the phone app is now answered by an AI on the phone. Getting there, and what still goes through the PC</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>For the first weeks, my phone was only a window. I typed in a private chat app, and the AI that answered ran on my PC, which had to be on, awake and connected. Today I made the phone a machine of its own: a message sent from the phone app is now answered by a Claude session running on the phone. This post is about why that is more than a switch, what I had to build around it, and what still does not work.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Where the Agent Runs, My Phone or My PC</h1>
+          <p class="sub">A message from the phone app is now answered by an AI on the phone. Getting there, and what still goes through the PC</p>
+        </header>
+        <div class="prose">
+          <p>For the first weeks, my phone was only a window. I typed in a private chat app, and the AI that answered ran on my PC, which had to be on, awake and connected. Today I made the phone a machine of its own: a message sent from the phone app is now answered by a Claude session running on the phone. This post is about why that is more than a switch, what I had to build around it, and what still does not work.</p>
 <h2>Three things that were all &quot;the app&quot;</h2>
 <p>When I said &quot;the app runs on my PC&quot;, I was lumping three things together.</p>
 <ul>
@@ -44,8 +59,9 @@
 <h2>What I want from it</h2>
 <p>What I wanted is simple to say: I should never have to wonder whether I am talking to the PC or to my phone, and the phone should not need the PC to be awake for the things it can do alone. The first half now works, as a label on every reply. The second half works for small things. I do not yet have numbers for how often the phone gets a task right alone, or how much slower it is, and until I do, &quot;the phone runs the agent&quot; describes where the process lives, not how well it does the job.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

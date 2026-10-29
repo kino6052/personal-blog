@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Software Is Made of Ideas, Not Matter</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Software Is Made of Ideas, Not Matter</h1>
-      <h2>Why the failures of software are philosophical failures, and why physical intuitions reliably mislead us when we apply them to code.</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>The Category Error at the Foundation</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Software Is Made of Ideas, Not Matter</h1>
+          <p class="sub">Why the failures of software are philosophical failures, and why physical intuitions reliably mislead us when we apply them to code.</p>
+        </header>
+        <div class="prose">
+          <h2>The Category Error at the Foundation</h2>
 <p>When a bridge collapses, we look for physical causes. Metal fatigue. Resonance frequency. A load that exceeded a structural limit. The investigation proceeds by examining matter — its composition, its arrangement, the forces acting upon it. The failure is in the physical world, and the physical world yields evidence.</p>
 <p>When a software system collapses — becomes unmaintainable, incomprehensible, impossible to extend — we instinctively perform the same investigation. We look for structural causes. Wrong layers. Excessive coupling. Misaligned boundaries. We use the language of physical engineering: architecture, foundations, load-bearing, brittleness. We speak as though the failure is in an arrangement of matter that we can inspect and rearrange.</p>
 <p>This is a category error. Software is not matter. It has never been matter. The failure of a software system is not a physical failure. It is a <em>philosophical</em> failure — a failure in the realm of ideas — and it cannot be diagnosed or corrected by the methods appropriate to physical systems.</p>
@@ -48,8 +63,9 @@
 <p>This is not a new insight. Berkeley made it in the eighteenth century. Peirce made it in the nineteenth. The logical empiricists made it in the twentieth. The insight keeps being made and keeps being forgotten, because the alternative — letting ideas float free, explaining them with analogies and defending them with appeals to pattern and principle — is so much more comfortable than the discipline of demanding, for every abstraction, the perceivable fact it is ultimately about.</p>
 <p>Software is a new medium for an old problem. The problem is the management of ideas. The solution is the same as it has always been: know what you are talking about, and know how you know it.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

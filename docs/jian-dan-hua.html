@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>简单话 (Jiǎndānhuà)</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>简单话 (Jiǎndānhuà)</h1>
-      <h2>Language Specification</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p><strong>Version 1.0</strong></p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>简单话 (Jiǎndānhuà)</h1>
+          <p class="sub">Language Specification</p>
+        </header>
+        <div class="prose">
+          <p><strong>Version 1.0</strong></p>
 <p>简单话 is a highly optimized, radically accessible version of Putonghua designed to function like an elegant &quot;Logic Engine.&quot; Its core philosophy can be summarized as: <strong>&quot;Esperanto, but completely valid Mandarin.&quot;</strong> It strips away centuries of historical, regional, and socio-cultural bloat, leaving a necessary-and-sufficient linguistic architecture that requires zero guessing from context.</p>
 <hr>
 <h2>1. Core Structural Guardrails</h2>
@@ -108,8 +123,9 @@
 <h3>Abstract Dimensions</h3>
 <p>For abstract metrics, both primitive oppositional compounds (e.g., <code>dà-xiǎo</code> [big-small / size]) and formal technical suffixes (e.g., <code>sùdù</code> [speed]) are permitted. The translation pipeline dynamically evaluates and serves whichever variant is structurally more common and less ambiguous within the context of the sentence.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

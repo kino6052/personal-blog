@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Dependency Hell of Modern Development</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Dependency Hell of Modern Development</h1>
-      <h2>Why do we have so many dependencies?</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>Why do we have so many dependencies? Are they truly necessary?</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Dependency Hell of Modern Development</h1>
+          <p class="sub">Why do we have so many dependencies?</p>
+        </header>
+        <div class="prose">
+          <p>Why do we have so many dependencies? Are they truly necessary?</p>
 <p>I argue they are not.</p>
 <p>But first, let’s look at the opposite view honestly.</p>
 <p>The other side says: Dependencies are essential. They save thousands of hours. You don’t want to write your own date parser, HTTP client, or UI framework. Security updates come from the package maintainer, not from your own buggy code. If everyone wrote everything from scratch, we would never finish any project. The real hell is not dependencies — it’s rewriting what already works.</p>
@@ -34,8 +49,9 @@
 <p>Yes, sometimes you need React. Sometimes you need a heavy tool. But most of the time, you don’t. That is not idealism. That is just counting.</p>
 <p>Both sides agree on one thing: unmanaged dependencies hurt. The difference is that one side accepts it as the cost of modern development. The other side — the stronger one — says we can do better. Not by avoiding all dependencies, but by treating each one as an expense, not a default.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

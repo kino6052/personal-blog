@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>When the Liquid Evaporates</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>When the Liquid Evaporates</h1>
-      <h2>Or, when you compare yourself only to yesterday</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>I recently bought strawberries in a Chinese supermarket. They came in a beautiful plastic box, and that box was wrapped again in a transparent film. Not far from the shop, a slogan on the wall said: “Sorting waste is a small step to civilised living.”</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>When the Liquid Evaporates</h1>
+          <p class="sub">Or, when you compare yourself only to yesterday</p>
+        </header>
+        <div class="prose">
+          <p>I recently bought strawberries in a Chinese supermarket. They came in a beautiful plastic box, and that box was wrapped again in a transparent film. Not far from the shop, a slogan on the wall said: “Sorting waste is a small step to civilised living.”</p>
 <p>Something about that pairing stayed with me.</p>
 <p>The strawberry is a perfect little machine of sweetness. It needs no help from petrochemicals. And yet there it sat, sealed in two layers of non‑biodegradable armour, as if it were a dangerous substance instead of a fruit.</p>
 <p>We are used to thinking of waste as a problem that begins at the bin. Sort paper from plastic, compost from glass, and the world improves. This is a satisfying picture. It gives the problem a shape you can hold.</p>
@@ -58,8 +73,9 @@
 <p>That question has no answer yet. We are somewhere in the middle of the phase transition. The liquid is still flowing, but the heat is rising. The only thing we know for certain is that the state that comes next will not look like the one we remember.</p>
 <p>And that, perhaps, is the most honest thing we can say.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

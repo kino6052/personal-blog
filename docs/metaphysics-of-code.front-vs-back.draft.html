@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>THE METAPHYSICS OF CODE - Front-end vs Back-end</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>THE METAPHYSICS OF CODE - Front-end vs Back-end</h1>
-      <h2>Front-end vs Back-end</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>The Perceptual Ground: Rethinking Software Architecture for Lasting Agility</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>THE METAPHYSICS OF CODE - Front-end vs Back-end</h1>
+          <p class="sub">Front-end vs Back-end</p>
+        </header>
+        <div class="prose">
+          <h2>The Perceptual Ground: Rethinking Software Architecture for Lasting Agility</h2>
 <p>Legacy code is rarely the result of a lack of skill; it is usually the result of a loss of agility. Code becomes legacy when it becomes too rigid to change safely. At the heart of this rigidity is a breakdown in our feedback loops. When our business rules become entangled with our frameworks, testing slows to a crawl, developer confidence drops, and the software begins to turn to stone.
 To keep our applications adaptable—to achieve a state of lasting softness—we need to rethink how we draw boundaries. We must cleanly separate the core logic of our applications from the mechanisms we use to deliver them.</p>
 <h3>Essence vs. Machinery</h3>
@@ -81,8 +96,9 @@ When we worship the machinery—whether it&#39;s React, a heavy ORM, or cloud or
 When the backend serves the frontend, the frontend serves the user, and every framework is kept safely in its place as a temporary tool, software finally stops fighting us. It achieves <strong>Radical Softness</strong>—becoming a clean, lightning-fast transformation of pure state into human experience, ready to adapt to whatever the future holds.</li>
 </ol>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>
