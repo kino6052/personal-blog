@@ -20,10 +20,23 @@
   const treeEl = document.getElementById("tree");
   const pageListEl = document.getElementById("page-list");
 
-  function renderTree(children, parentEl) {
+  // Fixed order: `all` first, then the six top levels in the owner's order,
+  // `draft` last. Anything else (a new top level, sub-levels) goes by post
+  // count, then name, so the page does not depend on the order of the files.
+  const TOP_ORDER = ["all", "Code", "Philosophy", "Language", "Learning and mind", "Science and money", "Life", "draft"];
+  function sortedEntries(children, isTop) {
+    const rank = (k) => (TOP_ORDER.indexOf(k) < 0 ? TOP_ORDER.length - 1.5 : TOP_ORDER.indexOf(k));
+    return Object.entries(children).sort(([ka, a], [kb, b]) =>
+      isTop && rank(ka) !== rank(kb)
+        ? rank(ka) - rank(kb)
+        : b.allPages.length - a.allPages.length || ka.localeCompare(kb)
+    );
+  }
+
+  function renderTree(children, parentEl, isTop) {
     const ul = document.createElement("ul");
 
-    for (const [key, node] of Object.entries(children)) {
+    for (const [key, node] of sortedEntries(children, isTop)) {
       const li = document.createElement("li");
 
       const header = document.createElement("div");
@@ -74,7 +87,7 @@
     parentEl.appendChild(ul);
   }
 
-  renderTree(hierarchy.children, treeEl);
+  renderTree(hierarchy.children, treeEl, true);
   displayPages(allPages);
 
   function displayPages(pages) {
