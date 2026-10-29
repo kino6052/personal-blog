@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - SCALE
 subtitle: Introduction. Software as an idea, not a phenomenal thing.
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / scalability; code / metaphysics;
+tags: all; Code / Architecture; Code / Tools; Philosophy / Metaphysics;
 ---
 
 # The Central Contradiction of Scalable Software

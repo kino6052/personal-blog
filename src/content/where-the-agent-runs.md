@@ -3,7 +3,7 @@ title: Where the Agent Runs, My Phone or My PC
 subtitle: A message from the phone app is now answered by an AI on the phone. Getting there, and what still goes through the PC
 date: 2026-10-28
 layout: post.html # reference to a layout file
-tags: all; technology / AI; code;
+tags: all; Code / AI; Code;
 ---
 
 For the first weeks, my phone was only a window. I typed in a private chat app, and the AI that answered ran on my PC, which had to be on, awake and connected. Today I made the phone a machine of its own: a message sent from the phone app is now answered by a Claude session running on the phone. This post is about why that is more than a switch, what I had to build around it, and what still does not work.

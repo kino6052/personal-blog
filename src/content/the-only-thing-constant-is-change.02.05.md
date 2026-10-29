@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 5 - Faith
 subtitle: Part 1 - Chapter 5 - Faith
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / the only thing constant is change; misc;
+tags: all; Philosophy / Change; Life / Misc;
 ---
 
 If the "Why?" question is the most fundamental inquiry we can make, then the meaning of life is the ultimate "Why?" question. What is the primary purpose of life as an activity? What are we ultimately striving to achieve?

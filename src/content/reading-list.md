@@ -3,7 +3,7 @@ title: Reading Against Myself
 subtitle: A checklist of the major works I need to be in honest dialogue with other fundamental thinkers
 date: 2026-10-02
 layout: post.html # reference to a layout file
-tags: all; philosophy; philosophy / reading list;
+tags: all; Philosophy;
 ---
 
 I have read widely in the history of philosophy — Plato, Aristotle, Aquinas, Descartes and others — but the framework I write from rests mainly on two books: Berkeley's _Principles of Human Knowledge_ and Kant's _Critique of Pure Reason_. Recently I added Schopenhauer's _On the Fourfold Root of the Principle of Sufficient Reason_ and Ernst Mach.

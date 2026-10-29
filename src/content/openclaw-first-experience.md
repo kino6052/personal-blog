@@ -3,7 +3,7 @@ title: OpenClaw
 subtitle: First experience using overhyped technology
 date: 2025-02-21
 layout: post.html
-tags: all; code; technology / AI;
+tags: all; Code; Code / AI;
 ---
 
 I remember when ChatGPT went public. Everybody was talking about it. I made an account, started chatting, and felt like I was talking to a real thinking being — calm, patient, surprisingly capable. It blew my mind, and it was only GPT-3.5.

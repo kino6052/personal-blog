@@ -3,7 +3,7 @@ title: Decoupling Code from Nesting
 subtitle: Why nesting is not an architectural concern
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture;
+tags: all; Code / Architecture;
 ---
 
 Is having a large function or file bad architecture? Is decomposition into many small functions always better? Can we answer these questions unequivocally?

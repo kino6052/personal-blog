@@ -3,7 +3,7 @@ title: The Bird's-Eye View
 subtitle: What a 30-Day Speedrun of a 120-Word Language Teaches a Polyglot
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language; learning;
+tags: all; Language; Learning and mind / Learning;
 ---
 
 You practice for years. You spend thousands of hours listening to polished podcasts, drilling digital flashcards, and pushing through the walls of grammar with sheer, stubborn persistence. Then you land in China. You step out onto the street, the raw audio of the real world hits you, and you realize with a cold shock that it feels as if you have never learned anything at all. You are like the hunter freezing in the woods, putting in absolute effort for zero efficiency. The language refuses to yield.

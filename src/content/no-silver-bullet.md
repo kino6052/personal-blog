@@ -3,7 +3,7 @@ title: The Silver Bullet and Context Dependency
 subtitle: Why cons are a necessary property
 date: 2025-02-21
 layout: post.html
-tags: all; philosophy / logic; philosophy / phenomenology;
+tags: all; Philosophy / Knowledge and logic;
 ---
 
 As a developer, I constantly hear this: yes, this solution is nice, but it is not perfect; there are pros and cons. But for me, as a person who is familiar with philosophy and logic, this seems more like a belief rather than something coming from a necessity.

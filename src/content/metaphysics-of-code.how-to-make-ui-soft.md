@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - How to Make UI Testable and Keep It Soft
 subtitle: How to Make UI Testable and Keep It Soft
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 ## How to Make UI Testable and Keep It Soft

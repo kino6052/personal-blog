@@ -3,7 +3,7 @@ title: Biological Metaphysics
 subtitle: Molecules that don't explain anything
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; science / biology; science / medical science; philosophy / metaphysics;
+tags: all; Science and money / Science; Philosophy / Metaphysics;
 ---
 
 In contemporary scientific popularization, there is a pervasive and epistemologically flawed tendency to reduce complex human behavior to the mere secretion of neurotransmitters. Modern literature frequently asserts that an individual engages in physical exertion to receive a "reward" of dopamine or endorphins. From a rigorous methodological standpoint, this is an undisciplined approach. It substitutes objective causality with chemical nomenclature, yielding an explanation that possesses essentially zero predictive power.

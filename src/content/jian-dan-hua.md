@@ -3,7 +3,7 @@ title: 简单话 (Jiǎndānhuà)
 subtitle: Language Specification
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning;
+tags: all; Language / Chinese; Learning and mind / Learning;
 ---
 
 **Version 1.0**

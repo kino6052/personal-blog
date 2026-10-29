@@ -3,7 +3,7 @@ title: Why Intelligence Can Never Rest
 subtitle: The Paradox of Completion
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy;
+tags: all; Philosophy;
 ---
 
 We live in a world that wants only one thing: stasis. Completion. A final, unchanging state where no further action is needed. Every rock, river, planet, and cell is aim ed at this same destination. Yet no matter how hard the phenomenal world tries, it never arrives. That is not a flaw. That is the very reason things exist—and the reason they change.

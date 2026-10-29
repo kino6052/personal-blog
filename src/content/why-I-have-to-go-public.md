@@ -3,7 +3,7 @@ title: Casting the Net
 subtitle: Why I Must Go Maximally Public
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; misc;
+tags: all; Life / Misc;
 ---
 
 In the pursuit of building meaningful systems, privacy is a strategic liability. Keeping ideas confined to private notebooks or small, comfortable circles is an act of passive isolation. To build what I want to build, I must scale my visibility aggressively through public speaking and blogging.

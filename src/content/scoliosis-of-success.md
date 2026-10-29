@@ -3,7 +3,7 @@ title: The Scoliosis of Success
 subtitle: A Philosophical Case for Systemic Balance
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values;
+tags: all; Philosophy / Values;
 ---
 
 Imagine a person who becomes entirely obsessed with a single, highly visible metric of physical fitness: the abdominal muscles. Day after day, year after year, they pour every ounce of their energy into training their core. They ignore their legs, their shoulders, and, crucially, their back.

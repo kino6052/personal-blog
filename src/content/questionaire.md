@@ -3,7 +3,7 @@ title: Philosophical Questionare
 subtitle: To understand the world view of others
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy;
+tags: all; Philosophy;
 ---
 
 # How Do You Know?

@@ -3,7 +3,7 @@ title: Decoupling Code from File Structure
 subtitle: Why file structure is not an architectural decision
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture;
+tags: all; Code / Architecture;
 ---
 
 Is file structure an architectural concern? Is one file structure better than another? Can we answer these questions unequivocally?

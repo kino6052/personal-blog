@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - INTRODUCTION
 subtitle: Introduction. A Million Patterns Versus One Codebase
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 Every program that has ever run on a machine originated from an idea. The world of software was invented by human minds — operating systems, databases, compilers, browsers, the very interfaces through which you read this sentence. None of it existed until someone thought it into being. And yet, unlike the physical creations of engineers, software lives entirely inside thought itself. It has no weight, no temperature, no position in space. It is pure philosophy made executable.

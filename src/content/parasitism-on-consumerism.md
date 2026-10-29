@@ -3,7 +3,7 @@ title: Parasitism on Modern Consumerism
 subtitle: Is not Worthwhile
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; misc; time-management;
+tags: all; Life / Misc; Learning and mind / Time;
 ---
 
 Parasitism on Modern Consumerism

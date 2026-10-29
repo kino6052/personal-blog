@@ -3,7 +3,7 @@ title: Learn Like Humans not Machines
 subtitle: Notes on what is important in education
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; learning;
+tags: all; Learning and mind / Learning;
 ---
 
 Learning should come from a personal, very human motivation. Not an abstract one.

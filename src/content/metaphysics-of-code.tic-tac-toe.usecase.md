@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - USE CASE - TIC TAC TOE (DRAFT)
 subtitle: A Post-Mortem of Tic-Tac-Toe Through the Lens of Empirical Software
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 ## Introduction: The Canonical Case Study

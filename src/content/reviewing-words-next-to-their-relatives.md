@@ -3,7 +3,7 @@ title: Reviewing a Word Next to Its Relatives
 subtitle: An idea for my flashcard app, where the links between words decide the order in which cards come up
 date: 2026-10-27
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning;
+tags: all; Language / Chinese; Learning and mind / Learning;
 ---
 
 I am building a small spaced-repetition app for my HSK 5 deck. It uses FSRS to decide what is due, and today it treats every card as if it lived alone: the due cards come up in order of how overdue they are, with the cards of one lesson kept together. That is not how I remember words. I remember a word because of what sits next to it: it means nearly the same as one word and the opposite of another, or it is a harder version of a simple word I already know.

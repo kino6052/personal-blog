@@ -3,7 +3,7 @@ title: The Fluency Lie
 subtitle: Why the "Hours Required" Metric is Gaslighting You (And How to Fix Chinese)
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; language; learning;
+tags: all; Language; Learning and mind / Learning;
 ---
 
 Let’s speedrun learning Chinese! According to official institutional charts, it takes exactly 2,200 hours of study to reach proficiency. So, it's simple: just study ten hours a day, every single day, and you’ll be completely fluent in under a year! Easy, right?

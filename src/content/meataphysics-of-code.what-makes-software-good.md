@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - INTRODUCTION
 subtitle: Introduction. A Million Patterns Versus One Codebase
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 # What Makes Software Good?

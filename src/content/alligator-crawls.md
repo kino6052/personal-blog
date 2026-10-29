@@ -3,7 +3,7 @@ title: Mountain Stair Alligator Crawl Blueprint
 subtitle: Mountain Stair Alligator Crawl Blueprint
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; workout;
+tags: all; Life / Workout;
 ---
 
 This workout is designed with a single objective: to be an intense, unforgettable physical experience that forces muscular adaptation through sheer mechanical tension and metabolic stress. By combining the anti-gravity demands of an incline crawl with strict micro-rests and slow-tempo eccentric descents, this routine guarantees complete muscular devastation.

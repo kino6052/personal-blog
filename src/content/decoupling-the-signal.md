@@ -3,7 +3,7 @@ title: Decoupling the Signal
 subtitle: A Mechanical Blueprint for Mandarin Listening Comprehension
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language / listening comprehension;
+tags: all; Language / English;
 ---
 
 Language acquisition is widely treated as an accumulation of vocabulary—a steady building of a mental dictionary. But this is an illusion born of traditional classrooms. In reality, moving through a language is not about expanding what you know; it is about systematically identifying and breaking through processing bottlenecks. For Mandarin, the most severe, uncompromising bottleneck is listening.

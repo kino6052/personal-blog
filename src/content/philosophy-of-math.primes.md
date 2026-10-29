@@ -3,7 +3,7 @@ title: What Are Prime Numbers?
 subtitle: On ghosts, rules, and why the primes are a process rather than a place
 date: 2026-08-21
 layout: post.html # reference to a layout file
-tags: all; philosophy; mathematics / number theory;
+tags: all; Philosophy; Science and money / Maths;
 ---
 
 # What are prime numbers?

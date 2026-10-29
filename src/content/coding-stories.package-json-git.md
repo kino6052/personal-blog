@@ -3,7 +3,7 @@ title: CODE STORIES - package.json and Git
 subtitle: When there are constantly updated dependencies
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / stories; code / git; code / web;
+tags: all; Code / Stories; Code / Tools;
 ---
 
 In software development more than 50% of the time you don't do software, you do things that are barely related to it—mostly reducing friction. One such example is working on a large front-end project with many teams where versions of internal packages constantly change. Your branch, which needs to update one package, will _guaranteed_ have merge conflicts.

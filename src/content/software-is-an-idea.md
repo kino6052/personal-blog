@@ -3,7 +3,7 @@ title: Software Is Made of Ideas, Not Matter
 subtitle: Why the failures of software are philosophical failures, and why physical intuitions reliably mislead us when we apply them to code.
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; philosophy; code / metaphysics;
+tags: all; Code / Architecture; Philosophy; Philosophy / Metaphysics;
 ---
 
 ## The Category Error at the Foundation

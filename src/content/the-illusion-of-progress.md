@@ -3,7 +3,7 @@ title: The Illusion of Progress
 subtitle: How the "Prestigious Grind" Hides the Broken Paradigms of Science and Tech
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy; knowledge; technology; science;
+tags: all; Philosophy; Philosophy / Knowledge and logic; Code; Science and money / Science;
 ---
 
 # The Illusion of Progress: How the "Prestigious Grind" Hides the Broken Paradigms of Science and Tech

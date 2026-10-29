@@ -3,7 +3,7 @@ title: The Real Martial Arts of the Modern World
 subtitle: Is not Worthwhile
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; misc; martial-arts;
+tags: all; Life / Misc; Life / Martial arts;
 ---
 
 We often think real martial arts are about fists. They are about hitting and hurting. But I have changed my mind.

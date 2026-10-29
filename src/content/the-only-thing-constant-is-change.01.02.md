@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 2 - Philosophy
 subtitle: Part 1 - Chapter 2 - Philosophy
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / the only thing constant is change; misc;
+tags: all; Philosophy / Change; Life / Misc;
 ---
 
 So, if I find myself tangled in this messy yarn that has accumulated throughout my life, a good place to start figuring a way out would be to ask myself: "Is this the real life, or is it just fantasy?"

@@ -3,7 +3,7 @@ title: Our Code Serves Our Instruments, Not Us
 subtitle: And how to fix it
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture;
+tags: all; Code / Architecture;
 ---
 
 Open any codebase. What do you see first?

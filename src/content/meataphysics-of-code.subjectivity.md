@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - PERSONAL PREFERENCE
 subtitle: Personal Preference
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 ## Section: The Labyrinth of Fake Entities — From Personal Preference to Precise Language

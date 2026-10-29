@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - 0 Introduction
 subtitle: Introduction
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / the only thing constant is change; misc;
+tags: all; Philosophy / Change; Life / Misc;
 ---
 
 > "And when you think you got it,

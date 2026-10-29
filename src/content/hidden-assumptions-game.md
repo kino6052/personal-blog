@@ -3,7 +3,7 @@ title: GROW
 subtitle: What a Seedling Teaches About the Assumptions You Never Knew You Had
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code; learning; philosophy / epistemology;
+tags: all; Code; Learning and mind / Learning; Philosophy / Knowledge and logic;
 ---
 
 <a href="https://codesandbox.io/p/sandbox/plant-99cjrl">CodeSandbox with the game.</a>

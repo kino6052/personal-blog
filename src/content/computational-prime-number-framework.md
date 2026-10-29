@@ -3,7 +3,7 @@ title: A Computational Framework for Prime Numbers
 subtitle: A Case Study on How Reification and Ontology Affect Prime Infinitude Arguments
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy; mathematics / number theory;
+tags: all; Philosophy; Science and money / Maths;
 ---
 
 **Yong Xue**  

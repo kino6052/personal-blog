@@ -3,7 +3,7 @@ title: An App I Change by Messaging It
 subtitle: A private chat on my phone with an AI inside it, and the loop that lets the AI edit the app it lives in
 date: 2026-10-27
 layout: post.html # reference to a layout file
-tags: all; technology / AI; code;
+tags: all; Code / AI; Code;
 ---
 
 There is an app on my phone that I do not write by hand. I message it, and it changes. Today I asked, in one sentence, for the quick-actions menu to open on a short list of pinned items. This post covers what the app is, how the loop works, what is rough, and how it compares with what exists. I do not think any single piece is new. I think the closed loop is unusual.

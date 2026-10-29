@@ -3,7 +3,7 @@ title: The Immersion Myth
 subtitle: Why Trying to "Think in Your Target Language" is Making You Fail
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language; learning;
+tags: all; Language; Learning and mind / Learning;
 ---
 
 We’ve all bought into the marketing. The language-learning apps, the polyglot influencers, and the immersion gurus all preach the same gospel: _“Don't translate in your head. Just immerse yourself. Think like a native from day one, and your brain will automatically figure it out.”_

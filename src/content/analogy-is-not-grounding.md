@@ -3,7 +3,7 @@ title: The Analogy Trap
 subtitle: Why Making Things Relatable Is Not the Same as Making Them Real
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / metaphysics; philosophy / epistemology;
+tags: all; Philosophy / Metaphysics; Philosophy / Knowledge and logic;
 ---
 
 _A common confusion between two opposite moves: grounding a concept by tracing it to perception, and dressing a concept in familiar clothing so that the absence of grounding goes unnoticed._

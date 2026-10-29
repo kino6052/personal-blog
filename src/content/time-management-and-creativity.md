@@ -3,7 +3,7 @@ title: Why Time Management is a Myth for Creative People
 subtitle: Let Creativity Take the Time Necessary
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; misc; time-management;
+tags: all; Life / Misc; Learning and mind / Time;
 ---
 
 We hear the same advice all the time.

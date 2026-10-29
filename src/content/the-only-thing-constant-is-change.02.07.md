@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 7 - Living in the ev
 subtitle: Part 1 - Chapter 7 - Living in the ever-changing world
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / the only thing constant is change; misc;
+tags: all; Philosophy / Change; Life / Misc;
 ---
 
 In this chapter, I will try to synthesize the conclusions from the previous chapters and discuss how it all applies to personal life and well-being.

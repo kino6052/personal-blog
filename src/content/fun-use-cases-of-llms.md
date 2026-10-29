@@ -3,7 +3,7 @@ title: Fun Use Cases for LLMs
 subtitle: Using LLMs in creative ways
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / creative;
+tags: all; Code / Stories;
 ---
 
 LLMs are an extraordinary tool. It is hard to believe that less than 5 years ago we didn't have them and now it is hard to imagine our lives without them.

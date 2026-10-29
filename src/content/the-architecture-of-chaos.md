@@ -3,7 +3,7 @@ title: The Architecture of Chaos
 subtitle: Hanzi, Reductionism, and the Ingenuity of Involution
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning;
+tags: all; Language / Chinese; Learning and mind / Learning;
 ---
 
 To express a single, coherent thought in a Western language requires a modest toolkit: twenty-six abstract, phonetic geometry pieces. They are low-friction, modular, and entirely detached from the visual world. To express that same thought in Chinese requires crossing a vast, historically weathered landscape of thousands of distinct characters. The cognitive friction, the sheer physical and mental effort required to master the baseline of communication, is easily ten times greater.

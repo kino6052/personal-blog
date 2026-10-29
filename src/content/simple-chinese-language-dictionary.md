@@ -3,7 +3,7 @@ title: 简单话 — Basic English 850 Dictionary
 subtitle: Dictionary
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese / 简单话; learning; technology / AI;
+tags: all; Language / Chinese; Language / 简单话; Learning and mind / Learning; Code / AI;
 ---
 
 **Legend**

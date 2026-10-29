@@ -3,7 +3,7 @@ title: The Algorithmic Arbitrator
 subtitle: LLMs as Emotionally Inert Dispute Intermediaries
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; philosophy; code / metaphysics;
+tags: all; Code / Architecture; Philosophy; Philosophy / Metaphysics;
 ---
 
 Human disputes are notoriously inefficient. When two parties clash—whether in corporate architecture, open-source communities, or personal partnerships—the core facts are almost immediately buried under layers of cognitive bias, ego, and emotional escalation. The friction shifts from solving the actual problem to winning the argument.

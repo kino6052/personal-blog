@@ -3,7 +3,7 @@ title: The Architecture of Perspective
 subtitle: Mastering the True Scale of Reality
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; wisdom;
+tags: all; Philosophy / Values; Philosophy / Knowledge and logic;
 ---
 
 Our brains are running on ancient, uncalibrated threat-detection software. Designed for a world where a rustle in the bushes meant a saber-toothed tiger, our internal alarm system flat-maps reality. It treats a public fart, an unannounced speech, an argument over birthday cake, and a genuine medical emergency with the exact same metabolic urgency.

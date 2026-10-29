@@ -3,7 +3,7 @@ title: Dependency Hell of Modern Development
 subtitle: Why do we have so many dependencies?
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / dependency;
+tags: all; Code / Tools;
 ---
 
 Why do we have so many dependencies? Are they truly necessary?

@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - PRAGMATISM FALLACY
 subtitle: Why "it works" isn't a good argument
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 Whenever you challenge an over-engineered labyrinth of ghosts—seven layers of abstractions, ORM magic, and framework rituals—a developer will inevitably raise the shield of false pragmatism:

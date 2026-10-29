@@ -3,7 +3,7 @@ title: Store the Essence, Regenerate the Memory
 subtitle: AI as a Cold Storage Codec
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; technology / AI;
+tags: all; Code / AI;
 ---
 
 **What if we stopped storing pixels and started storing meaning—then used powerful AI to reconstruct images and video only when someone actually wants to see them?**

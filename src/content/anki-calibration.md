@@ -3,7 +3,7 @@ title: Anki Isn't Broken. Your Calibration Is.
 subtitle: How to use Anki
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; learning; language;
+tags: all; Learning and mind / Learning; Language;
 ---
 
 Open the deck options in Anki and you'll find a number sitting there quietly, waiting for you to leave it alone: 90%. Desired retention. Almost nobody touches it, and almost nobody asks where it came from.

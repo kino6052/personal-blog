@@ -3,7 +3,7 @@ title: The Fractal Collapse
 subtitle: Why Capturing the Ontology of Language is an Unresolved Engineering Problem
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language; philosophy;
+tags: all; Language; Philosophy;
 ---
 
 An ontology is an information compression engine. The entire purpose of a linguistic ontology is to scale levels of abstraction smoothly—allowing a system to collapse a hyper-specific statement like _"Everest is in China"_ into a compressed, high-level concept like _"A tall mountain is in an Asian country."_

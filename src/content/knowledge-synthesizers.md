@@ -3,7 +3,7 @@ title: The Architects of the Whole
 subtitle: Why Synthesis is the Ultimate Intellectual Rockstardom
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy; knowledge;
+tags: all; Philosophy; Philosophy / Knowledge and logic;
 ---
 
 Isaac Newton famously said, "If I have seen further, it is by standing on the shoulders of giants." It is a beautiful quote. But it obscures how progress actually happens.

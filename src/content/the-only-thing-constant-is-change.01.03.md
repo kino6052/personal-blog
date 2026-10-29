@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 3 - Mind vs Matter
 subtitle: Part 1 - Chapter 3 - Mind vs Matter
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / the only thing constant is change; misc;
+tags: all; Philosophy / Change; Life / Misc;
 ---
 
 I now want to examine what happens when I choose the mind as the reference frame for my understanding of the world, and see where that decision leads.

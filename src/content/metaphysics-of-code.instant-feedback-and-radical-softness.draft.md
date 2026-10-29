@@ -4,7 +4,7 @@ title: THE METAPHYSICS OF CODE - Instant Feedback and Radical Softness
 subtitle: The Root of Scalability
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 ## The Root of Scalability: Instant Feedback and Radical Softness

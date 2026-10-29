@@ -3,7 +3,7 @@ title: The Script of Freedom
 subtitle: Why Modern Liberties are a Hollywood Hoax
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; philosophy / freedom;
+tags: all; Philosophy / Values; Philosophy / Ethics and freedom;
 ---
 
 The lights are dim. The atmosphere is tense. A rich tech billionaire stands on stage. Let's call him Pavel. He speaks into the microphone. He uses a big metaphor.

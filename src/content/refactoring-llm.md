@@ -3,7 +3,7 @@ title: The Neural Refactoring Hypothesis
 subtitle: Thoughts on how to refactor and understand LLMs
 date: 2025-02-21
 layout: post.html
-tags: all; science; technology / AI; philosophy;
+tags: all; Science and money / Science; Code / AI; Philosophy;
 ---
 
 _Speculative Science · Machine Intelligence · Interpretability_

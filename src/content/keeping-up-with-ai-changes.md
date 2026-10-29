@@ -3,7 +3,7 @@ title: The Tool That Erases the Race
 subtitle: Or, when the finish line disappears before you reach it
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; communication / feedback;
+tags: all; Philosophy / Values; Learning and mind / Communication;
 ---
 
 It is hard to believe that the future is already here. Not the future of flying cars or cities on the moon. The future of a tool that grows smarter while you sleep.
