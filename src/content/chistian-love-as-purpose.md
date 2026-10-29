@@ -3,7 +3,7 @@ title: Christian Love as Purpose
 subtitle: Is the one thing that is truly important
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; Philosophy / Values; Life / Faith;
+tags: all; Philosophy / Values; Life;
 ---
 
 In our hyper-focused, goal-oriented lives, it is incredibly easy to forget the one thing that is truly important. I used to think that thing was "meaning." But meaning is just an intellectual narrative label we place on things to feel like our life has a direction. Behind that abstract notion hides something much more concrete, much more valuable, and much more real: love—the Christian kind.

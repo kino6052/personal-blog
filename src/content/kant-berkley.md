@@ -3,7 +3,7 @@ title: Suggesting a Fix to Immanuel Kant's Critical Philosophy
 subtitle: Berklean respons to Critique of Pure Reason
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; Philosophy / People;
+tags: all; Philosophy;
 ---
 
 ## 1. The Crack in the Foundation

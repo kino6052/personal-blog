@@ -3,7 +3,7 @@ title: The Interview Method
 subtitle: How Asking Yourself Questions (with an LLM) Unlocks Better Writing
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; Life / Misc; Learning and mind / Writing; Code / AI;
+tags: all; Life / Misc; Learning and mind; Code / AI;
 ---
 
 ## This article was written using the very approach it describes—a back-and-forth Q&A session with an LLM, then refined into the piece you're reading now.

@@ -3,7 +3,7 @@ title: HONG XIUQUAN
 subtitle: THE ULTIMATE COSMIC COPE
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; Life / China;
+tags: all; Life;
 ---
 
 ### **PAGE 1**

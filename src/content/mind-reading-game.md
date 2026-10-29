@@ -3,7 +3,7 @@ title: Text-based Game about Read Minds
 subtitle: Summary
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; Life / Games;
+tags: all; Life;
 ---
 
 ## I. EXECUTIVE SUMMARY & HIGH CONCEPT

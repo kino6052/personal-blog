@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 4 - Change
 subtitle: Part 1 - Chapter 4 - Change
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; Philosophy / Change; Life / Misc;
+tags: all; Philosophy / Change;
 ---
 
 Having established mind as my primary reference frame, I can now step forward to examine the phenomenal world—the continuous stream of experience.

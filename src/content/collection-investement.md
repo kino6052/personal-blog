@@ -3,7 +3,7 @@ title: Collectibles as a form of investment
 subtitle: How to preserve money in a fun way
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; Science and money / Investment;
+tags: all; Science and money;
 ---
 
 I have a strong dislike for how most people invest their money. Stocks and cryptocurrency are popular choices, but I see them as a huge waste of time. They offer no real guarantees. It is no secret that the market is often supported by inexperienced people who make mistakes and lose money. They are encouraged to join, and their losses become someone else's gain. I think about the YouTube channel "Low Budget Stories" and the character Wojak. He is always trying to escape being a wage slave, but he keeps losing in that game. There is a lot of truth in that picture.

@@ -3,7 +3,7 @@ title: The Only Thing Constant Is Change - Part 1 - Chapter 6 - Science
 subtitle: Part 1 - Chapter 6 - Science
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; Philosophy / Change; Life / Misc;
+tags: all; Philosophy / Change;
 ---
 
 We are often told that science is the ultimate tool for understanding the world because it "explains" reality. But science does not explain _why_ things are the way they are; it merely describes _how_ things behave. Science maps the mechanics, the regularities, and the predictable patterns of phenomena. The deeper "Why?"—the question of necessity, meaning, and foundational truth—is a question that only philosophical examination can answer.
