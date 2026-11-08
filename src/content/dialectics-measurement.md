@@ -3,7 +3,7 @@ title: Why Intelligence Can Never Rest
 subtitle: The Paradox of Completion
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy;
+tags: all; Philosophy;
 ---
 
 ## An Empirical Alternative to Dialectics: Measuring Conflict through Perceived Choices and Game Dynamics

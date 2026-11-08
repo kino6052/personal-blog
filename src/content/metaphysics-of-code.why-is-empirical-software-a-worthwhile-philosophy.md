@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - Why Empirical Software Philosophy Is Worthwhile
 subtitle: Why Empirical Software Philosophy Is Worthwhile
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 Why This Philosophy Is Worthwhile

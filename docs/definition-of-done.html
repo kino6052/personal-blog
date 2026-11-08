@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>You&#39;re Not Done When You Think You&#39;re Done</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>You&#39;re Not Done When You Think You&#39;re Done</h1>
-      <h2>Definition of Done</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>You write the last line of code. You run it. It works. You check the requirements. Everything looks fine. You move the task to &quot;Done.&quot;</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>You&#39;re Not Done When You Think You&#39;re Done</h1>
+          <p class="sub">Definition of Done</p>
+        </header>
+        <div class="prose">
+          <p>You write the last line of code. You run it. It works. You check the requirements. Everything looks fine. You move the task to &quot;Done.&quot;</p>
 <p>Then the tester finds bugs. Things you never thought of. Things not in the requirements.</p>
 <p>You feel frustrated. But the real problem is not the tester. The real problem is your definition of &quot;done.&quot;</p>
 <p>Here is a better way to think about it. It comes from science.</p>
@@ -31,8 +46,9 @@
 <p>That is how science works. That is how good work works.</p>
 <p>So next time you think you are done, ask yourself: have I run out of ways to break this? If not, you are still in the fantasy stage. Keep going. Only when you cannot break it anymore — then you are truly done.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

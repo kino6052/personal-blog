@@ -3,7 +3,7 @@ title: Как дарить обратную связь
 subtitle: Разница между мнением и действием
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; communication / feedback;
+tags: all; Philosophy / Values; Learning and mind / Communication;
 ---
 
 Как дарить обратную связь

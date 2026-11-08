@@ -2,33 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Etymonline · Article Browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Personal blog</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <style>
       <%- cssContent %>
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <h1>PERSONAL BLOG</h1>
-      <p>sharing thoughts</p>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
 
-    <div class="main-container">
-      <div id="sidebar">
-        <h3>✧ browse by tag ✧</h3>
-        <div id="tree"></div>
-      </div>
+    <main class="wrap">
+      <div class="layout">
+        <nav class="tags" aria-label="Browse by tag">
+          <div class="tags-label">Tags</div>
+          <div id="tag-top" class="chips"></div>
+          <div id="tag-sub" class="tag-sub"></div>
+        </nav>
 
-      <div id="content">
-        <h3>✧ articles ✧</h3>
-        <div id="page-list"></div>
+        <section class="posts" aria-live="polite">
+          <div class="list-head">
+            <h2 id="list-title">All</h2>
+            <span id="list-count"></span>
+          </div>
+          <div id="page-list"></div>
+          <noscript><p class="empty">The list of posts needs JavaScript.</p></noscript>
+        </section>
       </div>
-    </div>
+    </main>
 
     <script>
-      window.__TAG_HIERARCHY__ = <%- JSON.stringify(hierarchy) %>;
-      window.__ALL_PAGES__ = <%- JSON.stringify(allPages) %>;
+      window.__TAG_HIERARCHY__ = <%- JSON.stringify(hierarchy).replace(/</g, "\\u003c") %>;
+      window.__ALL_PAGES__ = <%- JSON.stringify(allPages).replace(/</g, "\\u003c") %>;
     </script>
     <script>
       <%- jsContent %>

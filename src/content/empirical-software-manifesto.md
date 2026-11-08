@@ -3,7 +3,7 @@ title: EMPIRICAL SOFTWARE MANIFESTO
 subtitle: THE MANIFESTO FOR SOFT SOFTWARE
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 # EMPIRICAL SOFTWARE: THE MANIFESTO FOR GROUNDED CODE

@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>The Architecture of Perspective</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>The Architecture of Perspective</h1>
-      <h2>Mastering the True Scale of Reality</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>Our brains are running on ancient, uncalibrated threat-detection software. Designed for a world where a rustle in the bushes meant a saber-toothed tiger, our internal alarm system flat-maps reality. It treats a public fart, an unannounced speech, an argument over birthday cake, and a genuine medical emergency with the exact same metabolic urgency.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>The Architecture of Perspective</h1>
+          <p class="sub">Mastering the True Scale of Reality</p>
+        </header>
+        <div class="prose">
+          <p>Our brains are running on ancient, uncalibrated threat-detection software. Designed for a world where a rustle in the bushes meant a saber-toothed tiger, our internal alarm system flat-maps reality. It treats a public fart, an unannounced speech, an argument over birthday cake, and a genuine medical emergency with the exact same metabolic urgency.</p>
 <p>We live in a state of constant, exhausting hyper-vigilance, burning pristine psychological fuel treating low-stakes ego traps like existential threats.</p>
 <p>The greatest human wisdom is the radical capacity to look at a chaotic life and ruthlessly separate the monumental from the microscopic—to know, with absolute certainty, what is big and what is small, what is temporary software and what is permanent hardware.</p>
 <hr>
@@ -65,8 +80,9 @@
 <p>An unexamined life is flat, noisy, and constantly terrifying. Wisdom is the act of adding a vertical dimension to that map—building a towering mountain range for the few things that are truly big, and leaving a vast, flat plain for the millions of things that are small.</p>
 <p>Stop giving your pristine cognitive energy away to things that can be undone tomorrow. Save your fire for the things that are permanent. Know what matters, laugh at what doesn&#39;t, and keep your eyes wide open for the difference.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

@@ -3,7 +3,7 @@ title: You're Not Done When You Think You're Done
 subtitle: Definition of Done
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy;
+tags: all; Philosophy;
 ---
 
 You write the last line of code. You run it. It works. You check the requirements. Everything looks fine. You move the task to "Done."

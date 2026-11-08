@@ -3,7 +3,7 @@ title: Toastmasters - My Chinese Learning Journey
 subtitle: Learning Chinese is like playing Donkey Kong
 date: 2025-02-21
 layout: post.html
-tags: all; misc / public speaking / toastmasters;
+tags: all; Learning and mind / Public speaking;
 ---
 
 Learning Chinese is like playing Donkey Kong.

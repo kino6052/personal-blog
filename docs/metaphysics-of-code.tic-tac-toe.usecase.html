@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>THE METAPHYSICS OF CODE - USE CASE - TIC TAC TOE (DRAFT)</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>THE METAPHYSICS OF CODE - USE CASE - TIC TAC TOE (DRAFT)</h1>
-      <h2>A Post-Mortem of Tic-Tac-Toe Through the Lens of Empirical Software</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>Introduction: The Canonical Case Study</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>THE METAPHYSICS OF CODE - USE CASE - TIC TAC TOE (DRAFT)</h1>
+          <p class="sub">A Post-Mortem of Tic-Tac-Toe Through the Lens of Empirical Software</p>
+        </header>
+        <div class="prose">
+          <h2>Introduction: The Canonical Case Study</h2>
 <p>Every field has its canonical example. In software, Tic-Tac-Toe serves as the &quot;Hello World&quot; of interactive applications—the rite of passage that every developer completes, usually within their first week of learning React. The official React tutorial presents a complete implementation: state managed with hooks, logic embedded in components, and a game that works perfectly.</p>
 <p>But like the architectural &quot;temple of decoration&quot; described in the Empirical Software Manifesto, the default implementation contains a foundational error so deeply concealed by its apparent simplicity that generations of developers have replicated it without question. The error is this: <strong>the logic of the game has been bound to the machinery of its presentation, and the concepts of the code have been allowed to drift from their empirical anchors.</strong></p>
 <p>What follows is a philosophical and structural examination of a deliberately refactored Tic-Tac-Toe implementation—one that embodies the principles of Empirical Software and serves as a working demonstration of the metaphysics outlined in <em>The Metaphysics of Code</em>. This is not a tutorial. It is an autopsy of an architecture, conducted to reveal what most codebases conceal: <strong>the ghost of reification dressed in the robes of best practice.</strong></p>
@@ -597,8 +612,9 @@ export function createCompositionRoot() {
 export default createCompositionRoot();
 </code></pre>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

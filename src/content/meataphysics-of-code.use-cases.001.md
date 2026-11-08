@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - USE CASES - MISC
 subtitle: Use Cases
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 That is a profound realization, and it exposes the historical root of why software engineering is so broken today.

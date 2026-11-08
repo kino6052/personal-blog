@@ -3,7 +3,7 @@ title: Sprints Should Have Names
 subtitle: Agile as it was meant
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; philosophy; code / metaphysics;
+tags: all; Code / Architecture; Philosophy; Philosophy / Metaphysics;
 ---
 
 ## The Reification of Process

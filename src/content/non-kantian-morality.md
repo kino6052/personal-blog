@@ -3,7 +3,7 @@ title: Morality Is Not Make-Believe
 subtitle: Non-Kantian morality
 date: 2025-02-21
 layout: post.html
-tags: all; philosophy / ethics;
+tags: all; Philosophy / Ethics and freedom;
 ---
 
 Many people think we need abstract rules to be good. Immanuel Kant is famous for this. He said morality comes from pure reason. He said we must follow a universal duty, no matter what we feel.

@@ -3,7 +3,7 @@ title: Economy vs Sustainability as a Transitory Clash
 subtitle: Thoughts on how these are related
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; economics; sustainability; future; technology / AI;
+tags: all; Science and money / Economics; Science and money / Sustainability; Science and money / Future; Code / AI;
 ---
 
 I recently bought strawberries in China. They came in a beautiful plastic package, and that package was also wrapped in Saran wrap.

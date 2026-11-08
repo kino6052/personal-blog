@@ -3,7 +3,7 @@ title: The Grounding Principle
 subtitle: Why You Can't Achieve What You Can't Imagine
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy;
+tags: all; Philosophy;
 ---
 
 "If you can't imagine it, you can't get it done."

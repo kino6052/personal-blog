@@ -3,7 +3,7 @@ title: WELCOME TO HǍO-SHUO-DE
 subtitle: Most Minimal Chinese Language
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning;
+tags: all; Language / Chinese; Learning and mind / Learning;
 ---
 
 ## 1. The Problem: The Cognitive Wall

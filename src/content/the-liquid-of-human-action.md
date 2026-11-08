@@ -3,7 +3,7 @@ title: The Liquidity of Human Action
 subtitle: Why Workarounds Are the Enemy of True Intelligence
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; philosophy; misc;
+tags: all; Philosophy; Life / Misc;
 ---
 
 There is a quiet, fluid law governing how we interact with the world: human activity behaves like a liquid. When poured into any environment, it naturally and relentlessly seeps into whatever structural, physical, or temporal gaps have been left open.

@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - Microservices
 subtitle: Microservices
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 The comedic skit "Microservices" is funny precisely because it functions as a highly accurate documentary of modern enterprise software. It represents the absolute terminal stage of architectural rot: a system where the machinery has completely swallowed the meaning.

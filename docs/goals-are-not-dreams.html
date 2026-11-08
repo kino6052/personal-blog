@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Goals Are Not Dreams</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Goals Are Not Dreams</h1>
-      <h2>On the difference between a destination and a direction, and why confusing them is the same mistake that makes software unmaintainable</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>The Same Disease, a Different Domain</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Goals Are Not Dreams</h1>
+          <p class="sub">On the difference between a destination and a direction, and why confusing them is the same mistake that makes software unmaintainable</p>
+        </header>
+        <div class="prose">
+          <h2>The Same Disease, a Different Domain</h2>
 <p>Many of the articles have described a specific pathology in software: the tendency to mistake abstractions for things, to treat concepts that exist only in the mind as load-bearing structures in a system that must operate in the world. We called it reification. We traced its consequences through architecture, through process, through explanation.</p>
 <p>The same pathology governs how most people set goals. And the consequences are the same: a system — in this case, a life directed toward something — that looks organized from a distance and produces nothing actionable up close.</p>
 <p>The failure is not ambition. Ambition is not the problem. The failure is in the relationship between the abstract target and the concrete next step. Between the dream and the action. Most people who fail to achieve what they want have not failed to want hard enough. They have failed to ground their wanting in something perceivable — something that can be done today, verified today, built upon tomorrow.</p>
@@ -52,8 +67,9 @@
 <p>Note what does not falsify it: people who held both the dream and the decomposed steps simultaneously. The claim is about the decomposition, not the dream. A person who wants to be a great novelist and also writes five hundred words every morning is using the methodology. A person who wants to be a great novelist and thinks daily about the novel they will someday write is not. The comparison is between those two people, over a decade.</p>
 <p>The result is not guaranteed by the methodology. The methodology eliminates one specific failure mode: the consumption of energy by an ungrounded goal that produces no action and therefore no feedback about whether the direction is correct. What remains after eliminating that failure mode is the actual difficulty of the problem, which no methodology can dissolve. But actual difficulty, engaged directly, is more productive than imaginary difficulty, which is what an ungrounded goal produces — the illusion of working toward something while standing still.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

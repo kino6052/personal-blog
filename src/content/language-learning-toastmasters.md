@@ -3,7 +3,7 @@ title: The Language Circle
 subtitle: A Structure for Collective Progress
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; communication / feedback;
+tags: all; Philosophy / Values; Learning and mind / Communication;
 ---
 
 _A Toastmasters-inspired framework for language learning that takes seriously what language learning actually requires: grounded vocabulary, verifiable progress, native contact with guidance, and a community that advances together._

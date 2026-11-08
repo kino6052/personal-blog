@@ -3,7 +3,7 @@ title: How UI-kit broke the authentication initialization
 subtitle: A use case in technical communication
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; communication;
+tags: all; Learning and mind / Communication;
 ---
 
 Every machine we build is first assembled in our minds. When we write software, we are not just typing characters into a file; we are projecting our beliefs about how the world should organize itself. But we rarely write code in isolation. We write it in teams, meaning our individual mental models must somehow cooperate within the same digital space. When the software breaks, it is rarely just a physical failure of syntax. More often, it is a collision of invisible, unspoken assumptions. This is a study of one such collision between two developers, Alex and Dan, and how a critical payment failure became a masterclass in engineering communication.

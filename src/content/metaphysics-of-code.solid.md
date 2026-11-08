@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - SOLID Is Aristotelian Metaphysics
 subtitle: The Philosophy Bob Martin Didn't Know He Was Writing
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 **Introduction: The Hidden Philosophy**

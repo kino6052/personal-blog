@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - The Essence-in-Docs Practice
 subtitle: Embedding the Substance of Software Directly in Your JIRA Tickets
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft; code / stories; code / JIRA;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft; Code / Stories; Code / Tools;
 ---
 
 ## I. The Realization

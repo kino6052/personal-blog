@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>THE METAPHYSICS OF CODE - How to Make UI Testable and Keep It Soft</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>THE METAPHYSICS OF CODE - How to Make UI Testable and Keep It Soft</h1>
-      <h2>How to Make UI Testable and Keep It Soft</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>How to Make UI Testable and Keep It Soft</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>THE METAPHYSICS OF CODE - How to Make UI Testable and Keep It Soft</h1>
+          <p class="sub">How to Make UI Testable and Keep It Soft</p>
+        </header>
+        <div class="prose">
+          <h2>How to Make UI Testable and Keep It Soft</h2>
 <p>To prevent UI code from turning into legacy, we must secure rapid correctness feedback. But modern UI architectures actively sabotage this by trapping us in the accidental machinery.</p>
 <h3>The Architectural Trap: Welding Essence to Accident</h3>
 <p>UI development rots when developers weld the <strong>essence</strong> (pure business logic and state) directly to the <strong>accidents</strong> (the framework, the DOM, the network). Let&#39;s evaluate how standard patterns force this fatal coupling:</p>
@@ -57,8 +72,9 @@ Because the pure logic (the Model and the Update functions) is completely severe
 Because the View is passive, we <strong>do not write logical tests for it</strong>. Instead, we evaluate its representation. By placing the View in a tool like Storybook, we can inject any state we want and visually verify that it renders correctly. Storybook becomes our primary verification environment, replacing heavy DOM assertions with instantaneous visual rendering.
 By protecting our essence with fast memory tests and relegating the View to passive visual verification, we secure the fast feedback loop. We can safely refactor logic or completely swap the UI framework, ensuring the software remains eternally soft.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

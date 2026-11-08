@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>CODE STORIES - package.json and Git</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>CODE STORIES - package.json and Git</h1>
-      <h2>When there are constantly updated dependencies</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>In software development more than 50% of the time you don&#39;t do software, you do things that are barely related to it—mostly reducing friction. One such example is working on a large front-end project with many teams where versions of internal packages constantly change. Your branch, which needs to update one package, will <em>guaranteed</em> have merge conflicts.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>CODE STORIES - package.json and Git</h1>
+          <p class="sub">When there are constantly updated dependencies</p>
+        </header>
+        <div class="prose">
+          <p>In software development more than 50% of the time you don&#39;t do software, you do things that are barely related to it—mostly reducing friction. One such example is working on a large front-end project with many teams where versions of internal packages constantly change. Your branch, which needs to update one package, will <em>guaranteed</em> have merge conflicts.</p>
 <p>I had many thoughts about how to approach that problem. First, avoid JSON altogether and use YAML or even a TS file for managing packages. But that creates friction—we need to add extra scripts around <code>npm</code>.</p>
 <p>So here is how I solved it for myself.</p>
 <p>Simple, and to the point.</p>
@@ -192,8 +207,9 @@ main();
 <hr>
 <p><strong>P.S.</strong> If you&#39;re using Yarn, change step 5 to <code>yarn install --mode=update-lockfile</code>. If you&#39;re using pnpm, use <code>pnpm install --lockfile-only</code>. The Git staging logic stays exactly the same.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Philosophical Questionare</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Philosophical Questionare</h1>
-      <h2>To understand the world view of others</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h1>How Do You Know?</h1>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Philosophical Questionare</h1>
+          <p class="sub">To understand the world view of others</p>
+        </header>
+        <div class="prose">
+          <h1>How Do You Know?</h1>
 <p><em>Some people say one thing. Others say the opposite. What do you say?</em></p>
 <p><em>Write as much or as little as you want. If a question bores you, just write &quot;boring question&quot; and move on. No pressure.</em></p>
 <hr>
@@ -102,8 +117,9 @@
 <p>Others say your life is your argument. What you do matters more than what you say.</p>
 <p><strong>What do you think? Has any of this changed how you live? If you started over, what would you keep? What would you throw away? What are you waiting for?</strong></p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

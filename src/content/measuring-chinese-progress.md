@@ -3,7 +3,7 @@ title: An Objective Framework for Measuring Chinese Progress
 subtitle: ...
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning; technology / AI;
+tags: all; Language / Chinese; Learning and mind / Learning; Code / AI;
 ---
 
 In language learning, conventional metrics are highly deceptive. Tracking the number of characters memorized, hours logged, or flashcards flipped creates a comforting illusion of progress. But these metrics measure input, not processing power.

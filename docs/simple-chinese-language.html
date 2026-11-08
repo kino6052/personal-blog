@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>简单话</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>简单话</h1>
-      <h2>这个写出来的东西用简单话写，也说简单话是什么</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>这个写出来的东西用简单话写，也说简单话是什么。</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>简单话</h1>
+          <p class="sub">这个写出来的东西用简单话写，也说简单话是什么</p>
+        </header>
+        <div class="prose">
+          <p>这个写出来的东西用简单话写，也说简单话是什么。</p>
 <p>简单话是一种帮你学中文的说话和写字的方法，让你一直在中文里。</p>
 <p>简单话是真的中文，只是用字很不多、最不难的那种。它用和普通话一样的声音、字、和什么在前什么在后的法。让中文很难的东西，简单话里都没有——没有没有道理的词、没有很多部分的说话法、没有很多奇怪的字。</p>
 <p>简单话给你171个基本的字和12个说话的法。用这些，你可以说任何你想的。你用这些基本的字，合在一起，可以做别的词。中国人一听就明白。</p>
@@ -201,8 +216,9 @@
 </tr>
 </tbody></table>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

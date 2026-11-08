@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - The essence of operating system
 subtitle: The essence of operating system
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 The Essence of an Operating System

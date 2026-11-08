@@ -3,7 +3,7 @@ title: When the Liquid Evaporates
 subtitle: Or, when you compare yourself only to yesterday
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; economics; sustainability; future; philosophy; technology / AI;
+tags: all; Science and money / Economics; Science and money / Sustainability; Science and money / Future; Philosophy; Code / AI;
 ---
 
 I recently bought strawberries in a Chinese supermarket. They came in a beautiful plastic box, and that box was wrapped again in a transparent film. Not far from the shop, a slogan on the wall said: “Sorting waste is a small step to civilised living.”

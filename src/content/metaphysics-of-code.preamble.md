@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - IMPORTANT NOTE ON HOW TO READ THIS BOOK
 subtitle: The Default Framework and Its Hidden Bugs
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 Every reader brings a framework. You cannot think without one.

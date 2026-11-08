@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>On Rational Flâneurism</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>On Rational Flâneurism</h1>
-      <h2>The art of doing nothing</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>I write this not to convince anyone else, but to fix in place what I already know.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>On Rational Flâneurism</h1>
+          <p class="sub">The art of doing nothing</p>
+        </header>
+        <div class="prose">
+          <p>I write this not to convince anyone else, but to fix in place what I already know.</p>
 <p>The morning is mine. Before the noise starts, before the channels light up and the questions arrive, I write code. I close tickets. I do the methodical work that requires sustained attention, the kind of work that cannot be interrupted without losing its thread. This is the active phase, and it is visible. Anyone looking at my commit history or my pull requests would recognize it as work. No one disputes that.</p>
 <p>Then the day begins.</p>
 <p>The meetings start. The messages appear. The environment becomes one of constant, low-grade interruption—not malicious, just structural. And in that environment, methodical work is no longer possible. I cannot write a complex algorithm or reason through a subtle bug when I am being pulled in four directions. But I also cannot leave. I must be present. I must be available.</p>
@@ -35,8 +50,9 @@
 <p>I do not need to imitate activity. I do not need to apologize for rest. I do not need to translate my internal state into the language of motion. I only need to trust the rhythm I have already designed: deep work in the morning, generative lookout in the day, capture without judgment, and execution when the time is right.</p>
 <p>That rhythm is rational. It is effective. And it is mine.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

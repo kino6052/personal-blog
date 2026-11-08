@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - DON'T REPEAT YOURSELF
 subtitle: Don't repeat yourself
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 Here is the critical pressure-test that tightens the core argument.

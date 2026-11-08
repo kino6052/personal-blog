@@ -3,7 +3,7 @@ title: Learning Chinese with AI
 subtitle: How to make the hardest language a little bit easier
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; language / chinese; learning; technology / AI;
+tags: all; Language / Chinese; Learning and mind / Learning; Code / AI;
 ---
 
 Most people learn Chinese in a classroom: endless writing drills, memorizing vocabulary lists, and listening to textbook dialogues you'll never actually use. With this approach it takes years before Chinese becomes useful at all.

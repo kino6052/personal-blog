@@ -3,7 +3,7 @@ title: The Pull-Up Without a Bar
 subtitle: A TRIZ Case Study in Assumption-Breaking
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / TRIZ; engineering;
+tags: all; Philosophy; Code;
 ---
 
 # The Pull-Up Without a Bar: A TRIZ Case Study in Assumption-Breaking

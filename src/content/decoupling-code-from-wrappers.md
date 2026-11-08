@@ -3,7 +3,7 @@ title: Decoupling Code from Convenience Wrappers
 subtitle: Why declarative ceremony is not an architectural concern
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture;
+tags: all; Code / Architecture;
 ---
 
 I recently spent time inside an autotesting codebase. The technology is unimportant — call it Playwright, call it anything — because that is an implementation detail, and by the lights of this series, implementation details are not the unit of analysis.

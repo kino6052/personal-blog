@@ -3,7 +3,7 @@ title: Change
 subtitle: Fulfillment, Conflict, and the Transcendent Horizon
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / change;
+tags: all; Philosophy / Change;
 ---
 
 To understand reality cleanly, we must begin strictly with what is directly given to consciousness — nothing more, and nothing less.

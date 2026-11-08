@@ -3,7 +3,7 @@ title: The Content Bottleneck
 subtitle: Engineering Psychological Liftoff in Language Acquisition
 date: 2025-06-21
 layout: post.html # reference to a layout file
-tags: all; language; learning;
+tags: all; Language; Learning and mind / Learning;
 ---
 
 Traditional language pedagogy fails because it treats acquisition as an academic discipline rather than a systems engineering problem. The multi-billion-dollar language industry and traditional academic institutions optimize for chronological correctness: you learn the rules, you practice the drills, and eventually—years down the line—you are granted permission to interact with the real world.

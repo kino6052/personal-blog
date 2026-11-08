@@ -3,7 +3,7 @@ title: On Rational Flâneurism
 subtitle: The art of doing nothing
 date: 2025-02-21
 layout: post.html
-tags: all; science; technology / AI; philosophy;
+tags: all; Science and money / Science; Code / AI; Philosophy;
 ---
 
 I write this not to convince anyone else, but to fix in place what I already know.

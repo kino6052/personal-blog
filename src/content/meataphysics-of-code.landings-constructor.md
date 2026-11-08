@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - Landings Constructor
 subtitle: How a good intent made everything harder
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics;
+tags: all; Code / Architecture; Philosophy / Metaphysics;
 ---
 
 The intention behind this "landings constructor" is a classic, seductive trap in software engineering: trading structural integrity for momentary speed.

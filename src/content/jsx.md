@@ -3,7 +3,7 @@ title: JSX – why do we have to pay for the burden of the syntax sugar?
 subtitle: why do we have to pay for the burden of the syntax sugar?
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / presentation;
+tags: all; Code / Tools;
 ---
 
 Many of us love JSX. It feels intuitive and useful. But there is a big price: complex transformation pipelines that are not native to JavaScript. JSX is not built into the language.

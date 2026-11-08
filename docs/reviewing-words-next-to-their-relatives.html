@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Reviewing a Word Next to Its Relatives</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Reviewing a Word Next to Its Relatives</h1>
-      <h2>An idea for my flashcard app, where the links between words decide the order in which cards come up</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>I am building a small spaced-repetition app for my HSK 5 deck. It uses FSRS to decide what is due, and today it treats every card as if it lived alone: the due cards come up in order of how overdue they are, with the cards of one lesson kept together. That is not how I remember words. I remember a word because of what sits next to it: it means nearly the same as one word and the opposite of another, or it is a harder version of a simple word I already know.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Reviewing a Word Next to Its Relatives</h1>
+          <p class="sub">An idea for my flashcard app, where the links between words decide the order in which cards come up</p>
+        </header>
+        <div class="prose">
+          <p>I am building a small spaced-repetition app for my HSK 5 deck. It uses FSRS to decide what is due, and today it treats every card as if it lived alone: the due cards come up in order of how overdue they are, with the cards of one lesson kept together. That is not how I remember words. I remember a word because of what sits next to it: it means nearly the same as one word and the opposite of another, or it is a harder version of a simple word I already know.</p>
 <p>This post is about using that. It is an idea, with a design I settled on after a round of questions. Nothing in it is built yet, and the last two sections say what is undecided and how I will find out whether it works.</p>
 <h2>The idea</h2>
 <p>We do not memorize things by themselves. We memorize things that are related: we compare them, put them next to each other, set them against what we already know. In memory research the general finding points the same way: material that is tied to what you already know, and thought about in relation to other things, is remembered better than material met alone. The name for part of it is elaboration. I am not quoting a study or a number. I hold it as a general finding, and the test at the end is how I will check it for myself.</p>
@@ -66,8 +81,9 @@
 <p>What exists: the review screen with FSRS, the full review history, the theme tree, the day and week lists, and the review focus on a branch. My plan also has groups of confusable words that come together, followed by a contrast card, but as far as the plan says that is not built yet. It is a separate piece. A link is about one pair, it uses strength, and it says who goes first.</p>
 <p>What does not exist: the links themselves, the order they change, the chip, and the test. It is an idea I intend to try, and I will write down what the test shows, including if it shows nothing.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Decoupling Code from Convenience Wrappers</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Decoupling Code from Convenience Wrappers</h1>
-      <h2>Why declarative ceremony is not an architectural concern</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>I recently spent time inside an autotesting codebase. The technology is unimportant — call it Playwright, call it anything — because that is an implementation detail, and by the lights of this series, implementation details are not the unit of analysis.</p>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Decoupling Code from Convenience Wrappers</h1>
+          <p class="sub">Why declarative ceremony is not an architectural concern</p>
+        </header>
+        <div class="prose">
+          <p>I recently spent time inside an autotesting codebase. The technology is unimportant — call it Playwright, call it anything — because that is an implementation detail, and by the lights of this series, implementation details are not the unit of analysis.</p>
 <p>What I observed there was striking, and it took me some time to name precisely what was wrong.</p>
 <p>The codebase was, by the standards we have developed earlier, <em>well grounded</em>. Almost everything in it corresponded to something that could be observed on the screen. Buttons that could be clicked. Inputs that could be filled. Pages that could be navigated to. There was no DDD Aggregate hiding in the corner with no observable referent. There were no Domain Service objects mediating phantom relationships. The selectors pointed at real DOM elements. The assertions checked real visible state.</p>
 <p>This is the kind of codebase that passes the perception test: every concept has a perceivable correspondent. The grounding is intact.</p>
@@ -193,8 +208,9 @@
 <p>That is softness: the ability to change what the software does without being punished for how you chose to write it down.</p>
 <p><em>[Original conclusion follows.]</em></p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

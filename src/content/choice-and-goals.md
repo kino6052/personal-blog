@@ -3,7 +3,7 @@ title: The Parable of the Hungry Shopper
 subtitle: Or, Why Too Many Doors Make a Prison
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy / values; philosophy / free will;
+tags: all; Philosophy / Values; Philosophy / Ethics and freedom;
 ---
 
 Imagine a street. Not just any street, but a Street of a Thousand Tables. You are hungry. Your stomach gives a polite, but insistent, cough. Lunchtime has arrived.

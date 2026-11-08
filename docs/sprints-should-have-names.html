@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Sprints Should Have Names</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Sprints Should Have Names</h1>
-      <h2>Agile as it was meant</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <h2>The Reification of Process</h2>
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Sprints Should Have Names</h1>
+          <p class="sub">Agile as it was meant</p>
+        </header>
+        <div class="prose">
+          <h2>The Reification of Process</h2>
 <p>Every idea that escapes its empirical anchor becomes a ritual. This is not a metaphor — it is a predictable transformation with identifiable stages. First, a practice is developed in response to a concrete problem. Then the practice is named and formalized. Then the name is adopted without the practice. Then the formalization is enforced without the problem it was meant to solve ever being examined. Finally, the ritual is defended not by its results but by its own internal logic: we do it this way because this is the way it is done.</p>
 <p>Agile has completed this transformation in most organizations that claim to use it. What began as a serious attempt to build feedback into the software development process has become, in the majority of companies practicing it, a calendar of ceremonies layered on top of JIRA. The ceremonies are performed. The feedback is not obtained. The gap between the two is not noticed, because the ritual has replaced the purpose so completely that the purpose is no longer visible.</p>
 <p>This is precisely what happens to ungrounded ideas. And Agile, as practiced, is one of the most thoroughgoing examples the software industry has produced.</p>
@@ -52,8 +67,9 @@
 <p>Fix the software, and the process fixes itself. The ceremony becomes real because the artifact is real. The demo is possible because the software is grounded. The sprint earns a name because something happened in it that is worth remembering.</p>
 <p>That is Agile. What most teams practice is the ritual performed in its absence.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>

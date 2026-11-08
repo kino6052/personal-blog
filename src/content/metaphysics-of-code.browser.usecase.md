@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - USE CASE - BROWSER AS A SWAPPABLE IMPLEMENTATIO
 subtitle: BROWSER AS A SWAPPABLE IMPLEMENTATION DETAIL
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 ### 1. The Core Problem

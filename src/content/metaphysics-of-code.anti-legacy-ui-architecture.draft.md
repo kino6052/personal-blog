@@ -3,7 +3,7 @@ title: THE METAPHYSICS OF CODE - Anti-Legacy Architecture
 subtitle: The Pure View Model Pattern for Radical Softness
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; code / architecture; code / metaphysics; draft;
+tags: all; Code / Architecture; Philosophy / Metaphysics; draft;
 ---
 
 In our previous discussions, we established that preventing UI code from decaying into legacy requires completely severing the **essence** (pure business logic) from the **accidents** (the framework and delivery machinery).

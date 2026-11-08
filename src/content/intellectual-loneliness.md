@@ -3,7 +3,7 @@ title: Intellectual Loneliness
 subtitle: And how to deal with it
 date: 2025-02-21
 layout: post.html # reference to a layout file
-tags: all; philosophy;
+tags: all; Philosophy;
 ---
 
 Two thousand years ago, a group of men walked into a courtyard to spring a trap. They approached a man they thought was merely a controversial teacher and asked him a binary, political question about paying taxes to Caesar.

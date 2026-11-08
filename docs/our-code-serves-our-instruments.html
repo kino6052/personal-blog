@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <title>Our Code Serves Our Instruments, Not Us</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b5bf0'/%3E%3Cstop offset='1' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Our Code Serves Our Instruments, Not Us</h1>
-      <h2>And how to fix it</h2>
+    <header class="top">
+      <div class="top-in">
+        <a class="brand" href="." aria-label="Personal blog, all posts">
+          <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+          <span class="who">
+            <span class="wordmark">personal <span class="only">blog</span></span>
+            <span class="tagline">sharing thoughts</span>
+          </span>
+        </a>
+      </div>
     </header>
-    <main>
-      <a href=".">Home Page</a>
-      <p>Open any codebase. What do you see first?
+
+    <main class="post">
+      <article>
+        <header class="post-head">
+          <h1>Our Code Serves Our Instruments, Not Us</h1>
+          <p class="sub">And how to fix it</p>
+        </header>
+        <div class="prose">
+          <p>Open any codebase. What do you see first?
 A graveyard of machinery. webpack.config.js. tsconfig.json. jest.config.js. eslint.config.js. docker-compose.yml. vite.config.ts. .env.example. prettier.config.js. A dozen configuration files screaming for attention before you glimpse a single line of code that does something a human would recognize.
 The actual program entry point is buried. Hidden in a folder called src/index.ts that does nothing but bootstrap a framework. Named something that misleads you. Always behind layers of ceremony that exist not for the developer, but for the tooling.
 The build system needs these configs. The bundler needs them. The test runner. The linter. The framework. All demand their tribute. And we have accepted that our first duty is to feed the machinery before we can even find the program we are supposed to write.
@@ -88,8 +103,9 @@ That is the long path.</p>
 <p>If you removed every layer of ceremony, could you still describe the program clearly? If not, the abstractions have become load-bearing—and load-bearing abstractions are the ones that resist change.
 The instruments serve us, not the other way around.</p>
 
-      <!-- unescaped HTML from Markdown -->
-      <a href=".">Home Page</a>
+        </div>
+      </article>
+      <a class="back" href=".">All posts</a>
     </main>
   </body>
 </html>
